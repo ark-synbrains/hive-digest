@@ -1,0 +1,17 @@
+{
+  "name": "dev-digest-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Generate and email /dev/digest technical newsletters via Resend",
+  "scripts": {
+    "start": "node src/run.mjs",
+    "generate": "node src/run.mjs --dry-run"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "resend": "^6.14.0"
+  }
+}

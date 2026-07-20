@@ -1,0 +1,121 @@
+# /dev/digest — hourly newsletter automation (trial: 2 runs)
+#
+# Schedule: every hour at :00 IST (Asia/Kolkata).
+# GitHub Actions cron is UTC-only, so this is minute 30 UTC (= :00 IST).
+# Trial: after 2 successful sends, the workflow disables itself.
+#
+# Required GitHub Actions secrets:
+#   RESEND_API_KEY
+#   RESEND_FROM_EMAIL
+#   NEWSLETTER_TO_EMAILS
+#
+# Optional:
+#   DIGEST_MAX_RUNS  (default 2 for this trial workflow)
+
+name: /dev/digest hourly
+
+on:
+  schedule:
+    - cron: '30 * * * *' # :00 IST (UTC+5:30)
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: dev-digest-hourly
+  cancel-in-progress: false
+
+jobs:
+  send-digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Enforce trial run limit
+        id: limit
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const maxRuns = Number(process.env.DIGEST_MAX_RUNS || '2');
+            const workflowId = 'dev-digest-hourly.yml';
+            const { data } = await github.rest.actions.listWorkflowRuns({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: workflowId,
+              status: 'success',
+              per_page: 100,
+            });
+            // Count prior successful runs excluding this in-progress one
+            const prior = (data.workflow_runs || []).filter(
+              (r) => r.id !== context.runId && r.conclusion === 'success'
+            ).length;
+            core.info(`Prior successful runs: ${prior}; max: ${maxRuns}`);
+            if (prior >= maxRuns) {
+              core.notice(`Trial complete (${prior}/${maxRuns}). Disabling workflow.`);
+              try {
+                await github.rest.actions.disableWorkflow({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  workflow_id: workflowId,
+                });
+              } catch (e) {
+                core.warning(`Could not auto-disable workflow: ${e.message}`);
+              }
+              core.setOutput('skip', 'true');
+            } else {
+              core.setOutput('skip', 'false');
+              core.setOutput('remaining', String(maxRuns - prior));
+              // #001 was sent manually; automation issues start at #002
+              core.setOutput('issue_number', String(prior + 2));
+            }
+        env:
+          DIGEST_MAX_RUNS: '2'
+
+      - name: Skip if trial complete
+        if: steps.limit.outputs.skip == 'true'
+        run: |
+          echo "Trial complete — no newsletter sent."
+          exit 0
+
+      - name: Setup Node
+        if: steps.limit.outputs.skip != 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: agent/package.json
+
+      - name: Install agent deps
+        if: steps.limit.outputs.skip != 'true'
+        run: npm install --prefix agent
+
+      - name: Generate and send newsletter
+        if: steps.limit.outputs.skip != 'true'
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM_EMAIL: ${{ secrets.RESEND_FROM_EMAIL }}
+          NEWSLETTER_TO_EMAILS: ${{ secrets.NEWSLETTER_TO_EMAILS }}
+          DIGEST_ISSUE_NUMBER: ${{ steps.limit.outputs.issue_number }}
+          DIGEST_MAX_RUNS: '0'
+        run: npm start --prefix agent
+
+      - name: Disable workflow after final trial run
+        if: steps.limit.outputs.skip != 'true' && steps.limit.outputs.remaining == '1'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const workflowId = 'dev-digest-hourly.yml';
+            core.notice('This was the final trial run. Disabling workflow.');
+            try {
+              await github.rest.actions.disableWorkflow({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                workflow_id: workflowId,
+              });
+            } catch (e) {
+              core.warning(`Could not auto-disable workflow: ${e.message}`);
+            }

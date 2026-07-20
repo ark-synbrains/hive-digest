@@ -108,9 +108,42 @@ what counts as a "model," "algorithm," or "product" entry.
 - **Three API calls per run** — one per lane (fewer if you scope to a single
   category), each doing a small number of web searches.
 
+## Scheduled newsletter (automation)
+
+Two ways to generate and email `/dev/digest` on a timer:
+
+1. **Cursor Automation (preferred)** — paste the config in
+   [`.cursor/automations/dev-digest-hourly.md`](.cursor/automations/dev-digest-hourly.md)
+   at [cursor.com/automations](https://cursor.com/automations), every hour at
+   **:00 IST** (`CRON_TZ=Asia/Kolkata 0 * * * *`), 2-run trial via memory.
+   Uses this environment’s Resend secrets.
+2. **GitHub Actions fallback** —
+   [`.github/workflows/dev-digest-hourly.yml`](.github/workflows/dev-digest-hourly.yml)
+   runs `agent/` every hour at **:00 IST** (`30 * * * *` UTC) and auto-disables
+   after **2 successful sends**.
+
+### Agent CLI
+
+```bash
+npm install --prefix agent
+# preview only (writes agent/out/)
+npm run generate --prefix agent
+# send for real (needs secrets below)
+npm start --prefix agent
+```
+
+Secrets (Cursor environment and/or GitHub Actions):
+
+- `RESEND_API_KEY`
+- `RESEND_FROM_EMAIL`
+- `NEWSLETTER_TO_EMAILS`
+
 ## File structure
 
 ```
-tech-digest-agent.html   the entire app: markup, styles, and script in one file
-README.md                this file
+tech-digest-agent.html              browser artifact UI
+agent/                              Node newsletter generator + Resend sender
+.github/workflows/dev-digest-hourly.yml
+.cursor/automations/dev-digest-hourly.md
+README.md
 ```
