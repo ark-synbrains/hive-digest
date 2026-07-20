@@ -1,0 +1,19 @@
+{
+  "name": "dev-digest-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scheduled /dev/digest newsletter agent — generates an issue and emails it via Resend",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "send": "node src/index.js",
+    "dry-run": "node src/index.js --dry-run",
+    "schedule": "node src/scheduler.js"
+  },
+  "dependencies": {
+    "resend": "^6.14.0"
+  }
+}

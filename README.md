@@ -94,23 +94,47 @@ what counts as a "model," "algorithm," or "product" entry.
 **Model** — API calls use `claude-sonnet-4-6`. Change the `model` field inside
 `fetchCategory()` to point at a different model string if needed.
 
+## Automated email agent (every 12 hours)
+
+The `agent/` package is a server-side port of the same generation logic. It
+builds a fresh issue with Anthropic web search and emails it via Resend to
+`NEWSLETTER_TO_EMAIL`.
+
+- **Schedule:** GitHub Actions workflow `.github/workflows/newsletter.yml`
+  runs on cron `0 */12 * * *` (every 12 hours UTC), plus manual dispatch.
+- **Config:** see [`agent/README.md`](agent/README.md) and `agent/.env.example`.
+- **Required secrets:** `ANTHROPIC_API_KEY`, `RESEND_API_KEY`, and optionally
+  `NEWSLETTER_TO_EMAIL` / `RESEND_FROM_EMAIL`.
+- **Sending domain:** `newsletters.synbrains.ai` (verify DNS in Resend before
+  production sends).
+
+```bash
+cd agent && npm install
+cp .env.example .env   # set keys + NEWSLETTER_TO_EMAIL
+npm start              # one-shot generate + send
+npm run schedule       # loop every 12 hours
+```
+
 ## Known limitations
 
-- **Session-only** — nothing persists. Reloading the page resets the theme to
-  light and clears the current issue; there's no local storage or backend.
-- **No scheduling** — this generates an issue on demand when you click the
-  button. It doesn't run on a timer or send email. Turning this into an
-  automatically-recurring, emailed newsletter would mean moving the same
-  prompt/logic into a script (e.g. a scheduled job) that calls the Anthropic
-  API server-side and pipes the result to an email service.
+- **Session-only (HTML UI)** — nothing persists in the browser tool. Reloading
+  the page resets the theme to light and clears the current issue.
 - **Search quality varies** — results depend on what's indexed and available
   at generation time; always check the linked source before citing an entry.
 - **Three API calls per run** — one per lane (fewer if you scope to a single
   category), each doing a small number of web searches.
+- **Domain verification** — automated email requires the Resend sending domain
+  DNS records to be verified (see `agent/README.md`).
 
 ## File structure
 
 ```
-tech-digest-agent.html   the entire app: markup, styles, and script in one file
-README.md                this file
+tech-digest-agent.html              interactive single-file generator UI
+agent/                              scheduled newsletter agent (generate + email)
+  src/index.js                      one-shot generate + send
+  src/scheduler.js                  long-running every-N-hours loop
+  src/generate.js                   Anthropic + web search port of the UI logic
+  src/email.js                      HTML/text render + Resend send
+.github/workflows/newsletter.yml    cron every 12 hours
+README.md                           this file
 ```
