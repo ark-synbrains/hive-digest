@@ -1,6 +1,7 @@
 # /dev/digest — hourly newsletter automation (trial: 2 runs)
 #
-# Schedule: every hour at minute 0 (UTC).
+# Schedule: every hour at :00 IST (Asia/Kolkata).
+# GitHub Actions cron is UTC-only, so this is minute 30 UTC (= :00 IST).
 # Trial: after 2 successful sends, the workflow disables itself.
 #
 # Required GitHub Actions secrets:
@@ -15,7 +16,7 @@ name: /dev/digest hourly
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '30 * * * *' # :00 IST (UTC+5:30)
   workflow_dispatch:
 
 permissions:

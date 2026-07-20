@@ -9,7 +9,7 @@ Use this when creating the automation at [cursor.com/automations/new](https://cu
 | Field | Value |
 | --- | --- |
 | **Name** | `/dev/digest` hourly newsletter |
-| **Trigger** | Scheduled → Every hour (`0 * * * *` UTC) |
+| **Trigger** | Scheduled → Custom cron (every hour IST): `CRON_TZ=Asia/Kolkata 0 * * * *` |
 | **Trial** | Leave enabled for **2 hourly runs**, then disable (or keep the prompt’s memory-based 2-run guard) |
 | **Repository** | `ark-synbrains/dev-digest` @ `main` |
 | **Environment** | `ark-synbrains/dev-digest` (has `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `NEWSLETTER_TO_EMAILS`) |
@@ -60,5 +60,5 @@ Do not pretend success. Record the error in memory and stop.
 ## `/automate` one-liner (local Cursor)
 
 ```
-/automate Every hour, generate the /dev/digest technical newsletter for ark-synbrains/dev-digest and email it with Resend using RESEND_FROM_EMAIL and NEWSLETTER_TO_EMAILS. Limit to 2 successful sends via memory, then stop. Prefer running npm start --prefix agent when available.
+/automate Every hour at :00 IST (cron: CRON_TZ=Asia/Kolkata 0 * * * *), generate the /dev/digest technical newsletter for ark-synbrains/dev-digest and email it with Resend using RESEND_FROM_EMAIL and NEWSLETTER_TO_EMAILS. Limit to 2 successful sends via memory, then stop. Prefer running npm start --prefix agent when available.
 ```
