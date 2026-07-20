@@ -100,7 +100,7 @@ Two ways to generate and email `/dev/digest` on a timer:
    generates and emails a new digest identified by date (no issue numbers).
    Uses this environment’s SMTP secrets.
 2. **GitHub Actions fallback** —
-   [`.github/workflows/dev-digest-hourly.yml`](.github/workflows/dev-digest-hourly.yml)
+   [`.github/workflows/newsletter.yml`](.github/workflows/newsletter.yml)
    runs `agent/` every hour at **:00 IST** (`30 * * * *` UTC) with no send cap.
 
 ### Agent CLI
@@ -129,7 +129,7 @@ Optional: `SMTP_SECURE`, `SMTP_REPLY_TO`
 ```
 tech-digest-agent.html              browser artifact UI
 agent/                              Node newsletter generator + SMTP sender
-.github/workflows/dev-digest-hourly.yml
+.github/workflows/newsletter.yml
 .cursor/automations/newsletter.md
 README.md
 ```
