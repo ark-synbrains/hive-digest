@@ -26,7 +26,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: dev-digest-hourly
+  group: newsletter
   cancel-in-progress: false
 
 jobs:
