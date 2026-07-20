@@ -36,8 +36,12 @@ function parseRecipients(raw) {
     .filter(Boolean);
 }
 
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+/** Display / subject date: DD Mon YYYY (e.g. 20 Jul 2026). */
 function formatDate(d = new Date()) {
-  return d.toDateString();
+  const dd = String(d.getDate()).padStart(2, '0');
+  return `${dd} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
 }
 
 function dateStamp(d = new Date()) {

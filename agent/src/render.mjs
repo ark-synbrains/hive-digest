@@ -32,14 +32,52 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
+/**
+ * Short, inbox-friendly hook from a headline.
+ * Strips HN prefixes and keeps the punchiest phrase.
+ */
+function shortHook(headline) {
+  let h = String(headline || '')
+    .replace(/^(Show HN|Ask HN|Tell HN|Launch HN):\s*/i, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!h) return '';
+
+  // Drop trailing brackets/parentheticals: "Foo (at better ratios)" -> "Foo"
+  h = h.replace(/\s*[\(\[][^)\]]+[\)\]]\s*$/g, '').trim();
+
+  // "name - benefit" -> prefer the benefit when it's the catchy part
+  const dashParts = h.split(/\s+-\s+/);
+  if (dashParts.length >= 2) {
+    const left = dashParts[0].trim();
+    const right = dashParts.slice(1).join(' - ').trim();
+    if (right.length >= 16 && (left.length <= 24 || /\d/.test(right))) {
+      h = right;
+    } else if (left.length >= 16) {
+      h = left;
+    }
+  }
+
+  // Soft title-case cleanup for subject scanability
+  h = h.replace(/\s+/g, ' ').trim();
+  if (h.length > 52) h = `${h.slice(0, 49).trimEnd()}...`;
+  return h;
+}
+
+/** Eye-catching subject summary from top-ranked entries. */
 function teaser(byCategory, sectionOrder) {
   const order = sectionOrder?.length ? sectionOrder : DEFAULT_ORDER;
-  const first = order.map((k) => (byCategory[k] || [])[0]?.headline).filter(Boolean);
-  if (!first.length) return 'latest AI & technology insights';
-  return first
-    .slice(0, 3)
-    .map((h) => h.split(/[:\-]/)[0].trim())
-    .join(', ');
+  const hooks = [];
+  for (const cat of order) {
+    const top = (byCategory[cat] || [])[0]?.headline;
+    const hook = shortHook(top);
+    if (hook && !hooks.some((h) => h.toLowerCase() === hook.toLowerCase())) {
+      hooks.push(hook);
+    }
+    if (hooks.length >= 2) break;
+  }
+  if (!hooks.length) return 'This month in AI & technology';
+  return hooks.join(' | ');
 }
 
 function accentBar() {
@@ -52,7 +90,8 @@ export function buildIssue({ date, byCategory, sectionOrder }) {
   const order = (sectionOrder?.length ? sectionOrder : DEFAULT_ORDER).filter(
     (k) => (clean[k] || []).length
   );
-  const subject = `Hive Digest - ${teaser(clean, order)} (${cleanDate})`;
+  // Hive Digest - DD Mon YYYY - <small summary>
+  const subject = `Hive Digest - ${cleanDate} - ${teaser(clean, order)}`;
 
   let text = `Hive Digest\n${cleanDate}\n${HIVE.site}\n\n`;
   text += 'AI & technology insights from Synbrains - models, algorithms, and product releases.\n\n';

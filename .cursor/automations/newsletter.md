@@ -44,8 +44,9 @@ Do not use issue numbers — identify each digest by its date only.
 - Each entry: headline, 2–4 sentence engineer-focused summary, source_name, source_url (real links only).
 - Tone: Synbrains Hive insights for hands-on engineers. Match tech-digest-agent.html / Hive branding (red #EE462F → purple #7610C7 on dark).
 - The emailed HTML newsletter must always use the dark Hive theme (do not switch to light).
-- Subject: `Hive Digest — <short teaser> (<date>)`
-  - Date is the issue identity. No #NNN issue numbers.
+- Subject: `Hive Digest - DD Mon YYYY - <short eye-catching summary>`
+  - Example: `Hive Digest - 20 Jul 2026 - Codec 2x faster than LZ4 | Grok Build goes open source`
+  - Date is the issue identity (DD Mon YYYY). No #NNN issue numbers.
 - NEVER include insight scores in the email body/subject. Scores are ranking-only.
 
 ### Preferred implementation
