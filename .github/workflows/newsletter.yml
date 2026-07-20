@@ -1,7 +1,7 @@
-# /dev/digest — hourly newsletter automation
+# /dev/digest — monthly newsletter automation
 #
-# Schedule: every hour at :00 IST (Asia/Kolkata).
-# GitHub Actions cron is UTC-only, so this is minute 30 UTC (= :00 IST).
+# Schedule: 1st of each month at 09:00 IST (Asia/Kolkata).
+# GitHub Actions cron is UTC-only, so this is 03:30 UTC on day 1 (= 09:00 IST).
 #
 # Required GitHub Actions secrets:
 #   SMTP_HOST
@@ -15,11 +15,11 @@
 #   SMTP_SECURE        (true/false; defaults to true when port is 465)
 #   SMTP_REPLY_TO
 
-name: /dev/digest hourly
+name: /dev/digest monthly
 
 on:
   schedule:
-    - cron: '30 * * * *' # :00 IST (UTC+5:30)
+    - cron: '30 3 1 * *' # 09:00 IST on the 1st (UTC+5:30)
   workflow_dispatch:
 
 permissions:

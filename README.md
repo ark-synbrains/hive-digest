@@ -95,13 +95,14 @@ Two ways to generate and email `/dev/digest` on a timer:
 
 1. **Cursor Automation (preferred)** — paste the config in
    [`.cursor/automations/newsletter.md`](.cursor/automations/newsletter.md)
-   at [cursor.com/automations](https://cursor.com/automations), every hour at
-   **:00 IST** (`CRON_TZ=Asia/Kolkata 0 * * * *`). No run limit — each hour
-   generates and emails a new digest identified by date (no issue numbers).
-   Uses this environment’s SMTP secrets.
+   at [cursor.com/automations](https://cursor.com/automations), on the **1st of
+   each month at 09:00 IST** (`CRON_TZ=Asia/Kolkata 0 9 1 * *`). No run limit —
+   each month generates and emails a new digest identified by date (no issue
+   numbers). Uses this environment’s SMTP secrets.
 2. **GitHub Actions fallback** —
    [`.github/workflows/newsletter.yml`](.github/workflows/newsletter.yml)
-   runs `agent/` every hour at **:00 IST** (`30 * * * *` UTC) with no send cap.
+   runs `agent/` on the **1st of each month at 09:00 IST** (`30 3 1 * *` UTC)
+   with no send cap.
 
 ### Agent CLI
 

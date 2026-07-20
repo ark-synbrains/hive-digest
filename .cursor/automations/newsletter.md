@@ -9,7 +9,7 @@ Use this when creating the automation at [cursor.com/automations/new](https://cu
 | Field | Value |
 | --- | --- |
 | **Name** | `/dev/digest` newsletter |
-| **Trigger** | Scheduled → Custom cron (every hour IST): `CRON_TZ=Asia/Kolkata 0 * * * *` |
+| **Trigger** | Scheduled → Custom cron (monthly, 1st at 09:00 IST): `CRON_TZ=Asia/Kolkata 0 9 1 * *` |
 | **Repository** | `ark-synbrains/dev-digest` @ `main` |
 | **Environment** | `ark-synbrains/dev-digest` (needs SMTP + recipient secrets — see below) |
 | **Tools** | Memories on · PR creation optional/off |
@@ -32,7 +32,7 @@ Optional: `SMTP_SECURE`, `SMTP_REPLY_TO`
 You are the /dev/digest newsletter automation for repo ark-synbrains/dev-digest.
 
 ## Task
-Every scheduled run: generate a fresh /dev/digest technical newsletter and email it via SMTP.
+Every scheduled run (monthly): generate a fresh /dev/digest technical newsletter and email it via SMTP.
 There is no run limit — always generate and send unless SMTP/env is missing or generation fails.
 Do not use issue numbers — identify each digest by its date only.
 
@@ -54,7 +54,7 @@ Do not use issue numbers — identify each digest by its date only.
   - NEWSLETTER_TO_EMAILS (comma/semicolon-separated)
   - optional SMTP_SECURE, SMTP_REPLY_TO
 - Do not use Resend or the Resend MCP.
-- Ignore any prior memory about issue numbers or a "1-run trial" — those limits are removed. Always send.
+- Ignore any prior memory about issue numbers, hourly schedules, or a "1-run trial". Always send on the monthly schedule.
 
 ### After success
 Update memories: store subject, date, SMTP messageId, and last_success_at.
@@ -67,5 +67,5 @@ Do not pretend success. Record the error in memory and stop.
 ## `/automate` one-liner (local Cursor)
 
 ```
-/automate Every hour at :00 IST (cron: CRON_TZ=Asia/Kolkata 0 * * * *), generate the /dev/digest technical newsletter for ark-synbrains/dev-digest and email it via SMTP using SMTP_HOST/SMTP_PORT/SMTP_USER/SMTP_PASS/SMTP_FROM and NEWSLETTER_TO_EMAILS. No run limit and no issue numbers — identify each send by date. Prefer running npm start --prefix agent when available. Newsletter HTML must always be dark theme.
+/automate On the 1st of every month at 09:00 IST (cron: CRON_TZ=Asia/Kolkata 0 9 1 * *), generate the /dev/digest technical newsletter for ark-synbrains/dev-digest and email it via SMTP using SMTP_HOST/SMTP_PORT/SMTP_USER/SMTP_PASS/SMTP_FROM and NEWSLETTER_TO_EMAILS. No run limit and no issue numbers — identify each send by date. Prefer running npm start --prefix agent when available. Newsletter HTML must always be dark theme.
 ```
