@@ -1,5 +1,14 @@
 {
-  "runsCompleted": 0,
-  "lastSentAt": null,
-  "history": []
+  "runsCompleted": 1,
+  "lastSentAt": "2026-07-20T08:15:51.907Z",
+  "history": [
+    {
+      "date": "Mon Jul 20 2026",
+      "dateStamp": "2026-07-20",
+      "subject": "/dev/digest — PagedWeight, Knowing the Self, Understanding the World (Mon Jul 20 2026)",
+      "messageId": "<bbd4109c-702f-0b15-0381-6b835ac7fe47@synbrains.ai>",
+      "sentAt": "2026-07-20T08:15:51.907Z",
+      "recipients": 2
+    }
+  ]
 }
