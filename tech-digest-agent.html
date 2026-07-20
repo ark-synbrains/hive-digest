@@ -3,33 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="/dev/digest — an AI-generated changelog of the latest models, algorithms, and product releases for hands-on technical readers.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%233F6B4A'/%3E%3Ctext x='12' y='17' font-size='14' text-anchor='middle' fill='%23FBF6EC' font-family='monospace'%3E/%3C/text%3E%3C/svg%3E">
-<title>/dev/digest — technical newsletter agent</title>
+<meta name="description" content="Hive Digest — AI & technology insights from Synbrains (hive.synbrains.ai).">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%23EE462F'/%3E%3Cstop offset='1' stop-color='%237610C7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='24' height='24' rx='6' fill='url(%23g)'/%3E%3C/svg%3E">
+<title>Hive Digest — Synbrains newsletter agent</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,72,400;0,72,600;1,72,500&family=Inter:wght@400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap');
 
   :root{
-    --bg: #0F1516;
-    --bg-raised: #16201F;
-    --card: #1A2423;
-    --hairline: #2B3836;
-    --ink: #E6E8E1;
-    --ink-dim: #8CA39A;
-    --amber: #5FBE87;
-    --amber-dim: #2F4A3B;
-    --amber-dim-text: #6E8478;
-    --amber-text: #0B1210;
-    --add: #7FD9A0;
-    --del: #D97A63;
+    --bg: #0B0A12;
+    --bg-raised: #161222;
+    --card: #1A1526;
+    --hairline: #2A2438;
+    --ink: #F3F0F7;
+    --ink-dim: #A39BB3;
+    --amber: #EE462F;
+    --amber-dim: #5A2430;
+    --amber-dim-text: #C79AA0;
+    --amber-text: #FFFFFF;
+    --add: #7610C7;
+    --del: #F07167;
+    --hive-red: #EE462F;
+    --hive-purple: #7610C7;
   }
 
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
-    background: var(--bg);
+    background:
+      radial-gradient(1200px 500px at 10% -10%, rgba(238,70,47,0.18), transparent 55%),
+      radial-gradient(900px 420px at 90% 0%, rgba(118,16,199,0.22), transparent 50%),
+      var(--bg);
     color: var(--ink);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-wrap: break-word;
   }
@@ -52,30 +57,42 @@
     align-items: flex-end;
     gap: 16px;
   }
+  .brand-bar{
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--hive-red), var(--hive-purple));
+    margin: 28px 0 0;
+  }
   .masthead-title{
-    font-family: 'Newsreader', serif;
-    font-size: clamp(26px, 6vw, 40px);
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(28px, 6vw, 42px);
     font-weight: 600;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     margin: 0;
     display:flex;
     align-items:center;
     gap: 10px;
   }
-  .masthead-title .slash{ color: var(--amber); font-weight:400; }
+  .masthead-title .hive{ 
+    background: linear-gradient(90deg, var(--hive-red), var(--hive-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
   .cursor{
-    display:inline-block; width:10px; height:26px; background:var(--amber);
+    display:inline-block; width:10px; height:26px;
+    background: linear-gradient(180deg, var(--hive-red), var(--hive-purple));
     animation: blink 1.1s steps(1) infinite; vertical-align: -4px;
   }
   @keyframes blink{ 50%{ opacity:0; } }
   .meta-line{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Manrope', system-ui, sans-serif;
     font-size: 12px;
     color: var(--ink-dim);
     text-align: right;
     line-height: 1.6;
   }
-  .meta-line .issue{ color: var(--amber); }
+  .meta-line .issue{ color: var(--hive-purple); }
 
   .masthead-right{
     display:flex;
@@ -84,12 +101,13 @@
   }
 
   .tagline{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 12.5px;
+    font-family:'Manrope', system-ui, sans-serif;
+    font-size: 13px;
     color: var(--ink-dim);
     padding: 14px 0 0;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
   }
+  .tagline a{ color: var(--hive-purple); text-decoration: none; }
 
   /* ---- Controls ---- */
   .controls{
@@ -100,24 +118,24 @@
     align-items:center;
   }
   select, button{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 12.5px;
+    font-family:'Manrope', system-ui, sans-serif;
+    font-size: 13px;
     background: var(--bg-raised);
     color: var(--ink);
     border: 1px solid var(--hairline);
-    border-radius: 4px;
-    padding: 9px 12px;
+    border-radius: 999px;
+    padding: 9px 14px;
   }
   select{cursor:pointer;}
   #genBtn{
-    background: var(--amber);
+    background: linear-gradient(90deg, var(--hive-red), var(--hive-purple));
     color: var(--amber-text);
     border: none;
     font-weight: 600;
     cursor: pointer;
-    padding: 10px 16px;
-    border-radius: 4px;
-    transition: filter 0.15s ease;
+    padding: 10px 18px;
+    border-radius: 999px;
+    transition: filter 0.15s ease, transform 0.15s ease;
   }
   #genBtn:hover{ filter: brightness(1.08); }
   #genBtn:disabled{ background: var(--amber-dim); color: var(--amber-dim-text); cursor: progress; }
@@ -156,8 +174,8 @@
 
   /* ---- Status ---- */
   .status{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 12px;
+    font-family:'Manrope', system-ui, sans-serif;
+    font-size: 12.5px;
     color: var(--ink-dim);
     margin-top: 14px;
     min-height: 18px;
@@ -174,45 +192,53 @@
     margin-bottom: 18px;
   }
   .section-head .label{
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Manrope', system-ui, sans-serif;
     font-size: 12px;
-    color: var(--amber);
+    color: var(--hive-red);
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    font-weight: 700;
   }
   .section-head .count{
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Manrope', system-ui, sans-serif;
     font-size: 12px;
     color: var(--ink-dim);
   }
 
-  /* ---- Entry (diff/commit style) ---- */
+  /* ---- Entry ---- */
   .entry{
     background: var(--card);
     border: 1px solid var(--hairline);
-    border-radius: 6px;
+    border-radius: 12px;
     padding: 16px 18px;
     margin-bottom: 12px;
-    box-shadow: 0 1px 2px rgba(33,28,21,0.05), 0 1px 0 rgba(33,28,21,0.03);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .entry:hover{
+    transform: translateY(-2px);
+    border-color: rgba(238,70,47,0.45);
   }
   .entry-top{
     display:flex; justify-content: space-between; align-items: baseline; gap: 12px;
     margin-bottom: 6px;
   }
   .entry-tag{
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Manrope', system-ui, sans-serif;
     font-size: 11px;
-    color: var(--add);
+    color: var(--hive-purple);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
   }
-  .entry-tag::before{ content: "+ "; }
   .entry-hash{
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Manrope', system-ui, sans-serif;
     font-size: 11px;
     color: var(--ink-dim);
     flex-shrink:0;
   }
   .entry-title{
-    font-family: 'Newsreader', serif;
+    font-family: 'Fraunces', Georgia, serif;
     font-size: 19px;
     font-weight: 600;
     margin: 4px 0 6px;
@@ -226,11 +252,11 @@
   }
   .entry-body .del{ color: var(--del); }
   .entry-source{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 11.5px;
+    font-family:'Manrope', system-ui, sans-serif;
+    font-size: 12px;
   }
-  .entry-source a{ color: var(--ink-dim); text-decoration: none; border-bottom: 1px dotted var(--hairline); }
-  .entry-source a:hover{ color: var(--amber); border-color: var(--amber); }
+  .entry-source a{ color: var(--hive-red); text-decoration: none; font-weight: 600; }
+  .entry-source a:hover{ color: var(--hive-purple); }
 
   /* ---- Empty state ---- */
   .empty{
@@ -238,22 +264,23 @@
     padding: 40px 0;
     text-align:center;
     color: var(--ink-dim);
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Manrope', system-ui, sans-serif;
     font-size: 13px;
     border: 1px dashed var(--hairline);
-    border-radius: 6px;
+    border-radius: 12px;
   }
-  .empty .arrow{ color: var(--amber); }
+  .empty .arrow{ color: var(--hive-red); }
 
   .footer-note{
     margin-top: 48px;
     padding-top: 16px;
     border-top: 1px solid var(--hairline);
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 11px;
+    font-family:'Manrope', system-ui, sans-serif;
+    font-size: 12px;
     color: var(--ink-dim);
     line-height: 1.6;
   }
+  .footer-note a{ color: var(--hive-purple); text-decoration: none; }
 
   @media (max-width: 600px){
     .masthead{ flex-direction: column; align-items: flex-start; gap: 10px; }
@@ -273,15 +300,16 @@
 <body>
 <div class="wrap">
 
+  <div class="brand-bar" aria-hidden="true"></div>
   <header class="masthead">
-    <h1 class="masthead-title"><span class="slash">/</span>dev<span class="slash">/</span>digest<span class="cursor" aria-hidden="true"></span></h1>
+    <h1 class="masthead-title"><span class="hive">Hive</span>&nbsp;Digest<span class="cursor" aria-hidden="true"></span></h1>
     <div class="masthead-right">
       <div class="meta-line" id="metaLine">
         <span id="dateLine">not generated</span>
       </div>
     </div>
   </header>
-  <p class="tagline"># a changelog for the world's tech stack — models, algorithms, releases</p>
+  <p class="tagline">AI &amp; technology insights from Synbrains · <a href="https://hive.synbrains.ai/" target="_blank" rel="noopener noreferrer">hive.synbrains.ai</a></p>
 
   <main>
     <div class="controls">
@@ -291,7 +319,7 @@
         <option value="products">product &amp; company releases</option>
         <option value="algorithms">algorithms &amp; systems</option>
       </select>
-      <button id="genBtn" type="button">generate latest issue</button>
+      <button id="genBtn" type="button">generate Hive Digest</button>
       <span class="format-wrap" id="formatWrap" hidden>
         <select id="formatSelect" aria-label="Download format">
           <option value="md">.md</option>
@@ -309,12 +337,12 @@
     <div class="status" id="statusLine" role="status" aria-live="polite"></div>
 
     <div id="output">
-      <div class="empty" id="emptyState"><span class="arrow">→</span> run <code>generate latest issue</code> to pull this week's updates</div>
+      <div class="empty" id="emptyState"><span class="arrow">→</span> run <code>generate Hive Digest</code> to pull the latest insights</div>
     </div>
   </main>
 
   <footer class="footer-note">
-    entries are drafted by Claude from live web search at generation time; verify against primary sources before citing. no data is stored — each run is a fresh pull.
+    Hive Digest ranks stories by insight value for engineers (scores stay behind the scenes). Entries are drafted from live web search — verify against primary sources. Part of <a href="https://hive.synbrains.ai/" target="_blank" rel="noopener noreferrer">hive.synbrains.ai</a>.
   </footer>
 
 </div>
@@ -505,22 +533,91 @@ async function generateIssue(){
     statusLine.innerHTML = '<span class="err">✗ all lanes failed — ' + escapeHtml(errMsg) + '</span>';
     output.innerHTML = '<div class="empty"><span class="arrow">→</span> generation failed — see error above, then retry</div>';
   } else if(failed > 0){
-    statusLine.innerHTML = '<span class="ok">✓ issue generated</span> <span class="err">(' + failed + ' lane' + (failed>1?'s':'') + ' failed — see details in that section)</span>';
+    reorderSectionsByInsight();
+    statusLine.innerHTML = '<span class="ok">✓ Hive Digest ready</span> <span class="err">(' + failed + ' lane' + (failed>1?'s':'') + ' failed — see details in that section)</span>';
   } else {
-    statusLine.innerHTML = '<span class="ok">✓ issue generated</span>';
+    reorderSectionsByInsight();
+    statusLine.innerHTML = '<span class="ok">✓ Hive Digest ready</span>';
   }
 }
 
+function reorderSectionsByInsight(){
+  const outputEl = document.getElementById('output');
+  if(!outputEl) return;
+  const cats = Object.keys(lastIssue.byCategory || {});
+  if(cats.length < 2) return;
+  const scored = cats.map(cat => {
+    const items = lastIssue.byCategory[cat] || [];
+    // Re-score privately for section order only
+    const avg = items.length
+      ? items.reduce((s, it) => s + scoreInsight(it), 0) / items.length
+      : 0;
+    return { cat, avg, el: document.getElementById('section-' + cat) };
+  }).filter(x => x.el).sort((a,b) => b.avg - a.avg);
+  scored.forEach(({ el }) => outputEl.appendChild(el));
+}
+
+function isHttpUrl(value){
+  try{
+    const u = new URL(String(value));
+    return u.protocol === 'http:' || u.protocol === 'https:';
+  }catch(e){ return false; }
+}
+
+function validateItem(item){
+  if(!item || typeof item !== 'object') return false;
+  if(!item.headline || String(item.headline).trim().length < 8) return false;
+  if(!item.summary || String(item.summary).trim().split(/\s+/).length < 12) return false;
+  if(!item.source_name || !String(item.source_name).trim()) return false;
+  if(!item.source_url || !isHttpUrl(item.source_url)) return false;
+  return true;
+}
+
+function scoreInsight(item){
+  if(!validateItem(item)) return 0;
+  const headline = String(item.headline || '');
+  const summary = String(item.summary || '');
+  const blob = (headline + ' ' + summary).toLowerCase();
+  let host = '';
+  try{ host = new URL(item.source_url).hostname.toLowerCase(); }catch(e){}
+  let score = 28;
+  const words = summary.trim().split(/\s+/).filter(Boolean).length;
+  score += Math.max(0, Math.min(22, (words - 12) * 0.9));
+  if(/\b(v?\d+\.\d+|\d+%|\b\d{3,}\b)/.test(blob)) score += 8;
+  if(/\b(gpt|claude|gemini|llama|mistral|grok|qwen|deepseek|o\d)\b/i.test(blob)) score += 8;
+  if(/\b(paper|arxiv|benchmark|eval|sota)\b/i.test(blob)) score += 6;
+  const terms = ['benchmark','latency','architecture','transformer','reasoning','inference','training','dataset','api','release','rag','agent','quantization','moe'];
+  let hits = 0;
+  terms.forEach(t => { if(blob.includes(t)) hits += 1; });
+  score += Math.max(0, Math.min(18, hits * 2.5));
+  if(/arxiv\.org|github\.com|openai\.com|anthropic\.com|huggingface\.co|nvidia\.com/.test(host)) score += 12;
+  else if(/\.(edu|org)$/.test(host)) score += 8;
+  else score += 3;
+  if(blob.includes('trending on hacker news')) score -= 10;
+  if(summary.trim() === headline.trim()) score -= 15;
+  return Math.max(0, Math.min(100, Math.round(score)));
+}
+
+function rankItems(items){
+  return (items || [])
+    .filter(validateItem)
+    .map(it => ({ ...it, insightScore: scoreInsight(it) }))
+    .filter(it => it.insightScore >= 35)
+    .sort((a,b) => b.insightScore - a.insightScore || String(a.headline).localeCompare(String(b.headline)))
+    .map(({ insightScore, ...rest }) => rest); // never surface score in UI
+}
+
 function renderSection(cat, items){
-  lastIssue.byCategory[cat] = items;
+  const ranked = rankItems(items);
+  lastIssue.byCategory[cat] = ranked;
   const el = document.getElementById('section-' + cat);
   if(!el) return;
-  if(!items.length){
+  if(!ranked.length){
     el.innerHTML = `<div class="section-head"><span class="label">${sectionMeta[cat].label}</span><span class="count">0 entries</span></div>`;
     return;
   }
-  let html = `<div class="section-head"><span class="label">${sectionMeta[cat].label}</span><span class="count">${items.length} entr${items.length===1?'y':'ies'}</span></div>`;
-  items.forEach(it => {
+  let html = `<div class="section-head"><span class="label">${sectionMeta[cat].label}</span><span class="count">${ranked.length} entr${ranked.length===1?'y':'ies'}</span></div>`;
+  ranked.forEach(it => {
     const hash = hashFor((it.headline||'') + (it.source_url||''));
     const safeHeadline = escapeHtml(it.headline || 'untitled update');
     const safeSummary = escapeHtml(it.summary || '');
@@ -567,8 +664,9 @@ function triggerDownload(filename, content, mime){
 
 function buildMarkdown(){
   const order = ['model','algorithm','product'];
-  let md = `# /dev/digest\n\n`;
+  let md = `# Hive Digest\n\n`;
   md += `_${lastIssue.date}_\n\n`;
+  md += `[hive.synbrains.ai](https://hive.synbrains.ai/)\n\n`;
   order.forEach(cat => {
     const items = lastIssue.byCategory[cat];
     if(!items || !items.length) return;
@@ -583,19 +681,28 @@ function buildMarkdown(){
   return md;
 }
 
-// Generated newsletter HTML is always dark (phosphor terminal), independent of any UI theme.
+// Generated newsletter HTML is always dark Hive theme; insight scores are never included.
 const NEWSLETTER_DARK = {
-  bg: '#0F1516',
-  card: '#1A2423',
-  hairline: '#2B3836',
-  ink: '#E6E8E1',
-  'ink-dim': '#8CA39A',
-  amber: '#5FBE87',
-  add: '#7FD9A0',
+  bg: '#0B0A12',
+  card: '#161222',
+  hairline: '#2A2438',
+  ink: '#F3F0F7',
+  'ink-dim': '#A39BB3',
+  amber: '#EE462F',
+  add: '#7610C7',
 };
 
 function buildHtmlExport(){
-  const order = ['model','algorithm','product'];
+  const order = ['model','algorithm','product']
+    .filter(cat => (lastIssue.byCategory[cat] || []).length)
+    .sort((a, b) => {
+      const avg = (cat) => {
+        const items = lastIssue.byCategory[cat] || [];
+        if(!items.length) return 0;
+        return items.reduce((s, it) => s + scoreInsight(it), 0) / items.length;
+      };
+      return avg(b) - avg(a);
+    });
   const v = NEWSLETTER_DARK;
   let sections = '';
   order.forEach(cat => {
@@ -621,39 +728,39 @@ function buildHtmlExport(){
 <meta charset="UTF-8">
 <meta name="color-scheme" content="dark only">
 <meta name="supported-color-schemes" content="dark">
-<title>/dev/digest — ${escapeHtml(lastIssue.date)}</title>
+<title>Hive Digest — ${escapeHtml(lastIssue.date)}</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,72,400;0,72,600;1,72,500&family=Inter:wght@400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap');
   :root{ color-scheme: dark only; }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
     background: ${v.bg};
     color: ${v.ink};
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     color-scheme: dark;
   }
   .wrap{ max-width: 680px; margin: 0 auto; padding: 48px 24px 80px; background: ${v.bg}; color: ${v.ink}; }
+  .brand-bar{ height:4px; border-radius:999px; background:linear-gradient(90deg, ${v.amber}, ${v.add}); margin:0 0 22px; }
+  .eyebrow{ font-size:12px; letter-spacing:0.12em; text-transform:uppercase; font-weight:700; margin:0 0 8px; color:${v.amber}; }
   .masthead-title{
-    font-family: 'Newsreader', serif;
+    font-family: 'Fraunces', Georgia, serif;
     font-size: 34px;
     font-weight: 600;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     margin: 0 0 8px;
     color: ${v.ink};
   }
-  .masthead-title .slash{ color: ${v.amber}; font-weight: 400; }
   .meta-line{
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    color: ${v['ink-dim']};
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 13px;
+    color: ${v.add};
     margin-bottom: 4px;
   }
-  .meta-line{ color: ${v.amber}; }
   .tagline{
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12.5px;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 13px;
     color: ${v['ink-dim']};
     border-bottom: 1px solid ${v.hairline};
     padding-bottom: 22px;
@@ -667,34 +774,33 @@ function buildHtmlExport(){
     margin-bottom: 16px;
   }
   .section-head .label{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Manrope', system-ui, sans-serif;
     font-size: 12px;
     color: ${v.amber};
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    font-weight: 700;
   }
   .section-head .count{
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Manrope', system-ui, sans-serif;
     font-size: 12px;
     color: ${v['ink-dim']};
   }
   .entry{
     background: ${v.card};
     border: 1px solid ${v.hairline};
-    border-radius: 6px;
+    border-radius: 12px;
     padding: 16px 18px;
     margin-bottom: 12px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
   }
   .entry-top{
     display:flex; justify-content: space-between; align-items: baseline;
     margin-bottom: 6px;
   }
-  .entry-tag{ font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: ${v.add}; }
-  .entry-tag::before{ content: "+ "; }
-  .entry-hash{ font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: ${v['ink-dim']}; }
+  .entry-tag{ font-family: 'Manrope', system-ui, sans-serif; font-size: 11px; color: ${v.add}; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; }
+  .entry-hash{ font-family: 'Manrope', system-ui, sans-serif; font-size: 11px; color: ${v['ink-dim']}; }
   .entry-title{
-    font-family: 'Newsreader', serif;
+    font-family: 'Fraunces', Georgia, serif;
     font-size: 19px;
     font-weight: 600;
     margin: 4px 0 6px;
@@ -702,14 +808,14 @@ function buildHtmlExport(){
     color: ${v.ink};
   }
   .entry-body{ font-size: 14.5px; line-height: 1.55; margin: 0 0 8px; color: ${v.ink}; }
-  .entry-source{ font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; }
-  .entry-source a{ color: ${v['ink-dim']}; text-decoration: none; border-bottom: 1px dotted ${v.hairline}; }
+  .entry-source{ font-family: 'Manrope', system-ui, sans-serif; font-size: 12px; }
+  .entry-source a{ color: ${v.amber}; text-decoration: none; font-weight: 600; }
   .footer-note{
     margin-top: 44px;
     padding-top: 16px;
     border-top: 1px solid ${v.hairline};
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 12px;
     color: ${v['ink-dim']};
     line-height: 1.6;
   }
@@ -717,11 +823,13 @@ function buildHtmlExport(){
 </head>
 <body>
 <div class="wrap">
-  <h1 class="masthead-title"><span class="slash">/</span>dev<span class="slash">/</span>digest</h1>
+  <div class="brand-bar"></div>
+  <p class="eyebrow">Hive by Synbrains</p>
+  <h1 class="masthead-title">Hive Digest</h1>
   <div class="meta-line">${escapeHtml(lastIssue.date)}</div>
-  <div class="tagline"># a changelog for the world's tech stack — models, algorithms, releases</div>
+  <div class="tagline">AI &amp; technology insights — <a href="https://hive.synbrains.ai/" style="color:${v.add};text-decoration:none;">hive.synbrains.ai</a></div>
 ${sections}
-  <div class="footer-note">generated by /dev/digest from live web search — verify against primary sources before citing.</div>
+  <div class="footer-note">Generated for Hive Digest · Synbrains — verify against primary sources before citing.</div>
 </div>
 </body>
 </html>`;
@@ -731,7 +839,7 @@ function downloadIssue(){
   if(!Object.keys(lastIssue.byCategory).length) return;
   const format = formatSelect.value;
   const dateStamp = lastIssue.isoDate || new Date().toISOString().slice(0,10);
-  const base = `dev-digest-${dateStamp}`;
+  const base = `hive-digest-${dateStamp}`;
   if(format === 'md'){
     triggerDownload(`${base}.md`, buildMarkdown(), 'text/markdown');
   } else {

@@ -1,4 +1,4 @@
-# /dev/digest — monthly newsletter automation
+# Hive Digest — monthly newsletter automation (hive.synbrains.ai)
 #
 # Schedule: 1st of each month at 09:00 IST (Asia/Kolkata).
 # GitHub Actions cron is UTC-only, so this is 03:30 UTC on day 1 (= 09:00 IST).
@@ -8,14 +8,14 @@
 #   SMTP_PORT          (e.g. 587)
 #   SMTP_USER
 #   SMTP_PASS
-#   SMTP_FROM          (e.g. "/dev/digest <news@example.com>")
+#   SMTP_FROM          (e.g. "Hive Digest <news@example.com>")
 #   NEWSLETTER_TO_EMAILS
 #
 # Optional secrets / vars:
 #   SMTP_SECURE        (true/false; defaults to true when port is 465)
 #   SMTP_REPLY_TO
 
-name: /dev/digest monthly
+name: Hive Digest monthly
 
 on:
   schedule:

@@ -1,9 +1,9 @@
 {
-  "name": "dev-digest-agent",
+  "name": "hive-digest-agent",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Generate and email /dev/digest technical newsletters via SMTP",
+  "description": "Generate and email Hive Digest (Synbrains) newsletters via SMTP",
   "scripts": {
     "start": "node src/run.mjs",
     "generate": "node src/run.mjs --dry-run"

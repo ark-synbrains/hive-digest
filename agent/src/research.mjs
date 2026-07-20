@@ -1,5 +1,5 @@
 /**
- * Gather recent tech developments for the three /dev/digest lanes.
+ * Gather recent tech developments for the three Hive Digest lanes.
  * Uses public APIs (HN Algolia + arXiv) so scheduled runs don't need an LLM key.
  */
 
@@ -8,7 +8,7 @@ const ARXIV_URL = 'https://export.arxiv.org/api/query';
 
 async function fetchJson(url) {
   const res = await fetch(url, {
-    headers: { 'User-Agent': 'dev-digest-agent/1.0 (+https://github.com/ark-synbrains/dev-digest)' },
+    headers: { 'User-Agent': 'hive-digest-agent/1.0 (+https://hive.synbrains.ai/)' },
   });
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
   return res.json();
@@ -16,7 +16,7 @@ async function fetchJson(url) {
 
 async function fetchText(url) {
   const res = await fetch(url, {
-    headers: { 'User-Agent': 'dev-digest-agent/1.0 (+https://github.com/ark-synbrains/dev-digest)' },
+    headers: { 'User-Agent': 'hive-digest-agent/1.0 (+https://hive.synbrains.ai/)' },
   });
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
   return res.text();
@@ -45,13 +45,19 @@ async function searchHn(query, hitsPerPage = 8) {
   const data = await fetchJson(`${HN_URL}?${params}`);
   return (data.hits || [])
     .filter((h) => h.url && h.title)
-    .map((h) => ({
-      headline: h.title,
-      summary: `Trending on Hacker News (${h.points || 0} points, ${h.num_comments || 0} comments). ${truncate(h.story_text || h.title, 220)}`,
-      source_name: 'Hacker News',
-      source_url: h.url,
-      _score: (h.points || 0) + (h.num_comments || 0) * 0.5,
-    }));
+    .map((h) => {
+      const body = truncate(h.story_text || '', 260);
+      const summary = body
+        ? body
+        : `Community discussion of a notable release or technical update: ${truncate(h.title, 180)}. Engineers are weighing trade-offs, adoption path, and whether it changes production stacks.`;
+      return {
+        headline: h.title,
+        summary,
+        source_name: 'Hacker News',
+        source_url: h.url,
+        _score: (h.points || 0) + (h.num_comments || 0) * 0.5,
+      };
+    });
 }
 
 function parseArxiv(xml) {
@@ -98,24 +104,28 @@ function dedupe(items) {
 }
 
 function pickTop(items, n) {
+  // Keep a wider pool; validate.mjs applies insight scoring & final ranking.
   return dedupe(items)
     .sort((a, b) => (b._score || 0) - (a._score || 0))
     .slice(0, n)
-    .map(({ _score, ...rest }) => rest);
+    .map(({ _score, ...rest }) => ({
+      ...rest,
+      _popularity: typeof _score === 'number' ? _score : 0,
+    }));
 }
 
 export async function researchDigest() {
   const [hnModels, hnProducts, hnAlgo, arxivModels, arxivAlgo] = await Promise.all([
-    searchHn('AI model OR LLM OR "open weights" OR GPT OR Claude OR Grok'),
-    searchHn('launched OR release OR GA OR "now available" AI OR developer OR API'),
-    searchHn('algorithm OR "test-time" OR reasoning OR transformer OR MoE research'),
+    searchHn('LLM'),
+    searchHn('Show HN'),
+    searchHn('open source'),
     searchArxiv('cat:cs.LG OR cat:cs.AI OR cat:cs.CL'),
     searchArxiv('all:"test-time" OR all:"mixture of experts" OR all:reasoning'),
   ]);
 
   return {
-    model: pickTop([...hnModels, ...arxivModels], 3),
-    algorithm: pickTop([...arxivAlgo, ...hnAlgo], 3),
-    product: pickTop(hnProducts, 3),
+    model: pickTop([...hnModels, ...arxivModels], 8),
+    algorithm: pickTop([...arxivAlgo, ...hnAlgo], 8),
+    product: pickTop(hnProducts, 8),
   };
 }

@@ -3,6 +3,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { researchDigest } from './research.mjs';
+import { validateAndRankDigest } from './validate.mjs';
 import { buildIssue } from './render.mjs';
 import { sendSmtpEmail } from './smtp.mjs';
 
@@ -53,28 +54,62 @@ async function main() {
   const date = formatDate(now);
   const stamp = dateStamp(now);
 
-  console.log('Researching digest lanes…');
-  const byCategory = await researchDigest();
-  const total = Object.values(byCategory).reduce((n, arr) => n + arr.length, 0);
-  if (total === 0) throw new Error('No digest entries found from research sources');
+  console.log('Researching Hive Digest lanes…');
+  const raw = await researchDigest();
 
-  const issue = buildIssue({ date, byCategory });
+  console.log('Validating & ranking by insight score…');
+  const { byCategory, sectionOrder, report } = validateAndRankDigest(raw);
+  console.log(
+    JSON.stringify(
+      {
+        ranking: {
+          kept: report.kept,
+          dropped: report.dropped,
+          sectionOrder: report.sectionOrder,
+          categories: report.categories,
+        },
+      },
+      null,
+      2
+    )
+  );
+
+  const total = Object.values(byCategory).reduce((n, arr) => n + arr.length, 0);
+  if (total === 0) {
+    throw new Error('No digest entries passed validation / insight ranking');
+  }
+
+  const issue = buildIssue({ date, byCategory, sectionOrder });
 
   if (dryRun) {
     const outDir = join(ROOT, 'out');
     mkdirSync(outDir, { recursive: true });
     writeFileSync(join(outDir, `digest-${stamp}.html`), issue.html);
     writeFileSync(join(outDir, `digest-${stamp}.txt`), issue.text);
-    console.log(JSON.stringify({ ok: true, dryRun: true, subject: issue.subject, date, entries: total }, null, 2));
+    writeFileSync(join(outDir, `digest-${stamp}.ranking.json`), JSON.stringify(report, null, 2) + '\n');
+    console.log(
+      JSON.stringify(
+        {
+          ok: true,
+          dryRun: true,
+          subject: issue.subject,
+          date,
+          entries: total,
+          sectionOrder,
+        },
+        null,
+        2
+      )
+    );
     return;
   }
 
   const to = parseRecipients(requireEnv('NEWSLETTER_TO_EMAILS'));
   if (!to.length) throw new Error('NEWSLETTER_TO_EMAILS parsed to empty list');
 
-  const issueKey = `dev-digest/${hourStamp()}`;
+  const issueKey = `hive-digest/${hourStamp()}`;
 
-  console.log(`Sending /dev/digest for ${date} to ${to.length} recipient(s) via SMTP…`);
+  console.log(`Sending Hive Digest for ${date} to ${to.length} recipient(s) via SMTP…`);
   const result = await sendSmtpEmail({
     to,
     subject: issue.subject,
@@ -82,7 +117,7 @@ async function main() {
     html: issue.html,
     headers: {
       'X-Entity-Ref-ID': issueKey,
-      'X-Dev-Digest-Date': stamp,
+      'X-Hive-Digest-Date': stamp,
     },
   });
 
@@ -90,7 +125,6 @@ async function main() {
     throw new Error(`SMTP rejected recipients: ${result.rejected.join(', ')}`);
   }
 
-  // Drop legacy issue-number fields if present from older state files.
   delete state.lastIssueNumber;
 
   state.runsCompleted = (state.runsCompleted || 0) + 1;
@@ -104,6 +138,9 @@ async function main() {
       messageId: result.messageId,
       sentAt: state.lastSentAt,
       recipients: to.length,
+      sectionOrder,
+      rankingKept: report.kept,
+      rankingDropped: report.dropped,
     },
   ].slice(-20);
   saveState(state);
@@ -118,6 +155,7 @@ async function main() {
         accepted: result.accepted,
         recipients: to.length,
         runsCompleted: state.runsCompleted,
+        sectionOrder,
       },
       null,
       2
