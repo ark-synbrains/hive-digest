@@ -2,9 +2,9 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { Resend } from 'resend';
 import { researchDigest } from './research.mjs';
 import { buildIssue } from './render.mjs';
+import { sendSmtpEmail } from './smtp.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -81,32 +81,25 @@ async function main() {
     return;
   }
 
-  const apiKey = requireEnv('RESEND_API_KEY');
-  const from = requireEnv('RESEND_FROM_EMAIL');
   const to = parseRecipients(requireEnv('NEWSLETTER_TO_EMAILS'));
   if (!to.length) throw new Error('NEWSLETTER_TO_EMAILS parsed to empty list');
 
-  const resend = new Resend(apiKey);
-  const idempotencyKey = `dev-digest/issue-${String(number).padStart(3, '0')}/${hourStamp()}`;
+  const issueKey = `dev-digest/issue-${String(number).padStart(3, '0')}/${hourStamp()}`;
 
-  console.log(`Sending issue #${number} to ${to.length} recipient(s)…`);
-  const { data, error } = await resend.emails.send(
-    {
-      from,
-      to,
-      subject: issue.subject,
-      text: issue.text,
-      html: issue.html,
-      tags: [
-        { name: 'type', value: 'newsletter' },
-        { name: 'issue', value: String(number).padStart(3, '0') },
-      ],
+  console.log(`Sending issue #${number} to ${to.length} recipient(s) via SMTP…`);
+  const result = await sendSmtpEmail({
+    to,
+    subject: issue.subject,
+    text: issue.text,
+    html: issue.html,
+    headers: {
+      'X-Entity-Ref-ID': issueKey,
+      'X-Dev-Digest-Issue': String(number).padStart(3, '0'),
     },
-    { idempotencyKey }
-  );
+  });
 
-  if (error) {
-    throw new Error(`Resend error: ${error.message || JSON.stringify(error)}`);
+  if (result.rejected?.length) {
+    throw new Error(`SMTP rejected recipients: ${result.rejected.join(', ')}`);
   }
 
   state.lastIssueNumber = number;
@@ -117,7 +110,7 @@ async function main() {
     {
       number,
       subject: issue.subject,
-      resendId: data?.id || null,
+      messageId: result.messageId,
       sentAt: state.lastSentAt,
       recipients: to.length,
     },
@@ -133,7 +126,8 @@ async function main() {
         ok: true,
         issue: number,
         subject: issue.subject,
-        resendId: data?.id || null,
+        messageId: result.messageId,
+        accepted: result.accepted,
         recipients: to.length,
         runsCompleted: state.runsCompleted,
         remainingTrialRuns: remaining,

@@ -116,7 +116,7 @@ Two ways to generate and email `/dev/digest` on a timer:
    [`.cursor/automations/dev-digest-hourly.md`](.cursor/automations/dev-digest-hourly.md)
    at [cursor.com/automations](https://cursor.com/automations), every hour at
    **:00 IST** (`CRON_TZ=Asia/Kolkata 0 * * * *`), 2-run trial via memory.
-   Uses this environment’s Resend secrets.
+   Uses this environment’s SMTP secrets.
 2. **GitHub Actions fallback** —
    [`.github/workflows/dev-digest-hourly.yml`](.github/workflows/dev-digest-hourly.yml)
    runs `agent/` every hour at **:00 IST** (`30 * * * *` UTC) and auto-disables
@@ -128,21 +128,26 @@ Two ways to generate and email `/dev/digest` on a timer:
 npm install --prefix agent
 # preview only (writes agent/out/)
 npm run generate --prefix agent
-# send for real (needs secrets below)
+# send for real (needs SMTP secrets below)
 npm start --prefix agent
 ```
 
 Secrets (Cursor environment and/or GitHub Actions):
 
-- `RESEND_API_KEY`
-- `RESEND_FROM_EMAIL`
+- `SMTP_HOST`
+- `SMTP_PORT` (e.g. `587`)
+- `SMTP_USER`
+- `SMTP_PASS`
+- `SMTP_FROM` (e.g. `/dev/digest <news@example.com>`)
 - `NEWSLETTER_TO_EMAILS`
+
+Optional: `SMTP_SECURE`, `SMTP_REPLY_TO`
 
 ## File structure
 
 ```
 tech-digest-agent.html              browser artifact UI
-agent/                              Node newsletter generator + Resend sender
+agent/                              Node newsletter generator + SMTP sender
 .github/workflows/dev-digest-hourly.yml
 .cursor/automations/dev-digest-hourly.md
 README.md

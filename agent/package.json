@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Generate and email /dev/digest technical newsletters via Resend",
+  "description": "Generate and email /dev/digest technical newsletters via SMTP",
   "scripts": {
     "start": "node src/run.mjs",
     "generate": "node src/run.mjs --dry-run"
@@ -12,6 +12,6 @@
     "node": ">=20"
   },
   "dependencies": {
-    "resend": "^6.14.0"
+    "nodemailer": "^9.0.3"
   }
 }

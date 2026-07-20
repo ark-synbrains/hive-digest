@@ -5,12 +5,17 @@
 # Trial: after 2 successful sends, the workflow disables itself.
 #
 # Required GitHub Actions secrets:
-#   RESEND_API_KEY
-#   RESEND_FROM_EMAIL
+#   SMTP_HOST
+#   SMTP_PORT          (e.g. 587)
+#   SMTP_USER
+#   SMTP_PASS
+#   SMTP_FROM          (e.g. "/dev/digest <news@example.com>")
 #   NEWSLETTER_TO_EMAILS
 #
-# Optional:
-#   DIGEST_MAX_RUNS  (default 2 for this trial workflow)
+# Optional secrets / vars:
+#   SMTP_SECURE        (true/false; defaults to true when port is 465)
+#   SMTP_REPLY_TO
+#   DIGEST_MAX_RUNS    (default 2 for this trial workflow)
 
 name: /dev/digest hourly
 
@@ -96,8 +101,13 @@ jobs:
       - name: Generate and send newsletter
         if: steps.limit.outputs.skip != 'true'
         env:
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          RESEND_FROM_EMAIL: ${{ secrets.RESEND_FROM_EMAIL }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_SECURE: ${{ secrets.SMTP_SECURE }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          SMTP_REPLY_TO: ${{ secrets.SMTP_REPLY_TO }}
           NEWSLETTER_TO_EMAILS: ${{ secrets.NEWSLETTER_TO_EMAILS }}
           DIGEST_ISSUE_NUMBER: ${{ steps.limit.outputs.issue_number }}
           DIGEST_MAX_RUNS: '0'
