@@ -1,8 +1,8 @@
 /**
- * Build a styled HTML + plain-text newsletter and send it with Resend.
+ * Build a styled HTML + plain-text newsletter and send it over SMTP.
  */
 
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 import { SECTION_META } from './generate.js';
 
 function escapeHtml(str) {
@@ -126,32 +126,40 @@ export function buildHtmlEmail(issue) {
 </html>`;
 }
 
-export async function sendNewsletter({ apiKey, from, to, replyTo, issue }) {
-  const resend = new Resend(apiKey);
+export async function sendNewsletter({ smtp, from, to, replyTo, issue }) {
   const stamp = String(issue.number).padStart(3, '0');
   const subject = `/dev/digest #${stamp} — ${issue.isoDate}`;
   const html = buildHtmlEmail(issue);
   const text = buildMarkdown(issue);
-  const idempotencyKey = `dev-digest/${issue.isoDate}/${stamp}/${to}`;
+  const messageId = `<dev-digest-${issue.isoDate}-${stamp}@newsletter>`;
 
-  const payload = {
-    from,
-    to: [to],
-    subject,
-    html,
-    text,
-    tags: [
-      { name: 'product', value: 'dev-digest' },
-      { name: 'issue_date', value: issue.isoDate },
-    ],
+  const transportOptions = {
+    host: smtp.host,
+    port: smtp.port,
+    secure: smtp.secure,
   };
-  if (replyTo) payload.replyTo = replyTo;
-
-  const { data, error } = await resend.emails.send(payload, { idempotencyKey });
-
-  if (error) {
-    throw new Error(`Resend send failed: ${error.message}`);
+  if (smtp.user) {
+    transportOptions.auth = { user: smtp.user, pass: smtp.pass };
   }
 
-  return { id: data?.id, subject, idempotencyKey };
+  const transporter = nodemailer.createTransport(transportOptions);
+
+  const info = await transporter.sendMail({
+    from,
+    to,
+    replyTo,
+    subject,
+    text,
+    html,
+    messageId,
+    headers: {
+      'X-Entity-Ref-ID': `dev-digest/${issue.isoDate}/${stamp}`,
+    },
+  });
+
+  return {
+    id: info.messageId || messageId,
+    subject,
+    response: info.response,
+  };
 }

@@ -51,9 +51,13 @@ jobs:
       - name: Run newsletter agent
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_SECURE: ${{ secrets.SMTP_SECURE }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SMTP_FROM_EMAIL: ${{ secrets.SMTP_FROM_EMAIL }}
           NEWSLETTER_TO_EMAIL: ${{ secrets.NEWSLETTER_TO_EMAIL }}
-          RESEND_FROM_EMAIL: ${{ secrets.RESEND_FROM_EMAIL }}
           NEWSLETTER_REPLY_TO: ${{ secrets.NEWSLETTER_REPLY_TO }}
           NEWSLETTER_SCOPE: ${{ vars.NEWSLETTER_SCOPE }}
           ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
@@ -65,5 +69,4 @@ jobs:
           if [ "${{ github.event.inputs.fixture }}" = "true" ]; then
             ARGS+=(--fixture)
           fi
-          # Empty ARGS is fine; node ignores a lone empty string from "${ARGS[@]}"
           node src/index.js ${ARGS[@]+"${ARGS[@]}"}

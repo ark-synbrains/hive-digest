@@ -1,7 +1,8 @@
 # /dev/digest newsletter agent
 
 Server-side agent that generates a `/dev/digest` issue (same three lanes as
-`tech-digest-agent.html`) and emails it to a configured address via [Resend](https://resend.com).
+`tech-digest-agent.html`) and emails it to a configured address over **SMTP**
+(via [Nodemailer](https://nodemailer.com)).
 
 ## Schedule
 
@@ -18,9 +19,13 @@ Copy `.env.example` to `.env` (local) or set GitHub Actions secrets/variables:
 | Variable | Required | Default | Purpose |
 |----------|----------|---------|---------|
 | `ANTHROPIC_API_KEY` | yes (live generate) | — | Anthropic Messages API + web search |
-| `RESEND_API_KEY` | yes (send) | — | Resend send API |
+| `SMTP_HOST` | yes (send) | — | SMTP server hostname |
+| `SMTP_PORT` | no | `587` | SMTP port (`465` if using implicit TLS) |
+| `SMTP_SECURE` | no | `false` | `true` for port 465 |
+| `SMTP_USER` | usually | — | SMTP auth username |
+| `SMTP_PASS` | if user set | — | SMTP auth password / app password |
+| `SMTP_FROM_EMAIL` | yes (send) | `/dev/digest <digest@newsletters.synbrains.ai>` | From header |
 | `NEWSLETTER_TO_EMAIL` | yes | `archana.rk@synbrains.ai` | Recipient |
-| `RESEND_FROM_EMAIL` | yes | `/dev/digest <digest@newsletters.synbrains.ai>` | Verified sending identity |
 | `NEWSLETTER_REPLY_TO` | no | — | Reply-To header |
 | `NEWSLETTER_SCOPE` | no | `all` | `all` \| `models` \| `products` \| `algorithms` |
 | `NEWSLETTER_INTERVAL_HOURS` | no | `12` | Scheduler interval |
@@ -31,40 +36,35 @@ Copy `.env.example` to `.env` (local) or set GitHub Actions secrets/variables:
 Repository → Settings → Secrets and variables → Actions:
 
 - `ANTHROPIC_API_KEY`
-- `RESEND_API_KEY`
+- `SMTP_HOST`
+- `SMTP_USER`
+- `SMTP_PASS`
+- `SMTP_FROM_EMAIL` (optional if the default from-address is correct)
+- `SMTP_PORT` / `SMTP_SECURE` (optional)
 - `NEWSLETTER_TO_EMAIL` (optional if the default recipient is correct)
-- `RESEND_FROM_EMAIL` (optional if the default from-address is correct)
 
-## Sending domain DNS
+### Example providers
 
-Resend domain: **newsletters.synbrains.ai** (must be verified before production sends).
+| Provider | Typical settings |
+|----------|------------------|
+| Gmail (app password) | host `smtp.gmail.com`, port `587`, secure `false` |
+| Microsoft 365 | host `smtp.office365.com`, port `587`, secure `false` |
+| Amazon SES SMTP | host `email-smtp.<region>.amazonaws.com`, port `587` |
+| Mailgun / Postmark / etc. | use that provider’s SMTP credentials |
 
-Add these DNS records at your DNS provider:
-
-| Type | Name | Value | Priority |
-|------|------|-------|----------|
-| TXT | `resend._domainkey.newsletters` | *(DKIM value from Resend dashboard)* | — |
-| MX | `send.newsletters` | `feedback-smtp.ap-northeast-1.amazonses.com` | 10 |
-| TXT | `send.newsletters` | `v=spf1 include:amazonses.com ~all` | — |
-
-Then verify the domain in the Resend dashboard (or via API). Until verification
-completes, sends from `@newsletters.synbrains.ai` will fail.
-
-For sandbox testing without a verified domain, you can temporarily send from
-` /dev/digest <onboarding@resend.dev>` — that address can only deliver to the
-Resend account owner's email.
+Use an address your SMTP provider allows you to send from for `SMTP_FROM_EMAIL`.
 
 ## Local usage
 
 ```bash
 cd agent
-cp .env.example .env   # fill in keys
+cp .env.example .env   # fill in Anthropic + SMTP settings
 npm install
 
 # Generate + print markdown (no send)
 npm run dry-run
 
-# Generate with sample content + send (needs RESEND_API_KEY)
+# Generate with sample content + send (needs SMTP_*)
 node src/index.js --fixture
 
 # Full live generate + send
@@ -74,8 +74,8 @@ npm start
 npm run schedule
 ```
 
-## Idempotency
+## Message identity
 
-Each send uses an idempotency key of the form
-`dev-digest/<iso-date>/<issue>/<recipient>` so retries within 24 hours do not
-duplicate the same issue to the same address.
+Each send sets `Message-ID` / `X-Entity-Ref-ID` from the issue date so clients
+can tell issues apart. SMTP itself does not offer Resend-style idempotency;
+avoid overlapping workflow runs if you need exactly-once delivery.

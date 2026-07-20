@@ -2,7 +2,7 @@
 /**
  * /dev/digest newsletter agent — one-shot run.
  *
- * Generates a fresh issue (Anthropic + web search) and emails it via Resend
+ * Generates a fresh issue (Anthropic + web search) and emails it via SMTP
  * to NEWSLETTER_TO_EMAIL.
  *
  * Usage:
@@ -63,9 +63,14 @@ function buildFixtureIssue() {
 
 export async function runOnce(options = {}) {
   const { dryRun = false, fixture = false } = options;
-  const config = loadConfig({ requireSendSecrets: !dryRun && !fixture });
+  const config = loadConfig({
+    requireAnthropic: !dryRun && !fixture,
+    requireSmtp: false,
+  });
 
-  console.log(`[dev-digest] generating issue (scope=${config.scope}${fixture ? ', fixture' : ''})…`);
+  console.log(
+    `[dev-digest] generating issue (scope=${config.scope}${fixture ? ', fixture' : ''})…`
+  );
 
   const issue = fixture
     ? buildFixtureIssue()
@@ -92,12 +97,16 @@ export async function runOnce(options = {}) {
     return { issue, sent: null, dryRun: true };
   }
 
-  // Allow --fixture with send when RESEND_API_KEY is present
-  const sendConfig = loadConfig({ requireSendSecrets: true });
-  console.log(`[dev-digest] sending to ${sendConfig.to} from ${sendConfig.from}…`);
+  const sendConfig = loadConfig({
+    requireAnthropic: false,
+    requireSmtp: true,
+  });
+  console.log(
+    `[dev-digest] sending to ${sendConfig.to} from ${sendConfig.from} via ${sendConfig.smtp.host}:${sendConfig.smtp.port}…`
+  );
 
   const sent = await sendNewsletter({
-    apiKey: sendConfig.resendApiKey,
+    smtp: sendConfig.smtp,
     from: sendConfig.from,
     to: sendConfig.to,
     replyTo: sendConfig.replyTo,

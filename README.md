@@ -97,20 +97,18 @@ what counts as a "model," "algorithm," or "product" entry.
 ## Automated email agent (every 12 hours)
 
 The `agent/` package is a server-side port of the same generation logic. It
-builds a fresh issue with Anthropic web search and emails it via Resend to
+builds a fresh issue with Anthropic web search and emails it over **SMTP** to
 `NEWSLETTER_TO_EMAIL`.
 
 - **Schedule:** GitHub Actions workflow `.github/workflows/newsletter.yml`
   runs on cron `0 */12 * * *` (every 12 hours UTC), plus manual dispatch.
 - **Config:** see [`agent/README.md`](agent/README.md) and `agent/.env.example`.
-- **Required secrets:** `ANTHROPIC_API_KEY`, `RESEND_API_KEY`, and optionally
-  `NEWSLETTER_TO_EMAIL` / `RESEND_FROM_EMAIL`.
-- **Sending domain:** `newsletters.synbrains.ai` (verify DNS in Resend before
-  production sends).
+- **Required secrets:** `ANTHROPIC_API_KEY`, `SMTP_HOST`, `SMTP_USER`,
+  `SMTP_PASS`, and optionally `SMTP_FROM_EMAIL` / `NEWSLETTER_TO_EMAIL`.
 
 ```bash
 cd agent && npm install
-cp .env.example .env   # set keys + NEWSLETTER_TO_EMAIL
+cp .env.example .env   # set Anthropic + SMTP + NEWSLETTER_TO_EMAIL
 npm start              # one-shot generate + send
 npm run schedule       # loop every 12 hours
 ```
@@ -123,8 +121,6 @@ npm run schedule       # loop every 12 hours
   at generation time; always check the linked source before citing an entry.
 - **Three API calls per run** — one per lane (fewer if you scope to a single
   category), each doing a small number of web searches.
-- **Domain verification** — automated email requires the Resend sending domain
-  DNS records to be verified (see `agent/README.md`).
 
 ## File structure
 
@@ -134,7 +130,7 @@ agent/                              scheduled newsletter agent (generate + email
   src/index.js                      one-shot generate + send
   src/scheduler.js                  long-running every-N-hours loop
   src/generate.js                   Anthropic + web search port of the UI logic
-  src/email.js                      HTML/text render + Resend send
+  src/email.js                      HTML/text render + SMTP send
 .github/workflows/newsletter.yml    cron every 12 hours
 README.md                           this file
 ```
