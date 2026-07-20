@@ -97,7 +97,7 @@ what counts as a "model," "algorithm," or "product" entry.
 ## Automated email agent (every 12 hours)
 
 The `agent/` package is a server-side port of the same generation logic. It
-builds a fresh issue with Anthropic web search and emails it over **SMTP** to
+builds a fresh issue with Anthropic web search and emails it via **Resend** to
 every address in `NEWSLETTER_TO_EMAILS`.
 
 - **Cursor Automation:** ready-to-create definition in
@@ -106,12 +106,12 @@ every address in `NEWSLETTER_TO_EMAILS`.
 - **GitHub Actions fallback:** `.github/workflows/newsletter.yml` on the same
   cron, plus manual dispatch.
 - **Config:** see [`agent/README.md`](agent/README.md) and `agent/.env.example`.
-- **Required secrets:** `ANTHROPIC_API_KEY`, `SMTP_HOST`, `SMTP_USER`,
-  `SMTP_PASS`, and `NEWSLETTER_TO_EMAILS` (comma-separated list).
+- **Required secrets:** `ANTHROPIC_API_KEY`, `RESEND_API_KEY`, and
+  `NEWSLETTER_TO_EMAILS` (comma-separated list).
 
 ```bash
 cd agent && npm install
-cp .env.example .env   # set Anthropic + SMTP + NEWSLETTER_TO_EMAILS
+cp .env.example .env   # set Anthropic + Resend + NEWSLETTER_TO_EMAILS
 npm start              # one-shot generate + send to all recipients
 npm run schedule       # loop every 12 hours
 ```
@@ -124,12 +124,15 @@ npm run schedule       # loop every 12 hours
   at generation time; always check the linked source before citing an entry.
 - **Three API calls per run** — one per lane (fewer if you scope to a single
   category), each doing a small number of web searches.
+- **Domain verification** — production sends need `newsletters.synbrains.ai`
+  verified in Resend (sandbox `onboarding@resend.dev` only reaches your
+  Resend account email).
 
 ## File structure
 
 ```
 tech-digest-agent.html                 interactive single-file generator UI
-agent/                                 newsletter agent (generate + SMTP send)
+agent/                                 newsletter agent (generate + Resend send)
 .cursor/automations/send-dev-digest.md Cursor Automation prompt (every 12h)
 .github/workflows/newsletter.yml       GitHub Actions cron every 12 hours
 README.md                              this file

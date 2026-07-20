@@ -1,8 +1,8 @@
 /**
- * Build a styled HTML + plain-text newsletter and send it over SMTP.
+ * Build a styled HTML + plain-text newsletter and send it with Resend.
  */
 
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 import { SECTION_META } from './generate.js';
 
 function escapeHtml(str) {
@@ -127,12 +127,12 @@ export function buildHtmlEmail(issue) {
 }
 
 /**
- * Send the newsletter to one or more recipients.
+ * Send the newsletter to one or more recipients via Resend.
  * Delivers individually so addresses stay private and failures are per-recipient.
  *
- * @param {{ smtp: object, from: string, to: string|string[], replyTo?: string, issue: object }} opts
+ * @param {{ apiKey: string, from: string, to: string|string[], replyTo?: string, issue: object }} opts
  */
-export async function sendNewsletter({ smtp, from, to, replyTo, issue }) {
+export async function sendNewsletter({ apiKey, from, to, replyTo, issue }) {
   const recipients = Array.isArray(to)
     ? to
     : String(to || '')
@@ -148,39 +148,40 @@ export async function sendNewsletter({ smtp, from, to, replyTo, issue }) {
   const subject = `/dev/digest #${stamp} — ${issue.isoDate}`;
   const html = buildHtmlEmail(issue);
   const text = buildMarkdown(issue);
+  const resend = new Resend(apiKey);
 
-  const transportOptions = {
-    host: smtp.host,
-    port: smtp.port,
-    secure: smtp.secure,
-  };
-  if (smtp.user) {
-    transportOptions.auth = { user: smtp.user, pass: smtp.pass };
-  }
-
-  const transporter = nodemailer.createTransport(transportOptions);
   const results = [];
   const failures = [];
 
   for (const recipient of recipients) {
-    const messageId = `<dev-digest-${issue.isoDate}-${stamp}-${recipient.replace(/[^a-z0-9]/gi, '.')}@newsletter>`;
+    const idempotencyKey = `dev-digest/${issue.isoDate}/${stamp}/${recipient}`;
     try {
-      const info = await transporter.sendMail({
+      const payload = {
         from,
-        to: recipient,
-        replyTo,
+        to: [recipient],
         subject,
-        text,
         html,
-        messageId,
-        headers: {
-          'X-Entity-Ref-ID': `dev-digest/${issue.isoDate}/${stamp}/${recipient}`,
-        },
+        text,
+        tags: [
+          { name: 'product', value: 'dev-digest' },
+          { name: 'issue_date', value: issue.isoDate },
+        ],
+      };
+      if (replyTo) payload.replyTo = replyTo;
+
+      const { data, error } = await resend.emails.send(payload, {
+        idempotencyKey,
       });
+
+      if (error) {
+        failures.push({ to: recipient, error: error.message });
+        continue;
+      }
+
       results.push({
         to: recipient,
-        id: info.messageId || messageId,
-        response: info.response,
+        id: data?.id,
+        idempotencyKey,
       });
     } catch (err) {
       failures.push({
@@ -192,7 +193,7 @@ export async function sendNewsletter({ smtp, from, to, replyTo, issue }) {
 
   if (results.length === 0) {
     const detail = failures.map((f) => `${f.to}: ${f.error}`).join('; ');
-    throw new Error(`SMTP send failed for all recipients — ${detail}`);
+    throw new Error(`Resend send failed for all recipients — ${detail}`);
   }
 
   return {

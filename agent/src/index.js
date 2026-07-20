@@ -2,7 +2,7 @@
 /**
  * /dev/digest newsletter agent — one-shot run.
  *
- * Generates a fresh issue (Anthropic + web search) and emails it via SMTP
+ * Generates a fresh issue (Anthropic + web search) and emails it via Resend
  * to every address in NEWSLETTER_TO_EMAILS (or NEWSLETTER_TO_EMAIL).
  *
  * Usage:
@@ -65,7 +65,7 @@ export async function runOnce(options = {}) {
   const { dryRun = false, fixture = false } = options;
   const config = loadConfig({
     requireAnthropic: !dryRun && !fixture,
-    requireSmtp: false,
+    requireResend: false,
   });
 
   console.log(
@@ -99,16 +99,15 @@ export async function runOnce(options = {}) {
 
   const sendConfig = loadConfig({
     requireAnthropic: false,
-    requireSmtp: true,
+    requireResend: true,
   });
   console.log(
     `[dev-digest] sending to ${sendConfig.recipients.length} recipient(s) ` +
-      `(${sendConfig.recipients.join(', ')}) from ${sendConfig.from} ` +
-      `via ${sendConfig.smtp.host}:${sendConfig.smtp.port}…`
+      `(${sendConfig.recipients.join(', ')}) from ${sendConfig.from} via Resend…`
   );
 
   const sent = await sendNewsletter({
-    smtp: sendConfig.smtp,
+    apiKey: sendConfig.resendApiKey,
     from: sendConfig.from,
     to: sendConfig.recipients,
     replyTo: sendConfig.replyTo,

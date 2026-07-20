@@ -1,8 +1,8 @@
 # /dev/digest newsletter agent
 
 Server-side agent that generates a `/dev/digest` issue (same three lanes as
-`tech-digest-agent.html`) and emails it to a configured address over **SMTP**
-(via [Nodemailer](https://nodemailer.com)).
+`tech-digest-agent.html`) and emails it to configured recipients via
+[Resend](https://resend.com).
 
 ## Schedule
 
@@ -13,19 +13,26 @@ Server-side agent that generates a `/dev/digest` issue (same three lanes as
 | **Long-running process** | `npm run schedule` — loops every `NEWSLETTER_INTERVAL_HOURS` (default 12) |
 | **One-shot** | `npm start` |
 
+## Get a Resend API key (no SMTP account needed)
+
+1. Sign up at [resend.com](https://resend.com) (free tier is enough to start)
+2. Create an API key: [resend.com/api-keys](https://resend.com/api-keys)
+3. For production sends, verify domain **newsletters.synbrains.ai** in
+   [Resend Domains](https://resend.com/domains) and use
+   `RESEND_FROM_EMAIL=/dev/digest <digest@newsletters.synbrains.ai>`
+4. For a quick sandbox test without DNS, set
+   `RESEND_FROM_EMAIL=/dev/digest <onboarding@resend.dev>` — that can only
+   deliver to your Resend account email
+
 ## Configuration
 
-Copy `.env.example` to `.env` (local) or set GitHub Actions secrets/variables:
+Copy `.env.example` to `.env` (local) or set GitHub Actions / Cursor secrets:
 
 | Variable | Required | Default | Purpose |
 |----------|----------|---------|---------|
 | `ANTHROPIC_API_KEY` | yes (live generate) | — | Anthropic Messages API + web search |
-| `SMTP_HOST` | yes (send) | — | SMTP server hostname |
-| `SMTP_PORT` | no | `587` | SMTP port (`465` if using implicit TLS) |
-| `SMTP_SECURE` | no | `false` | `true` for port 465 |
-| `SMTP_USER` | usually | — | SMTP auth username |
-| `SMTP_PASS` | if user set | — | SMTP auth password / app password |
-| `SMTP_FROM_EMAIL` | yes (send) | `/dev/digest <digest@newsletters.synbrains.ai>` | From header |
+| `RESEND_API_KEY` | yes (send) | — | Resend API key |
+| `RESEND_FROM_EMAIL` | yes (send) | `/dev/digest <digest@newsletters.synbrains.ai>` | Verified sending identity |
 | `NEWSLETTER_TO_EMAILS` | yes | `archana.rk@synbrains.ai` | Comma/semicolon/whitespace-separated recipient list |
 | `NEWSLETTER_TO_EMAIL` | no | — | Single-address fallback if `NEWSLETTER_TO_EMAILS` is unset |
 | `NEWSLETTER_REPLY_TO` | no | — | Reply-To header |
@@ -33,41 +40,24 @@ Copy `.env.example` to `.env` (local) or set GitHub Actions secrets/variables:
 | `NEWSLETTER_INTERVAL_HOURS` | no | `12` | Scheduler interval |
 | `ANTHROPIC_MODEL` | no | `claude-sonnet-4-6` | Model id |
 
-### GitHub Actions secrets
-
-Repository → Settings → Secrets and variables → Actions:
+### Secrets checklist
 
 - `ANTHROPIC_API_KEY`
-- `SMTP_HOST`
-- `SMTP_USER`
-- `SMTP_PASS`
-- `SMTP_FROM_EMAIL` (optional if the default from-address is correct)
-- `SMTP_PORT` / `SMTP_SECURE` (optional)
-- `NEWSLETTER_TO_EMAILS` — comma-separated list, e.g. `a@x.com,b@y.com`
-  (or `NEWSLETTER_TO_EMAIL` for a single address)
-
-### Example providers
-
-| Provider | Typical settings |
-|----------|------------------|
-| Gmail (app password) | host `smtp.gmail.com`, port `587`, secure `false` |
-| Microsoft 365 | host `smtp.office365.com`, port `587`, secure `false` |
-| Amazon SES SMTP | host `email-smtp.<region>.amazonaws.com`, port `587` |
-| Mailgun / Postmark / etc. | use that provider’s SMTP credentials |
-
-Use an address your SMTP provider allows you to send from for `SMTP_FROM_EMAIL`.
+- `RESEND_API_KEY`
+- `NEWSLETTER_TO_EMAILS` — e.g. `a@x.com,b@y.com`
+- `RESEND_FROM_EMAIL` (optional if the default is correct)
 
 ## Local usage
 
 ```bash
 cd agent
-cp .env.example .env   # fill in Anthropic + SMTP + NEWSLETTER_TO_EMAILS
+cp .env.example .env   # fill in Anthropic + Resend + NEWSLETTER_TO_EMAILS
 npm install
 
 # Generate + print markdown (no send)
 npm run dry-run
 
-# Generate with sample content + send to all recipients (needs SMTP_*)
+# Generate with sample content + send to all recipients (needs RESEND_API_KEY)
 NEWSLETTER_TO_EMAILS='a@x.com,b@y.com' node src/index.js --fixture
 
 # Full live generate + send
@@ -77,8 +67,8 @@ npm start
 npm run schedule
 ```
 
-## Message identity
+## Idempotency
 
-Each send sets `Message-ID` / `X-Entity-Ref-ID` from the issue date so clients
-can tell issues apart. SMTP itself does not offer Resend-style idempotency;
-avoid overlapping workflow runs if you need exactly-once delivery.
+Each per-recipient send uses idempotency key
+`dev-digest/<iso-date>/<issue>/<recipient>` so retries within 24 hours do not
+duplicate the same issue to the same address.

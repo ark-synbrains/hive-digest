@@ -51,12 +51,8 @@ jobs:
       - name: Run newsletter agent
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          SMTP_HOST: ${{ secrets.SMTP_HOST }}
-          SMTP_PORT: ${{ secrets.SMTP_PORT }}
-          SMTP_SECURE: ${{ secrets.SMTP_SECURE }}
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASS: ${{ secrets.SMTP_PASS }}
-          SMTP_FROM_EMAIL: ${{ secrets.SMTP_FROM_EMAIL }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM_EMAIL: ${{ secrets.RESEND_FROM_EMAIL }}
           # Comma-separated list, e.g. "a@x.com,b@y.com"
           NEWSLETTER_TO_EMAILS: ${{ secrets.NEWSLETTER_TO_EMAILS }}
           # Fallback single address if NEWSLETTER_TO_EMAILS is unset
