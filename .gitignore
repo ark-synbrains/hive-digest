@@ -1,0 +1,71 @@
+# Hive Digest / Node agent
+# -----------------------
+# Keep intentional tracked config (e.g. .cursor/automations/, .github/,
+# agent/package-lock.json, agent/state.json delivery history).
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Agent dry-run / generated newsletter output
+agent/out/
+**/out/
+
+# Environment & secrets (SMTP credentials, local overrides)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+.secrets
+
+# Logs & debug
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Test / coverage / caches
+coverage/
+.nyc_output/
+.cache/
+.turbo/
+.parcel-cache/
+.eslintcache
+*.tsbuildinfo
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Cursor / local agent scratch (keep shared automations tracked)
+.cursor/*
+!.cursor/automations/
+!.cursor/automations/**
+
+# Temporary / misc
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.orig
+.vercel
+.netlify
