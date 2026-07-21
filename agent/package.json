@@ -6,7 +6,8 @@
   "description": "Generate and email Hive Digest (Synbrains) newsletters via SMTP",
   "scripts": {
     "start": "node src/run.mjs",
-    "generate": "node src/run.mjs --dry-run"
+    "generate": "node src/run.mjs --dry-run",
+    "test": "node src/research.test.mjs"
   },
   "engines": {
     "node": ">=20"

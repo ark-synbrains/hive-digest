@@ -52,6 +52,7 @@ Do not use issue numbers — identify each digest by its date only.
 ### Preferred implementation
 - Run: `npm install --prefix agent && npm start --prefix agent`
   - The agent validates entries, scores insight value, ranks items high→low, and orders sections by average score. Scores are logged only.
+  - Research retries 429/408/5xx for every upstream (HN, arXiv, OpenAlex), paces per host, times out hung requests, falls back across sources (arXiv→OpenAlex→HN; alternate HN queries), and soft-fails individual queries. Warnings about backups are OK — still send if the digest has entries.
 - Sending uses nodemailer SMTP with env secrets:
   - SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM
   - NEWSLETTER_TO_EMAILS (comma/semicolon-separated)
@@ -62,9 +63,11 @@ Do not use issue numbers — identify each digest by its date only.
 ### After success
 Update memories: store subject, date, SMTP messageId, and last_success_at.
 Report date and messageId (not an issue number, not scores).
+If a paper-source backup was used (OpenAlex / HN-only), mention that briefly in the success report and memory.
 
 ### Failure
 Do not pretend success. Record the error in memory and stop.
+If `npm start` fails once on a transient upstream error, wait ~30s and retry `npm start --prefix agent` once before recording failure.
 ```
 
 ## `/automate` one-liner (local Cursor)

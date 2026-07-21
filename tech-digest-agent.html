@@ -414,8 +414,8 @@ async function fetchCategory(cat, today, attempt){
       })
     });
   } catch(networkErr){
-    if(attempt < 2){
-      await new Promise(r => setTimeout(r, 800));
+    if(attempt < 4){
+      await new Promise(r => setTimeout(r, 800 * attempt));
       return fetchCategory(cat, today, attempt + 1);
     }
     throw new Error((networkErr.name || 'NetworkError') + ': ' + (networkErr.message || 'request could not be sent'));
@@ -424,8 +424,11 @@ async function fetchCategory(cat, today, attempt){
   if(!response.ok){
     let bodyText = '';
     try{ bodyText = (await response.text()).slice(0, 200); } catch(e){}
-    if((response.status === 429 || response.status >= 500) && attempt < 2){
-      await new Promise(r => setTimeout(r, 1000));
+    var retryable = response.status === 408 || response.status === 425 || response.status === 429 || response.status >= 500;
+    if(retryable && attempt < 4){
+      var retryAfter = parseInt(response.headers.get('retry-after') || '', 10);
+      var waitMs = (retryAfter > 0 ? retryAfter * 1000 : 1000 * Math.pow(2, attempt - 1));
+      await new Promise(r => setTimeout(r, Math.min(waitMs, 30000)));
       return fetchCategory(cat, today, attempt + 1);
     }
     throw new Error('HTTP ' + response.status + (bodyText ? ' — ' + bodyText : ''));
