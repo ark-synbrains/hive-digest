@@ -28,6 +28,8 @@ Brand: **Hive by Synbrains** (accents `#EE462F` → `#7610C7`).
 - **Download the issue** — export Markdown or standalone dark HTML
   (`Hive Digest` branding).
 - **Responsive layout** — usable from phone to desktop.
+- **Knowledge graph** — [graphify](https://github.com/Graphify-Labs/graphify) maps the
+  codebase (AST + docs) into a queryable graph under `graphify-out/`.
 
 ## How to use it
 
@@ -38,6 +40,39 @@ Brand: **Hive by Synbrains** (accents `#EE462F` → `#7610C7`).
    are ranked by insight score (scores stay hidden).
 4. Download `.md` or `.html` when ready. HTML exports always use the dark
    Hive theme.
+
+## Knowledge graph (graphify)
+
+This repo includes a checked-in [graphify](https://github.com/Graphify-Labs/graphify)
+knowledge graph of the agent, automations, and docs.
+
+**Visualize the graph** (opens in a new tab):
+
+<a href="https://htmlpreview.github.io/?https://github.com/ark-synbrains/dev-digest/blob/main/graphify-out/graph.html" target="_blank" rel="noopener noreferrer"><strong>Open interactive graph.html</strong></a>
+
+Also available locally at [`graphify-out/graph.html`](graphify-out/graph.html)
+(open the file in a browser after cloning). Companion artifacts:
+
+- [`graphify-out/graph.json`](graphify-out/graph.json) — queryable graph data
+- [`graphify-out/GRAPH_REPORT.md`](graphify-out/GRAPH_REPORT.md) — communities, god nodes, suggested questions
+
+### Rebuild / query
+
+```bash
+# install once (PyPI package name is temporarily graphifyy)
+pip install graphifyy && graphify install --platform cursor
+
+# AST-only refresh after code changes (no LLM)
+graphify update .
+
+# full rebuild in Cursor / Claude
+/graphify .
+
+# query the existing graph
+graphify query "how does research fall back across sources?"
+graphify path "researchDigest" "sendSmtpEmail"
+graphify explain "fetchWithRetry"
+```
 
 ## Important: where this runs
 
@@ -106,7 +141,12 @@ agent/                              Node generator + validate/rank + SMTP
   src/research.mjs                  HN + arXiv research (OpenAlex / HN fallback)
   src/render.mjs                    Hive Digest email HTML (dark)
   src/run.mjs                       orchestration
+graphify-out/                       knowledge graph (graphify)
+  graph.html                        interactive visualization
+  graph.json                        queryable graph data
+  GRAPH_REPORT.md                   communities / god nodes / questions
 .github/workflows/newsletter.yml
 .cursor/automations/newsletter.md
+.cursor/rules/graphify.mdc
 README.md
 ```
