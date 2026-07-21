@@ -1,0 +1,37 @@
+# Delete the PR head branch after a successful merge.
+# Complements (or replaces) the GitHub "Automatically delete head branches"
+# setting when that toggle is unavailable to automation tokens.
+
+name: Delete merged PR branch
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+
+jobs:
+  delete-branch:
+    if: >
+      github.event.pull_request.merged == true &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.head.ref != github.event.pull_request.base.ref &&
+      github.event.pull_request.head.ref != 'main' &&
+      github.event.pull_request.head.ref != 'master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete merged head branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          echo "Deleting origin/${BRANCH} (merged PR #${{ github.event.pull_request.number }})…"
+          if gh api -X DELETE "repos/${{ github.repository }}/git/refs/heads/${BRANCH}"; then
+            echo "Deleted ${BRANCH}"
+          else
+            status=$?
+            # 422 / already gone is fine (manual delete or race with repo setting).
+            echo "Branch ${BRANCH} already absent or not deletable (exit ${status}); continuing."
+          fi

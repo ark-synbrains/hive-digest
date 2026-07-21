@@ -72,6 +72,10 @@ Two ways to generate and email Hive Digest on a timer:
    [`.github/workflows/newsletter.yml`](.github/workflows/newsletter.yml)
    runs `agent/` on the **1st of each month at 09:00 IST** (`30 3 1 * *` UTC).
 
+Merged PR feature branches are deleted automatically by
+[`.github/workflows/delete-merged-branch.yml`](.github/workflows/delete-merged-branch.yml)
+(same-repo heads only; `main`/`master` are never deleted).
+
 ### Agent CLI
 
 ```bash
