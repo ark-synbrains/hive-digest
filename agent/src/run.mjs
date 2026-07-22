@@ -2,17 +2,20 @@
 /**
  * Hive Digest monthly sender (Node CLI for ark-synbrains/hive-digest).
  *
- * Flow: researchDigest → validateAndRankDigest → buildIssue → sanitizeIssue → SMTP.
+ * Flow: researchDigest → enrichDigestWithGraphRag → validateAndRankDigest
+ *       → buildIssue → sanitizeIssue → SMTP.
  * Browser UI counterpart: ../hive-digest.html (Claude.ai artifact).
  * npm package name: hive-digest-agent (this directory is agent/).
  *
  * Required env: SMTP_* and NEWSLETTER_TO_EMAILS
  * (historical recipient-list name — product is still Hive Digest).
+ * Optional: HIVE_GRAPHRAG=0 to disable content GraphRAG ranking boosts.
  */
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { researchDigest } from './research.mjs';
+import { enrichDigestWithGraphRag } from './graphrag.mjs';
 import { validateAndRankDigest } from './validate.mjs';
 import { buildIssue } from './render.mjs';
 import { sanitizeIssue } from './sanitize.mjs';
@@ -70,7 +73,13 @@ async function main() {
   const stamp = dateStamp(now);
 
   console.log('Researching Hive Digest lanes...');
-  const raw = await researchDigest();
+  const researched = await researchDigest();
+
+  console.log('Building content GraphRAG (Graphify) for ranking boosts...');
+  const { byCategory: raw, graphRag } = await enrichDigestWithGraphRag(researched, {
+    stamp,
+  });
+  console.log(JSON.stringify({ graphRag }, null, 2));
 
   console.log('Validating & ranking by insight score...');
   const { byCategory, sectionOrder, report } = validateAndRankDigest(raw);
@@ -83,6 +92,7 @@ async function main() {
           sectionOrder: report.sectionOrder,
           categories: report.categories,
         },
+        graphRag,
       },
       null,
       2
@@ -103,6 +113,7 @@ async function main() {
     writeFileSync(join(outDir, `digest-${stamp}.html`), issue.html);
     writeFileSync(join(outDir, `digest-${stamp}.txt`), issue.text);
     writeFileSync(join(outDir, `digest-${stamp}.ranking.json`), JSON.stringify(report, null, 2) + '\n');
+    writeFileSync(join(outDir, `digest-${stamp}.graphrag.json`), JSON.stringify(graphRag, null, 2) + '\n');
     console.log(
       JSON.stringify(
         {
@@ -112,6 +123,7 @@ async function main() {
           date,
           entries: total,
           sectionOrder,
+          graphRag,
         },
         null,
         2

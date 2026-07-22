@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node src/run.mjs",
     "generate": "node src/run.mjs --dry-run",
-    "test": "node src/research.test.mjs && node src/digest.test.mjs"
+    "test": "node src/research.test.mjs && node src/digest.test.mjs && node src/graphrag.test.mjs"
   },
   "engines": {
     "node": ">=20"

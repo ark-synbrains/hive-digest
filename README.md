@@ -45,7 +45,9 @@ Brand: **Hive by Synbrains** (accents `#EE462F` → `#7610C7`).
   (`Hive Digest` branding).
 - **Responsive layout** — usable from phone to desktop.
 - **Knowledge graph** — [graphify](https://github.com/Graphify-Labs/graphify) maps the
-  codebase (AST + docs) into a queryable graph under `graphify-out/`.
+  codebase (AST + docs) into a queryable graph under `graphify-out/`, and the
+  Node sender also builds a **content GraphRAG** graph from each run’s research
+  candidates to boost insight ranking (see below).
 
 ## How to use it
 
@@ -109,6 +111,39 @@ graphify explain "fetchWithRetry"
 (`agent/**`, `hive-digest.html`, and common source extensions), then
 commits refreshed `graphify-out/` artifacts when the graph changes.
 Manual runs: Actions → **graphify** → **Run workflow**.
+
+### Content GraphRAG (inside the monthly digest pipeline)
+
+Separate from the **codebase** map above, the Node sender (`agent/`) builds a
+**content** knowledge graph from research candidates each run:
+
+```
+researchDigest → enrichDigestWithGraphRag → validateAndRankDigest → render → SMTP
+```
+
+How it works:
+
+1. Research pulls HN / arXiv / OpenAlex candidates into three lanes.
+2. `agent/src/graphrag.mjs` turns entries into Graphify extraction nodes
+   (documents) plus shared technical **concepts**, lane tags, and source hosts.
+3. Prefer `agent/scripts/build_content_graph.py` (Graphify + NetworkX) to
+   cluster and compute god-node / bridge **ranking boosts** (`_graphBoost`).
+4. If Python/graphifyy is missing, a pure-Node fallback computes the same style
+   of boosts so the digest never fails on GraphRAG.
+5. `scoreInsight()` applies the boost (capped at +12). Boosts are ranking-only
+   and never appear in the emailed issue.
+
+Artifacts (gitignored) land under `agent/out/digest-graph/<date>/`:
+`extraction.json`, `graph.json`, `boosts.json`, `corpus/`, `summary.json`.
+
+| Env | Effect |
+| --- | --- |
+| `HIVE_GRAPHRAG=0` | Disable content GraphRAG (research → validate only) |
+| `HIVE_GRAPHRAG_FORCE_NODE=1` | Skip Python; use Node fallback boosts |
+| `GRAPHIFY_PYTHON` | Optional path to the Python that has `graphify` installed |
+
+This does **not** replace live research, and it does **not** write into
+`graphify-out/` (that remains the codebase map for Cursor agents).
 
 ## Important: where this runs
 
@@ -175,13 +210,15 @@ Optional: `SMTP_SECURE`, `SMTP_REPLY_TO`
 hive-digest.html                    Claude.ai browser artifact UI
 agent/                              Node sender (npm: hive-digest-agent)
   package.json                      package name hive-digest-agent
-  src/run.mjs                       orchestration + SMTP send
+  src/run.mjs                       orchestration + GraphRAG + SMTP send
   src/research.mjs                  HN + arXiv research (OpenAlex / HN fallback)
+  src/graphrag.mjs                  content GraphRAG → ranking boosts
   src/validate.mjs                  schema validation + insight scoring
   src/render.mjs                    Hive Digest email HTML (dark; HIVE palette)
   src/sanitize.mjs                  sanitizeDigestText / sanitizeIssue
   src/smtp.mjs                      nodemailer transport
-graphify-out/                       knowledge graph (graphify)
+  scripts/build_content_graph.py    Graphify build/cluster for content boosts
+graphify-out/                       codebase knowledge graph (graphify)
   graph.html                        interactive visualization
   graph.json                        queryable graph data
   GRAPH_REPORT.md                   communities / god nodes / questions

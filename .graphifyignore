@@ -1,3 +1,7 @@
 # Graphify install artifacts — never index the skill/tooling into the project graph
 .agents/skills/graphify/
 .cursor/rules/graphify.mdc
+# Ephemeral digest content GraphRAG corpus (separate from codebase graph)
+agent/out/
+agent/digest-corpus/
+agent/digest-graph/

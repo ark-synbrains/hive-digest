@@ -9,11 +9,19 @@ and emails a Hive Digest issue via SMTP. It is **not** a Cursor Cloud Agent.
 | --- | --- |
 | `src/run.mjs` | Orchestration (`npm start` / `npm run generate`) |
 | `src/research.mjs` | HN + arXiv (+ OpenAlex / HN fallbacks) → `researchDigest()` |
+| `src/graphrag.mjs` | Content GraphRAG (Graphify) → `_graphBoost` ranking hints |
 | `src/validate.mjs` | Schema + insight ranking → `validateAndRankDigest()` |
 | `src/render.mjs` | Dark email HTML/text → `buildIssue()` (`HIVE` palette) |
 | `src/sanitize.mjs` | `sanitizeDigestText` / `sanitizeIssue` |
 | `src/smtp.mjs` | nodemailer transport (`SMTP_*` env) |
+| `scripts/build_content_graph.py` | Graphify build/cluster helper for content boosts |
 | `state.json` | Local send history (gitignored patterns may apply in CI) |
+
+Pipeline: `researchDigest` → `enrichDigestWithGraphRag` → `validateAndRankDigest`
+→ `buildIssue` → `sanitizeIssue` → SMTP.
+
+Set `HIVE_GRAPHRAG=0` to skip the content-graph step. Install `graphifyy` on the
+runner for the preferred Graphify engine; otherwise a Node fallback is used.
 
 Browser UI counterpart (Claude.ai artifact): [`../hive-digest.html`](../hive-digest.html).
 

@@ -9,6 +9,8 @@
   "7": "SMTP Transport",
   "8": "Research Tests",
   "9": "Branch Cleanup CI",
+  "10": "graphrag.mjs",
+  "11": "compute_boosts",
   "12": "Cursor Automation — Hive Digest (monthly)",
   "13": "Cursor Automation (Preferred)"
 }

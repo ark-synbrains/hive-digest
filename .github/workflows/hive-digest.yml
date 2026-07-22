@@ -49,8 +49,17 @@ jobs:
           cache: npm
           cache-dependency-path: agent/package.json
 
+      - name: Setup Python (content GraphRAG / Graphify)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
       - name: Install Hive Digest sender deps
         run: npm install --prefix agent
+
+      - name: Install graphifyy (optional content GraphRAG engine)
+        run: pip install graphifyy
+        continue-on-error: true
 
       - name: Generate and send Hive Digest
         env:
@@ -62,4 +71,6 @@ jobs:
           SMTP_FROM: ${{ secrets.SMTP_FROM }}
           SMTP_REPLY_TO: ${{ secrets.SMTP_REPLY_TO }}
           NEWSLETTER_TO_EMAILS: ${{ secrets.NEWSLETTER_TO_EMAILS }}
+          # Content GraphRAG is on by default; set repository variable HIVE_GRAPHRAG=0 to disable.
+          HIVE_GRAPHRAG: ${{ vars.HIVE_GRAPHRAG || '1' }}
         run: npm start --prefix agent

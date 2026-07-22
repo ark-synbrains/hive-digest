@@ -23,7 +23,7 @@ const PRIMARY_HOST_HINTS = [
   'docs.',
 ];
 
-const INSIGHT_TERMS = [
+export const INSIGHT_TERMS = [
   'benchmark',
   'latency',
   'throughput',
@@ -167,6 +167,11 @@ export function scoreInsight(item) {
     score += clamp(Math.log10(1 + item._popularity) * 3, 0, 8);
   }
 
+  // Content GraphRAG boost (from agent/src/graphrag.mjs) — capped, ranking-only
+  if (typeof item._graphBoost === 'number' && item._graphBoost > 0) {
+    score += clamp(item._graphBoost, 0, 12);
+  }
+
   return Math.round(clamp(score, 0, 100));
 }
 
@@ -176,6 +181,8 @@ function stripRankingFields(item) {
     _popularity: _pop,
     _score: _legacy,
     _errors: _errors,
+    _graphBoost: _graphBoost,
+    _graphReasons: _graphReasons,
     ...rest
   } = item;
   return rest;

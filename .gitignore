@@ -5,8 +5,10 @@ node_modules/
 .env
 .env.*
 
-# Agent dry-run output
+# Agent dry-run output + content GraphRAG run artifacts
 agent/out/
+agent/digest-corpus/
+agent/digest-graph/
 
 # OS
 .DS_Store

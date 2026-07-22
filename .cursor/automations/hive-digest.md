@@ -72,6 +72,7 @@ Do not open a PR or create a feature branch for a normal successful send.
   - Opens a per-host circuit after an exhausted rate-limit cycle so backups do not keep hammering that host.
   - Soft-fails individual queries so one upstream cannot abort the whole run.
   - Falls back across sources: arXiv → OpenAlex → HN-only; each HN lane has alternate queries if the primary is empty/failing.
+  - Builds a content GraphRAG graph (Graphify) from candidates and applies ranking-only `_graphBoost` scores (capped; never emailed). Soft-falls back to a Node graph if Python/graphifyy is missing. Set `HIVE_GRAPHRAG=0` to skip.
   - Validates entries, scores insight value, ranks high→low, orders sections by average score (scores logged only, never emailed).
   - Sanitizes digest text/HTML before SMTP send.
 - Sending uses nodemailer SMTP with env secrets:
