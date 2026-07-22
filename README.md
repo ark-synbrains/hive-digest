@@ -112,6 +112,55 @@ graphify explain "fetchWithRetry"
 commits refreshed `graphify-out/` artifacts when the graph changes.
 Manual runs: Actions → **graphify** → **Run workflow**.
 
+### Architecture flowchart
+
+Two Graphify roles sit around the product: a **codebase map** for agents/humans,
+and a **content GraphRAG** step inside each monthly send.
+
+```mermaid
+flowchart TB
+  subgraph triggers [Triggers]
+    CA[Cursor Automation monthly]
+    GA[GitHub Actions hive-digest.yml]
+  end
+
+  subgraph sender [Node sender agent/]
+    R[researchDigest<br/>HN · arXiv · OpenAlex]
+    G[enrichDigestWithGraphRag<br/>content knowledge graph]
+    V[validateAndRankDigest<br/>insight score + GraphRAG boost]
+    B[buildIssue → sanitizeIssue]
+    S[sendSmtpEmail / dry-run out/]
+  end
+
+  subgraph contentGraph [Content GraphRAG per run]
+    E[Entries + shared concepts]
+    P[Graphify Python cluster<br/>preferred]
+    N[Node fallback graph]
+    X[_graphBoost ranking-only<br/>capped · never emailed]
+  end
+
+  subgraph codebaseGraph [Codebase graph — separate]
+    CG[graphify-out/<br/>graph.html · graph.json · GRAPH_REPORT.md]
+    CQ[Cursor agents: query / path / explain]
+  end
+
+  CA --> R
+  GA --> R
+  R --> G
+  G --> E
+  E --> P
+  E --> N
+  P --> X
+  N --> X
+  X --> V
+  G --> V
+  V --> B
+  B --> S
+
+  Codebase[Repo code + docs] --> CG
+  CG --> CQ
+```
+
 ### Content GraphRAG (inside the monthly digest pipeline)
 
 Separate from the **codebase** map above, the Node sender (`agent/`) builds a
