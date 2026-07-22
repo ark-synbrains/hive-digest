@@ -168,6 +168,24 @@ and similar paths so that text cannot become nodes/edges in `graphify-out/`
 or [`graph.html`](../graphify-out/graph.html).
 `package.json` / lockfiles are also excluded (they add noisy leaf nodes).
 
+**What `graph.html` shows:** a **code-only AST graph** of the digest agent — not
+docs, README sections, or newsletter content. Nodes come from
+`agent/src/*.mjs` (pipeline + tests) and `agent/scripts/build_content_graph.py`.
+Typical makeup (~120 nodes after a rebuild):
+
+| Kind | Examples |
+| --- | --- |
+| **Functions** (majority) | `researchDigest()`, `enrichDigestWithGraphRag()`, `sendSmtpEmail()` |
+| **Constants** | `DIGESTS_DIR`, `INSIGHT_TERMS`, `HIVE` |
+| **Modules / files** | one node per source file (`run.mjs`, `research.mjs`, …) |
+| **Locals / test fixtures** | variables and destructures, mostly from `*.test.mjs` |
+| **Occasional rationale** | e.g. a Python docstring attached to a symbol |
+
+Edges are code relationships: **contains**, **calls**, **imports** (plus a few
+inferred calls). Open [`graph.html`](../graphify-out/graph.html) or read
+[`GRAPH_REPORT.md`](../graphify-out/GRAPH_REPORT.md) for the current community
+hubs and god nodes.
+
 **Typical use:**
 
 ```bash

@@ -66,7 +66,14 @@ overall system design, pipeline flowchart, and how Graphify is integrated
 ## Knowledge graph (graphify)
 
 This repo includes a checked-in [graphify](https://github.com/Graphify-Labs/graphify)
-knowledge graph of the sender, automations, and docs.
+**code-only AST** knowledge graph of the digest agent (not docs or newsletter content).
+
+**What the graph shows:** functions, constants, modules, and test locals from
+`agent/src/*.mjs` and `agent/scripts/build_content_graph.py`, linked by
+contains / calls / imports. Documentation `*.md` is excluded via
+[`.graphifyignore`](.graphifyignore). See
+[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) (Role A) for the full node-type
+breakdown.
 
 Artifacts:
 - [`graphify-out/graph.html`](graphify-out/graph.html) — interactive graph (open the file in a browser after cloning locally)
