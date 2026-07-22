@@ -1,107 +1,102 @@
 {
-  "agent/package.json": {
-    "mtime": 1784711312.4737067,
-    "ast_hash": "631d3807b8135dc788ca0dfaa5270a84",
-    "semantic_hash": ""
-  },
   "agent/src/render.mjs": {
-    "mtime": 1784711312.4739413,
+    "mtime": 1784704621.848619,
     "ast_hash": "7b5e10c10259bb64851a353a2e446cf0",
     "semantic_hash": ""
   },
   "agent/src/research.mjs": {
-    "mtime": 1784711312.4739413,
+    "mtime": 1784704621.848619,
     "ast_hash": "ed27a33881a2c26046bac70bed422d23",
     "semantic_hash": ""
   },
   "agent/src/research.test.mjs": {
-    "mtime": 1784711312.4739413,
+    "mtime": 1784704621.848619,
     "ast_hash": "c200ecacea9fb6d04b2a7f0e1869f050",
     "semantic_hash": ""
   },
   "agent/src/run.mjs": {
-    "mtime": 1784711312.4740283,
+    "mtime": 1784711190.7476592,
     "ast_hash": "b7e51f562a9ca54ba6d4620651e0c86e",
     "semantic_hash": ""
   },
   "agent/src/sanitize.mjs": {
-    "mtime": 1784711312.4740283,
+    "mtime": 1784704621.848619,
     "ast_hash": "344a228f40ccfccbc449287ec0c05017",
     "semantic_hash": ""
   },
   "agent/src/smtp.mjs": {
-    "mtime": 1784711312.4740283,
+    "mtime": 1784704621.848619,
     "ast_hash": "cd2cbfc645c89cda5b38107d1b40b0ac",
     "semantic_hash": ""
   },
   "agent/src/validate.mjs": {
-    "mtime": 1784711312.4740283,
+    "mtime": 1784710663.2977617,
     "ast_hash": "0a56795051cf8562e04309c5debeb6fc",
     "semantic_hash": ""
   },
   "agent/state.json": {
-    "mtime": 1784711312.4740283,
+    "mtime": 1784710663.2977617,
     "ast_hash": "eeddb7e9808a89690ffacd200b1baa05",
     "semantic_hash": ""
   },
   ".github/workflows/delete-merged-branch.yml": {
-    "mtime": 1784711312.4732745,
+    "mtime": 1784704621.848619,
     "ast_hash": "9f7f870897f8394e0da098c61893efa2",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1784711312.4733393,
-    "ast_hash": "9cf7235e32aaf024e8c80d0a04b896cd",
+    "mtime": 1784711629.6945772,
+    "ast_hash": "f3572bbf3950ca23ca8ce2a667cd8e53",
     "semantic_hash": ""
   },
   ".github/workflows/graphify.yml": {
-    "mtime": 1784711312.4733393,
+    "mtime": 1784704621.848619,
     "ast_hash": "12552605c38056383863cfd8fba74fd7",
     "semantic_hash": ""
   },
   "hive-digest.html": {
-    "mtime": 1784711312.4760277,
+    "mtime": 1784704621.852619,
     "ast_hash": "5a25f0f0e8639d2f4413e591b7114fc4",
     "semantic_hash": ""
   },
   ".cursor/automations/hive-digest.md": {
-    "mtime": 1784711312.473045,
+    "mtime": 1784711190.7476592,
     "ast_hash": "5876c871ede53cf630a76a6bfefb7b2c",
     "semantic_hash": ""
   },
   ".github/workflows/hive-digest.yml": {
-    "mtime": 1784711312.4733393,
+    "mtime": 1784711120.6598952,
     "ast_hash": "43dfe469ede77e9937f68850b4538be9",
     "semantic_hash": ""
   },
   "agent/README.md": {
-    "mtime": 1784711312.4733393,
+    "mtime": 1784711190.7516592,
     "ast_hash": "940e2ea284d47c8a10bac2bf61620c15",
     "semantic_hash": ""
   },
   "agent/src/digest.test.mjs": {
-    "mtime": 1784711312.4737067,
+    "mtime": 1784704621.848619,
     "ast_hash": "4fec4b07812f1a75befb18d9884ee582",
     "semantic_hash": ""
   },
   "agent/scripts/build_content_graph.py": {
-    "mtime": 1784711312.4737067,
+    "mtime": 1784710663.2977617,
     "ast_hash": "3c9000374403461cfac277a1788e5684",
     "semantic_hash": ""
   },
   "agent/src/graphrag.mjs": {
-    "mtime": 1784711312.4739413,
+    "mtime": 1784710663.2977617,
     "ast_hash": "c1985b15fb9ece815a2779bdec18bdc8",
     "semantic_hash": ""
   },
   "agent/src/graphrag.test.mjs": {
-    "mtime": 1784711312.4739413,
+    "mtime": 1784710663.2977617,
     "ast_hash": "8ed1eed42bf60d1665014a72a1c16e1e",
     "semantic_hash": ""
   },
   "docs/ARCHITECTURE.md": {
-    "mtime": 1784711312.4747639,
-    "ast_hash": "1186997717e7f2658c44fd514a0e76aa",
+    "mtime": 1784711629.702577,
+    "ast_hash": "575469056f885def5295f91dc216ff41",
     "semantic_hash": ""
   }
 }

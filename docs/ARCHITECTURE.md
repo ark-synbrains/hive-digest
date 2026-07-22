@@ -158,12 +158,13 @@ reading every file.
 | Audit report | [`graphify-out/GRAPH_REPORT.md`](../graphify-out/GRAPH_REPORT.md) |
 | Always-on Cursor rule | [`.cursor/rules/graphify.mdc`](../.cursor/rules/graphify.mdc) |
 | Agent Skill | [`.agents/skills/graphify/`](../.agents/skills/graphify/) |
-| Ignore rules / skills / digests / local out | [`.graphifyignore`](../.graphifyignore) — **rules are never graph corpus** |
+| Ignore rules / skills / digests / out / package.json | [`.graphifyignore`](../.graphifyignore) — **rules are never graph corpus** |
 | CI rebuild | [`.github/workflows/graphify.yml`](../.github/workflows/graphify.yml) |
 
 **Rules are never considered by Graphify.** `.graphifyignore` excludes
 `.cursor/rules/`, `.agents/`, `AGENTS.md`, `CLAUDE.md`, and similar paths so
 agent instructions cannot become nodes/edges in `graphify-out/`.
+`package.json` / lockfiles are also excluded (they add noisy leaf nodes).
 
 **Typical use:**
 
@@ -241,7 +242,7 @@ successful send. See [`digests/README.md`](../digests/README.md).
 | Email delivery | SMTP via `SMTP_*` + `NEWSLETTER_TO_EMAILS` (historical env name) |
 | Upstream APIs | Retries, per-host pacing, circuit breaker, soft-fail per query |
 | Ranking privacy | Insight / GraphRAG scores logged only — never in subject/body |
-| Codebase vs content | Separate graphs; `.graphifyignore` excludes rules/skills/`digests/`/`agent/out` from the codebase graph |
+| Codebase vs content | Separate graphs; `.graphifyignore` excludes rules/skills/`digests/`/`agent/out`/`package.json` from the codebase graph |
 | Browser UI | `hive-digest.html` needs Claude.ai artifact proxy for Anthropic calls |
 
 ---
