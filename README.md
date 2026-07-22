@@ -90,8 +90,9 @@ graphify hook install
 This repo already includes:
 - `.cursor/rules/graphify.mdc` — always-on Cursor rule (query-first)
 - `.agents/skills/graphify/` — `/graphify` Agent Skill + references
-- `.graphifyignore` — excludes Cursor/agent **rules**, skills, `digests/`, and
-  local `agent/out/` from the generated codebase graph (rules are never corpus)
+- `.graphifyignore` — excludes Cursor/agent **rules**, skills, `digests/`,
+  local `agent/out/`, and `package.json` / lockfiles from the generated codebase
+  graph (rules are never corpus)
 - `.gitattributes` — union-merge driver for `graphify-out/graph.json`
 
 ### Rebuild / query
@@ -285,7 +286,7 @@ graphify-out/                       codebase knowledge graph (graphify)
   graph.json                        queryable graph data
   GRAPH_REPORT.md                   communities / god nodes / questions
 .agents/skills/graphify/            /graphify Agent Skill + references
-.graphifyignore                     exclude rules/skills/digests/out from code graph
+.graphifyignore                     exclude rules/skills/digests/out/package.json from code graph
 .github/workflows/hive-digest.yml   monthly SMTP send + commit digests/
 .github/workflows/graphify.yml      rebuild graphify-out on code pushes
 .cursor/automations/hive-digest.md  Cursor Automation recipe (monthly send)

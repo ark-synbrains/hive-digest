@@ -19,3 +19,9 @@ agent/digest-graph/
 
 # Issued newsletter archives are git-tracked but excluded from the *codebase* graph
 digests/
+
+# Package manifests (noisy leaf nodes; not useful for architecture queries)
+package.json
+**/package.json
+package-lock.json
+**/package-lock.json

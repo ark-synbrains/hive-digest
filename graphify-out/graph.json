@@ -4,171 +4,6 @@
   "graph": {},
   "nodes": [
     {
-      "label": "package.json",
-      "file_type": "code",
-      "source_file": "agent/package.json",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agent_package",
-      "community": 2,
-      "community_name": "Agent Package Config",
-      "norm_label": "package.json"
-    },
-    {
-      "label": "name",
-      "file_type": "code",
-      "source_file": "agent/package.json",
-      "source_location": "L2",
-      "_origin": "ast",
-      "id": "agent_package_name",
-      "community": 2,
-      "community_name": "Agent Package Config",
-      "norm_label": "name"
-    },
-    {
-      "label": "version",
-      "file_type": "code",
-      "source_file": "agent/package.json",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "agent_package_version",
-      "community": 2,
-      "community_name": "Agent Package Config",
-      "norm_label": "version"
-    },
-    {
-      "label": "private",
-      "file_type": "code",
-      "source_file": "agent/package.json",
-      "source_location": "L4",
-      "_origin": "ast",
-      "id": "agent_package_private",
-      "community": 2,
-      "community_name": "Agent Package Config",
-      "norm_label": "private"
-    },
-    {
-      "label": "type",
-      "file_type": "code",
-      "source_file": "agent/package.json",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "agent_package_type",
-      "community": 2,
-      "community_name": "Agent Package Config",
-      "norm_label": "type"
-    },
-    {
-      "label": "description",
-      "file_type": "code",
-      "source_file": "agent/package.json",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "agent_package_description",
-      "community": 2,
-      "community_name": "Agent Package Config",
-      "norm_label": "description"
-    },
-    {
-      "label": "scripts",
-      "file_type": "code",
-      "source_file": "agent/package.json",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "agent_package_scripts",
-      "community": 2,
-      "community_name": "Agent Package Config",
-      "norm_label": "scripts"
-    },
-    {
-      "label": "start",
-      "file_type": "code",
-      "source_file": "agent/package.json",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "agent_package_scripts_start",
-      "community": 2,
-      "community_name": "Agent Package Config",
-      "norm_label": "start"
-    },
-    {
-      "label": "generate",
-      "file_type": "code",
-      "source_file": "agent/package.json",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "agent_package_scripts_generate",
-      "community": 2,
-      "community_name": "Agent Package Config",
-      "norm_label": "generate"
-    },
-    {
-      "label": "test",
-      "file_type": "code",
-      "source_file": "agent/package.json",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "agent_package_scripts_test",
-      "community": 2,
-      "community_name": "Agent Package Config",
-      "norm_label": "test"
-    },
-    {
-      "label": "engines",
-      "file_type": "code",
-      "source_file": "agent/package.json",
-      "source_location": "L12",
-      "_origin": "ast",
-      "id": "agent_package_engines",
-      "community": 2,
-      "community_name": "Agent Package Config",
-      "norm_label": "engines"
-    },
-    {
-      "label": "node",
-      "file_type": "code",
-      "source_file": "agent/package.json",
-      "source_location": "L13",
-      "_origin": "ast",
-      "id": "agent_package_engines_node",
-      "community": 2,
-      "community_name": "Agent Package Config",
-      "norm_label": "node"
-    },
-    {
-      "label": "dependencies",
-      "file_type": "code",
-      "source_file": "agent/package.json",
-      "source_location": "L15",
-      "_origin": "ast",
-      "id": "agent_package_dependencies",
-      "community": 2,
-      "community_name": "Agent Package Config",
-      "norm_label": "dependencies"
-    },
-    {
-      "label": "nodemailer",
-      "file_type": "code",
-      "source_file": "agent/package.json",
-      "source_location": "L16",
-      "_origin": "ast",
-      "id": "agent_package_dependencies_nodemailer",
-      "community": 2,
-      "community_name": "Agent Package Config",
-      "norm_label": "nodemailer"
-    },
-    {
-      "label": "nodemailer",
-      "file_type": "concept",
-      "source_file": "agent/package.json",
-      "source_location": "L16",
-      "_origin": "ast",
-      "id": "nodemailer",
-      "community": 2,
-      "community_name": "Agent Package Config",
-      "norm_label": "nodemailer"
-    },
-    {
       "label": "build_content_graph.py",
       "file_type": "code",
       "source_file": "agent/scripts/build_content_graph.py",
@@ -461,8 +296,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "agent_src_graphrag_test",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "graphrag.test.mjs"
     },
     {
@@ -472,8 +307,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_sample",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "sample"
     },
     {
@@ -483,8 +318,8 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_extraction_idmap",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "{ extraction, idmap }"
     },
     {
@@ -494,8 +329,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_fallback",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "fallback"
     },
     {
@@ -505,8 +340,8 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_basescore",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "basescore"
     },
     {
@@ -516,8 +351,8 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_boostedscore",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "boostedscore"
     },
     {
@@ -527,8 +362,8 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_tmp",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "tmp"
     },
     {
@@ -538,8 +373,8 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_bycategory_ranked_report",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "{ bycategory: ranked, report }"
     },
     {
@@ -549,8 +384,8 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_serialized",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "serialized"
     },
     {
@@ -1264,8 +1099,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "agent_src_smtp",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "smtp.mjs"
     },
     {
@@ -1275,8 +1110,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "agent_src_smtp_requireenv",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "requireenv()"
     },
     {
@@ -1286,8 +1121,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "agent_src_smtp_optionalenv",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "optionalenv()"
     },
     {
@@ -1297,8 +1132,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "agent_src_smtp_parsebool",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "parsebool()"
     },
     {
@@ -1308,8 +1143,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "agent_src_smtp_sleep",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "sleep()"
     },
     {
@@ -1319,8 +1154,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "agent_src_smtp_istransientsmtperror",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "istransientsmtperror()"
     },
     {
@@ -1330,8 +1165,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "agent_src_smtp_getsmtpconfig",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "getsmtpconfig()"
     },
     {
@@ -1341,8 +1176,8 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "agent_src_smtp_createtransport",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "createtransport()"
     },
     {
@@ -1352,8 +1187,8 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "agent_src_smtp_sendsmtpemail",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "sendsmtpemail()"
     },
     {
@@ -1396,8 +1231,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "agent_src_validate_insight_terms",
-      "community": 10,
-      "community_name": "graphrag.mjs",
+      "community": 6,
+      "community_name": "Validate & Rank",
       "norm_label": "insight_terms"
     },
     {
@@ -1690,7 +1525,7 @@
       "label": "Role B \u2014 Content GraphRAG (inside the monthly digest)",
       "file_type": "document",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L179",
+      "source_location": "L180",
       "_origin": "ast",
       "id": "docs_architecture_role_b_content_graphrag_inside_the_monthly_digest",
       "community": 12,
@@ -1701,7 +1536,7 @@
       "label": "5. Issue archive",
       "file_type": "document",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L217",
+      "source_location": "L218",
       "_origin": "ast",
       "id": "docs_architecture_5_issue_archive",
       "community": 12,
@@ -1712,7 +1547,7 @@
       "label": "6. Trust boundaries & secrets",
       "file_type": "document",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L237",
+      "source_location": "L238",
       "_origin": "ast",
       "id": "docs_architecture_6_trust_boundaries_secrets",
       "community": 12,
@@ -1723,7 +1558,7 @@
       "label": "7. Related docs",
       "file_type": "document",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L249",
+      "source_location": "L250",
       "_origin": "ast",
       "id": "docs_architecture_7_related_docs",
       "community": 12,
@@ -1734,7 +1569,7 @@
       "label": "8. Mental model (one paragraph)",
       "file_type": "document",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L261",
+      "source_location": "L262",
       "_origin": "ast",
       "id": "docs_architecture_8_mental_model_one_paragraph",
       "community": 12,
@@ -1886,161 +1721,6 @@
     }
   ],
   "links": [
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agent/package.json",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agent_package",
-      "target": "agent_package_dependencies",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agent/package.json",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agent_package",
-      "target": "agent_package_description",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agent/package.json",
-      "source_location": "L12",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agent_package",
-      "target": "agent_package_engines",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agent/package.json",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agent_package",
-      "target": "agent_package_name",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agent/package.json",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agent_package",
-      "target": "agent_package_private",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agent/package.json",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agent_package",
-      "target": "agent_package_scripts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agent/package.json",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agent_package",
-      "target": "agent_package_type",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agent/package.json",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agent_package",
-      "target": "agent_package_version",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agent/package.json",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agent_package_scripts",
-      "target": "agent_package_scripts_generate",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agent/package.json",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agent_package_scripts",
-      "target": "agent_package_scripts_start",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agent/package.json",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agent_package_scripts",
-      "target": "agent_package_scripts_test",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agent/package.json",
-      "source_location": "L13",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agent_package_engines",
-      "target": "agent_package_engines_node",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agent/package.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agent_package_dependencies",
-      "target": "agent_package_dependencies_nodemailer",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "source_file": "agent/package.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "context": "import",
-      "_origin": "ast",
-      "source": "agent_package_dependencies_nodemailer",
-      "target": "nodemailer",
-      "confidence_score": 1.0
-    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -4809,7 +4489,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L257",
+      "source_location": "L258",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_architecture",
@@ -4963,7 +4643,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L217",
+      "source_location": "L218",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_architecture_hive_digest_architecture_graphify_integration",
@@ -4974,7 +4654,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L237",
+      "source_location": "L238",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_architecture_hive_digest_architecture_graphify_integration",
@@ -4985,7 +4665,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L249",
+      "source_location": "L250",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_architecture_hive_digest_architecture_graphify_integration",
@@ -4996,7 +4676,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L261",
+      "source_location": "L262",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_architecture_hive_digest_architecture_graphify_integration",
@@ -5029,7 +4709,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L179",
+      "source_location": "L180",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_architecture_4_how_graphify_is_integrated",
@@ -5098,5 +4778,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "1b0ac567802d098c06dae26f3f130ab5644aeba6"
+  "built_at_commit": "7caa7017b8385dc9b0cab4b689626599f04b1aa5"
 }
