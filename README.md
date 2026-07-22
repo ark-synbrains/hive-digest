@@ -129,7 +129,8 @@ flowchart TB
     G[enrichDigestWithGraphRag<br/>content knowledge graph]
     V[validateAndRankDigest<br/>insight score + GraphRAG boost]
     B[buildIssue → sanitizeIssue]
-    S[sendSmtpEmail / dry-run out/]
+    A[Archive digests/YYYY-MM-DD/<br/>+ agent/out scratch]
+    S[sendSmtpEmail or stop on dry-run]
   end
 
   subgraph contentGraph [Content GraphRAG per run]
@@ -155,7 +156,8 @@ flowchart TB
   X --> V
   G --> V
   V --> B
-  B --> S
+  B --> A
+  A --> S
 
   Codebase[Repo code + docs] --> CG
   CG --> CQ
@@ -236,9 +238,9 @@ Merged PR feature branches are deleted automatically by
 
 ```bash
 npm install --prefix agent
-# preview only (writes agent/out/ + ranking.json)
+# preview only (writes digests/YYYY-MM-DD/ + agent/out/)
 npm run generate --prefix agent
-# send for real (needs SMTP secrets below)
+# send for real (needs SMTP secrets below; also archives under digests/)
 npm start --prefix agent
 ```
 
@@ -257,9 +259,11 @@ Optional: `SMTP_SECURE`, `SMTP_REPLY_TO`
 
 ```
 hive-digest.html                    Claude.ai browser artifact UI
+digests/                            tracked archive of generated issues
+  YYYY-MM-DD/                       hive-digest.html/.txt + ranking/meta JSON
 agent/                              Node sender (npm: hive-digest-agent)
   package.json                      package name hive-digest-agent
-  src/run.mjs                       orchestration + GraphRAG + SMTP send
+  src/run.mjs                       orchestration + GraphRAG + archive + SMTP
   src/research.mjs                  HN + arXiv research (OpenAlex / HN fallback)
   src/graphrag.mjs                  content GraphRAG → ranking boosts
   src/validate.mjs                  schema validation + insight scoring
@@ -267,13 +271,14 @@ agent/                              Node sender (npm: hive-digest-agent)
   src/sanitize.mjs                  sanitizeDigestText / sanitizeIssue
   src/smtp.mjs                      nodemailer transport
   scripts/build_content_graph.py    Graphify build/cluster for content boosts
+  out/                              local scratch copies (gitignored)
 graphify-out/                       codebase knowledge graph (graphify)
   graph.html                        interactive visualization
   graph.json                        queryable graph data
   GRAPH_REPORT.md                   communities / god nodes / questions
 .agents/skills/graphify/            /graphify Agent Skill + references
-.graphifyignore                     exclude skill/rule files from the graph
-.github/workflows/hive-digest.yml   monthly SMTP send (Actions)
+.graphifyignore                     exclude skill/rule/digest files from the graph
+.github/workflows/hive-digest.yml   monthly SMTP send + commit digests/
 .github/workflows/graphify.yml      rebuild graphify-out on code pushes
 .cursor/automations/hive-digest.md  Cursor Automation recipe (monthly send)
 .cursor/rules/graphify.mdc          always-on Cursor graphify rule

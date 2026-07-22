@@ -1,0 +1,24 @@
+{
+  "subject": "Hive Digest - 22 Jul 2026",
+  "date": "22 Jul 2026",
+  "dateStamp": "2026-07-22",
+  "dryRun": false,
+  "entries": 9,
+  "sectionOrder": [
+    "algorithm",
+    "model",
+    "product"
+  ],
+  "messageId": "<4cac918d-f12a-c231-d79e-cc0d763cc05c@synbrains.ai>",
+  "recipients": 1,
+  "archivedAt": "2026-07-22T08:40:01.250Z",
+  "rankingKept": 9,
+  "rankingDropped": 0,
+  "graphRag": {
+    "enabled": true,
+    "engine": "graphify",
+    "boosted": 23,
+    "nodes": 60,
+    "edges": 265
+  }
+}

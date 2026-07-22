@@ -28,7 +28,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: hive-digest
@@ -74,3 +74,16 @@ jobs:
           # Content GraphRAG is on by default; set repository variable HIVE_GRAPHRAG=0 to disable.
           HIVE_GRAPHRAG: ${{ vars.HIVE_GRAPHRAG || '1' }}
         run: npm start --prefix agent
+
+      - name: Commit archived issue under digests/
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add digests/ agent/state.json
+          if git diff --cached --quiet; then
+            echo "No digest archive changes to commit."
+            exit 0
+          fi
+          git commit -m "chore(digests): archive Hive Digest issue"
+          git push

@@ -18,7 +18,7 @@ and emails a Hive Digest issue via SMTP. It is **not** a Cursor Cloud Agent.
 | `state.json` | Local send history (gitignored patterns may apply in CI) |
 
 Pipeline: `researchDigest` → `enrichDigestWithGraphRag` → `validateAndRankDigest`
-→ `buildIssue` → `sanitizeIssue` → SMTP.
+→ `buildIssue` → `sanitizeIssue` → archive `digests/` → SMTP.
 
 Set `HIVE_GRAPHRAG=0` to skip the content-graph step. Install `graphifyy` on the
 runner for the preferred Graphify engine; otherwise a Node fallback is used.
@@ -35,9 +35,14 @@ Monthly automation entrypoints:
 ```bash
 npm install
 npm test           # research + digest pipeline regression tests
-npm run generate   # dry-run → agent/out/
-npm start          # research + send (needs SMTP_* + NEWSLETTER_TO_EMAILS)
+npm run generate   # dry-run → digests/YYYY-MM-DD/ + agent/out/
+npm start          # research + archive + send (needs SMTP_* + NEWSLETTER_TO_EMAILS)
 ```
+
+Every generated issue (dry-run or send) is written to **`digests/YYYY-MM-DD/`** in the
+repo (`hive-digest.html`, `.txt`, ranking/GraphRAG/meta JSON). Scratch copies also
+go to `agent/out/` (gitignored). Monthly GitHub Actions commits new `digests/`
+folders after a successful send.
 
 
 `NEWSLETTER_TO_EMAILS` is the recipient-list secret name (historical); the

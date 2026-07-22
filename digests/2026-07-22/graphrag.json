@@ -1,0 +1,12 @@
+{
+  "enabled": true,
+  "engine": "graphify",
+  "boosted": 23,
+  "outDir": "/workspace/agent/out/digest-graph/2026-07-22",
+  "nodes": 60,
+  "edges": 265,
+  "ok": true,
+  "communities": 13,
+  "graph": "/workspace/agent/out/digest-graph/2026-07-22/graph.json",
+  "boosts": "/workspace/agent/out/digest-graph/2026-07-22/boosts.json"
+}

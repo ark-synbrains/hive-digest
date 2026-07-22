@@ -5,3 +5,5 @@
 agent/out/
 agent/digest-corpus/
 agent/digest-graph/
+# Issued newsletter HTML/text archives (tracked in git, not part of code graph)
+digests/

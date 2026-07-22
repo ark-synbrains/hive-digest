@@ -1,0 +1,50 @@
+Hive Digest
+22 Jul 2026
+https://hive.synbrains.ai/
+
+AI & technology insights from Synbrains - models, algorithms, and product releases.
+
+## algorithms & systems
+
+Grok Build is open source
+Community discussion of a notable release or technical update: Grok Build is open source. Engineers are weighing trade-offs, adoption path, and whether it changes production stacks.
+Source: Hacker News - https://github.com/xai-org/grok-build
+
+Show HN: Imagin Raw - A 9MB Open-Source Alternative to Adobe Bridge for Mac
+Community discussion of a notable release or technical update: Show HN: Imagin Raw - A 9MB Open-Source Alternative to Adobe Bridge for Mac. Engineers are weighing trade-offs, adoption path, and whether it changes production stacks.
+Source: Hacker News - https://github.com/cristibaluta/Imagin-Raw
+
+Open-source memory for coding agents, synced over SSH
+Community discussion of a notable release or technical update: Open-source memory for coding agents, synced over SSH. Engineers are weighing trade-offs, adoption path, and whether it changes production stacks.
+Source: Hacker News - https://github.com/vshulcz/deja-vu/
+
+## models & research
+
+Can LLMs Perform Deep Technical Comprehension of Computer Architecture Papers
+Community discussion of a notable release or technical update: Can LLMs Perform Deep Technical Comprehension of Computer Architecture Papers. Engineers are weighing trade-offs, adoption path, and whether it changes production stacks.
+Source: Hacker News - https://arxiv.org/abs/2607.11859
+
+Detecting LLM-Generated Texts with "Classical" Machine Learning
+Community discussion of a notable release or technical update: Detecting LLM-Generated Texts with "Classical" Machine Learning. Engineers are weighing trade-offs, adoption path, and whether it changes production stacks.
+Source: Hacker News - https://blog.lyc8503.net/en/post/llm-classifier/
+
+1-Bit LLM in the Browser
+Community discussion of a notable release or technical update: 1-Bit LLM in the Browser. Engineers are weighing trade-offs, adoption path, and whether it changes production stacks.
+Source: Hacker News - https://huggingface.co/spaces/webml-community/bonsai-webgpu
+
+## product & company releases
+
+Show HN: misa77 - a codec that decodes 2x faster than LZ4 (at better ratios)
+I've spent the last few months working on this codec. It has the following characteristics: - SOTA decompression throughput in its ratio class - Decent ratios (comparable to LZ4 at high effort levels) - Slow compression Most of the gains can be attributed to...
+Source: Hacker News - https://github.com/welcome-to-the-sunny-side/misa77
+
+Show HN: Immersive Gaussian Splat tour of grace cathedral, San Francisco
+Community discussion of a notable release or technical update: Show HN: Immersive Gaussian Splat tour of grace cathedral, San Francisco. Engineers are weighing trade-offs, adoption path, and whether it changes production stacks.
+Source: Hacker News - https://vincentwoo.com/3d/grace_cathedral/
+
+Show HN: Watch bots interact with an SSH honeypot in real time
+Community discussion of a notable release or technical update: Show HN: Watch bots interact with an SSH honeypot in real time. Engineers are weighing trade-offs, adoption path, and whether it changes production stacks.
+Source: Hacker News - https://honeypotlive.cc/
+
+- Hive Digest - Synbrains
+https://hive.synbrains.ai/

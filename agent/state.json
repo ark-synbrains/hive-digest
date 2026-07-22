@@ -1,6 +1,6 @@
 {
-  "runsCompleted": 3,
-  "lastSentAt": "2026-07-22T06:31:21.612Z",
+  "runsCompleted": 5,
+  "lastSentAt": "2026-07-22T08:40:01.251Z",
   "history": [
     {
       "date": "Mon Jul 20 2026",
@@ -39,6 +39,37 @@
       ],
       "rankingKept": 9,
       "rankingDropped": 0
+    },
+    {
+      "date": "22 Jul 2026",
+      "dateStamp": "2026-07-22",
+      "subject": "Hive Digest - 22 Jul 2026",
+      "messageId": "<616b1544-d183-fb29-db35-9f51080a86c8@synbrains.ai>",
+      "sentAt": "2026-07-22T08:35:58.294Z",
+      "recipients": 1,
+      "sectionOrder": [
+        "algorithm",
+        "model",
+        "product"
+      ],
+      "rankingKept": 9,
+      "rankingDropped": 0
+    },
+    {
+      "date": "22 Jul 2026",
+      "dateStamp": "2026-07-22",
+      "subject": "Hive Digest - 22 Jul 2026",
+      "messageId": "<4cac918d-f12a-c231-d79e-cc0d763cc05c@synbrains.ai>",
+      "sentAt": "2026-07-22T08:40:01.251Z",
+      "recipients": 1,
+      "sectionOrder": [
+        "algorithm",
+        "model",
+        "product"
+      ],
+      "rankingKept": 9,
+      "rankingDropped": 0,
+      "archive": "digests/2026-07-22/"
     }
   ]
 }

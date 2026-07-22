@@ -1,0 +1,65 @@
+{
+  "kept": 9,
+  "dropped": 0,
+  "categories": {
+    "model": {
+      "count": 3,
+      "avgInsightScore": 71.7,
+      "order": [
+        {
+          "headline": "Can LLMs Perform Deep Technical Comprehension of Computer Architecture Papers",
+          "insightScore": 77
+        },
+        {
+          "headline": "Detecting LLM-Generated Texts with “Classical” Machine Learning",
+          "insightScore": 70
+        },
+        {
+          "headline": "1-Bit LLM in the Browser",
+          "insightScore": 68
+        }
+      ]
+    },
+    "algorithm": {
+      "count": 3,
+      "avgInsightScore": 77.3,
+      "order": [
+        {
+          "headline": "Grok Build is open source",
+          "insightScore": 80
+        },
+        {
+          "headline": "Show HN: Imagin Raw – A 9MB Open-Source Alternative to Adobe Bridge for Mac",
+          "insightScore": 77
+        },
+        {
+          "headline": "Open-source memory for coding agents, synced over SSH",
+          "insightScore": 75
+        }
+      ]
+    },
+    "product": {
+      "count": 3,
+      "avgInsightScore": 71.3,
+      "order": [
+        {
+          "headline": "Show HN: misa77 - a codec that decodes 2x faster than LZ4 (at better ratios)",
+          "insightScore": 84
+        },
+        {
+          "headline": "Show HN: Immersive Gaussian Splat tour of grace cathedral, San Francisco",
+          "insightScore": 65
+        },
+        {
+          "headline": "Show HN: Watch bots interact with an SSH honeypot in real time",
+          "insightScore": 65
+        }
+      ]
+    }
+  },
+  "sectionOrder": [
+    "algorithm",
+    "model",
+    "product"
+  ]
+}
