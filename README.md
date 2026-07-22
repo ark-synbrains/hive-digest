@@ -7,6 +7,10 @@ and written up with a source link.
 
 Brand: **Hive by Synbrains** (accents `#EE462F` → `#7610C7`).
 
+**Architecture:** see [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the
+overall system design, pipeline flowchart, and how Graphify is integrated
+(codebase map + content GraphRAG).
+
 ## Naming (read this first)
 
 | Name | Meaning |
@@ -113,6 +117,8 @@ commits refreshed `graphify-out/` artifacts when the graph changes.
 Manual runs: Actions → **graphify** → **Run workflow**.
 
 ### Architecture flowchart
+
+> Full write-up: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
 
 Two Graphify roles sit around the product: a **codebase map** for agents/humans,
 and a **content GraphRAG** step inside each monthly send.
@@ -283,5 +289,6 @@ graphify-out/                       codebase knowledge graph (graphify)
 .cursor/automations/hive-digest.md  Cursor Automation recipe (monthly send)
 .cursor/rules/graphify.mdc          always-on Cursor graphify rule
 .gitattributes                      graph.json union-merge driver
+docs/ARCHITECTURE.md                system architecture + Graphify integration
 README.md
 ```
