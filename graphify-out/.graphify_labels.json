@@ -1,1 +1,21 @@
-{"0": "Research Resilience", "1": "Automation & Delivery", "2": "Agent Package Config", "3": "Render & Sanitize", "4": "Run Orchestration", "5": "Hive Branding & UI", "6": "Validate & Rank", "7": "SMTP Transport", "8": "Research Tests", "9": "Branch Cleanup CI"}
+{
+  "0": "Research Resilience",
+  "1": "Automation & Delivery",
+  "2": "Agent Package Config",
+  "3": "Render & Sanitize",
+  "4": "Run Orchestration",
+  "5": "Hive Branding & UI",
+  "6": "Validate & Rank",
+  "7": "SMTP Transport",
+  "8": "Research Tests",
+  "9": "Branch Cleanup CI",
+  "10": "/graphify",
+  "11": "graphify reference: extra exports and benchmark",
+  "12": "graphify reference: query, path, explain",
+  "13": "graphify reference: add a URL and watch a folder",
+  "14": "graphify reference: commit hook and native AGENTS.md integration",
+  "15": "graphify reference: incremental update and cluster-only",
+  "16": "graphify reference: GitHub clone and cross-repo merge",
+  "17": "graphify reference: transcribe video and audio",
+  "18": "extraction-spec.md"
+}
