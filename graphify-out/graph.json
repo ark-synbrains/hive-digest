@@ -48,675 +48,15 @@
   },
   "nodes": [
     {
-      "label": "SKILL.md",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill",
-      "community": 10,
-      "community_name": "/graphify",
-      "norm_label": "skill.md"
-    },
-    {
-      "label": "/graphify",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_graphify",
-      "community": 10,
-      "community_name": "/graphify",
-      "norm_label": "/graphify"
-    },
-    {
-      "label": "Usage",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L10",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_usage",
-      "community": 10,
-      "community_name": "/graphify",
-      "norm_label": "usage"
-    },
-    {
-      "label": "What graphify is for",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L45",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_what_graphify_is_for",
-      "community": 10,
-      "community_name": "/graphify",
-      "norm_label": "what graphify is for"
-    },
-    {
-      "label": "What You Must Do When Invoked",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L49",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_what_you_must_do_when_invoked",
-      "community": 7,
-      "community_name": "SMTP Transport",
-      "norm_label": "what you must do when invoked"
-    },
-    {
-      "label": "Step 0 - GitHub repos and multi-path merge (only if a URL or several paths)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L61",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_step_0_github_repos_and_multi_path_merge_only_if_a_url_or_several_paths",
-      "community": 7,
-      "community_name": "SMTP Transport",
-      "norm_label": "step 0 - github repos and multi-path merge (only if a url or several paths)"
-    },
-    {
-      "label": "Step 1 - Ensure graphify is installed",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L65",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_step_1_ensure_graphify_is_installed",
-      "community": 7,
-      "community_name": "SMTP Transport",
-      "norm_label": "step 1 - ensure graphify is installed"
-    },
-    {
-      "label": "Step 2 - Detect files",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L107",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_step_2_detect_files",
-      "community": 7,
-      "community_name": "SMTP Transport",
-      "norm_label": "step 2 - detect files"
-    },
-    {
-      "label": "Step 2.5 - Video and audio (only if video files detected)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L144",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_step_2_5_video_and_audio_only_if_video_files_detected",
-      "community": 7,
-      "community_name": "SMTP Transport",
-      "norm_label": "step 2.5 - video and audio (only if video files detected)"
-    },
-    {
-      "label": "Step 3 - Extract entities and relationships",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L148",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_step_3_extract_entities_and_relationships",
-      "community": 7,
-      "community_name": "SMTP Transport",
-      "norm_label": "step 3 - extract entities and relationships"
-    },
-    {
-      "label": "Part A - Structural extraction for code files",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L167",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_part_a_structural_extraction_for_code_files",
-      "community": 7,
-      "community_name": "SMTP Transport",
-      "norm_label": "part a - structural extraction for code files"
-    },
-    {
-      "label": "Part B - Semantic extraction (parallel subagents)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L193",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_part_b_semantic_extraction_parallel_subagents",
-      "community": 7,
-      "community_name": "SMTP Transport",
-      "norm_label": "part b - semantic extraction (parallel subagents)"
-    },
-    {
-      "label": "Part C - Merge AST + semantic into final extraction",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L353",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_part_c_merge_ast_semantic_into_final_extraction",
-      "community": 7,
-      "community_name": "SMTP Transport",
-      "norm_label": "part c - merge ast + semantic into final extraction"
-    },
-    {
-      "label": "Step 4 - Build graph, cluster, analyze, generate outputs",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L387",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_step_4_build_graph_cluster_analyze_generate_outputs",
-      "community": 7,
-      "community_name": "SMTP Transport",
-      "norm_label": "step 4 - build graph, cluster, analyze, generate outputs"
-    },
-    {
-      "label": "Step 4.5 - Graph health check (read-only integrity gate)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L450",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_step_4_5_graph_health_check_read_only_integrity_gate",
-      "community": 7,
-      "community_name": "SMTP Transport",
-      "norm_label": "step 4.5 - graph health check (read-only integrity gate)"
-    },
-    {
-      "label": "Step 5 - Label communities",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L476",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_step_5_label_communities",
-      "community": 7,
-      "community_name": "SMTP Transport",
-      "norm_label": "step 5 - label communities"
-    },
-    {
-      "label": "Step 6 - Generate Obsidian vault (opt-in) + HTML",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L517",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_step_6_generate_obsidian_vault_opt_in_html",
-      "community": 7,
-      "community_name": "SMTP Transport",
-      "norm_label": "step 6 - generate obsidian vault (opt-in) + html"
-    },
-    {
-      "label": "Steps 6b-8 - Wiki, Neo4j, FalkorDB, SVG, GraphML, MCP, benchmark (only on their flags)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L537",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_steps_6b_8_wiki_neo4j_falkordb_svg_graphml_mcp_benchmark_only_on_their_flags",
-      "community": 7,
-      "community_name": "SMTP Transport",
-      "norm_label": "steps 6b-8 - wiki, neo4j, falkordb, svg, graphml, mcp, benchmark (only on their flags)"
-    },
-    {
-      "label": "Step 9 - Save manifest, update cost tracker, clean up, and report",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L543",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_step_9_save_manifest_update_cost_tracker_clean_up_and_report",
-      "community": 7,
-      "community_name": "SMTP Transport",
-      "norm_label": "step 9 - save manifest, update cost tracker, clean up, and report"
-    },
-    {
-      "label": "Interpreter guard for subcommands",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L645",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_interpreter_guard_for_subcommands",
-      "community": 10,
-      "community_name": "/graphify",
-      "norm_label": "interpreter guard for subcommands"
-    },
-    {
-      "label": "For --update and --cluster-only",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L663",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_for_update_and_cluster_only",
-      "community": 10,
-      "community_name": "/graphify",
-      "norm_label": "for --update and --cluster-only"
-    },
-    {
-      "label": "For /graphify query",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L669",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_for_graphify_query",
-      "community": 10,
-      "community_name": "/graphify",
-      "norm_label": "for /graphify query"
-    },
-    {
-      "label": "For /graphify add and --watch",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L681",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_for_graphify_add_and_watch",
-      "community": 10,
-      "community_name": "/graphify",
-      "norm_label": "for /graphify add and --watch"
-    },
-    {
-      "label": "For the commit hook and native AGENTS.md integration",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L687",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_for_the_commit_hook_and_native_agents_md_integration",
-      "community": 10,
-      "community_name": "/graphify",
-      "norm_label": "for the commit hook and native agents.md integration"
-    },
-    {
-      "label": "Honesty Rules",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L693",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_skill_honesty_rules",
-      "community": 10,
-      "community_name": "/graphify",
-      "norm_label": "honesty rules"
-    },
-    {
-      "label": "add-watch.md",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/add-watch.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_add_watch",
-      "community": 13,
-      "community_name": "graphify reference: add a URL and watch a folder",
-      "norm_label": "add-watch.md"
-    },
-    {
-      "label": "graphify reference: add a URL and watch a folder",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/add-watch.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_add_watch_graphify_reference_add_a_url_and_watch_a_folder",
-      "community": 13,
-      "community_name": "graphify reference: add a URL and watch a folder",
-      "norm_label": "graphify reference: add a url and watch a folder"
-    },
-    {
-      "label": "For /graphify add",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/add-watch.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_add_watch_for_graphify_add",
-      "community": 13,
-      "community_name": "graphify reference: add a URL and watch a folder",
-      "norm_label": "for /graphify add"
-    },
-    {
-      "label": "For --watch",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/add-watch.md",
-      "source_location": "L39",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_add_watch_for_watch",
-      "community": 13,
-      "community_name": "graphify reference: add a URL and watch a folder",
-      "norm_label": "for --watch"
-    },
-    {
-      "label": "exports.md",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_exports",
-      "community": 11,
-      "community_name": "graphify reference: extra exports and benchmark",
-      "norm_label": "exports.md"
-    },
-    {
-      "label": "graphify reference: extra exports and benchmark",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_exports_graphify_reference_extra_exports_and_benchmark",
-      "community": 11,
-      "community_name": "graphify reference: extra exports and benchmark",
-      "norm_label": "graphify reference: extra exports and benchmark"
-    },
-    {
-      "label": "Step 6b - Wiki (only if --wiki flag)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_exports_step_6b_wiki_only_if_wiki_flag",
-      "community": 11,
-      "community_name": "graphify reference: extra exports and benchmark",
-      "norm_label": "step 6b - wiki (only if --wiki flag)"
-    },
-    {
-      "label": "Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L15",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_exports_step_7_neo4j_export_only_if_neo4j_or_neo4j_push_flag",
-      "community": 11,
-      "community_name": "graphify reference: extra exports and benchmark",
-      "norm_label": "step 7 - neo4j export (only if --neo4j or --neo4j-push flag)"
-    },
-    {
-      "label": "Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L31",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_exports_step_7a_falkordb_export_only_if_falkordb_or_falkordb_push_flag",
-      "community": 11,
-      "community_name": "graphify reference: extra exports and benchmark",
-      "norm_label": "step 7a - falkordb export (only if --falkordb or --falkordb-push flag)"
-    },
-    {
-      "label": "Step 7b - SVG export (only if --svg flag)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L47",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_exports_step_7b_svg_export_only_if_svg_flag",
-      "community": 11,
-      "community_name": "graphify reference: extra exports and benchmark",
-      "norm_label": "step 7b - svg export (only if --svg flag)"
-    },
-    {
-      "label": "Step 7c - GraphML export (only if --graphml flag)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L53",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_exports_step_7c_graphml_export_only_if_graphml_flag",
-      "community": 11,
-      "community_name": "graphify reference: extra exports and benchmark",
-      "norm_label": "step 7c - graphml export (only if --graphml flag)"
-    },
-    {
-      "label": "Step 7d - MCP server (only if --mcp flag)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L59",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_exports_step_7d_mcp_server_only_if_mcp_flag",
-      "community": 11,
-      "community_name": "graphify reference: extra exports and benchmark",
-      "norm_label": "step 7d - mcp server (only if --mcp flag)"
-    },
-    {
-      "label": "Step 8 - Token reduction benchmark (only if total_words > 5000)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L79",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_exports_step_8_token_reduction_benchmark_only_if_total_words_5000",
-      "community": 11,
-      "community_name": "graphify reference: extra exports and benchmark",
-      "norm_label": "step 8 - token reduction benchmark (only if total_words > 5000)"
-    },
-    {
-      "label": "extraction-spec.md",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/extraction-spec.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_extraction_spec",
-      "community": 18,
-      "community_name": "extraction-spec.md",
-      "norm_label": "extraction-spec.md"
-    },
-    {
-      "label": "graphify reference: extraction subagent prompt",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/extraction-spec.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_extraction_spec_graphify_reference_extraction_subagent_prompt",
-      "community": 18,
-      "community_name": "extraction-spec.md",
-      "norm_label": "graphify reference: extraction subagent prompt"
-    },
-    {
-      "label": "github-and-merge.md",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/github-and-merge.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_github_and_merge",
-      "community": 16,
-      "community_name": "graphify reference: GitHub clone and cross-repo merge",
-      "norm_label": "github-and-merge.md"
-    },
-    {
-      "label": "graphify reference: GitHub clone and cross-repo merge",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/github-and-merge.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_github_and_merge_graphify_reference_github_clone_and_cross_repo_merge",
-      "community": 16,
-      "community_name": "graphify reference: GitHub clone and cross-repo merge",
-      "norm_label": "graphify reference: github clone and cross-repo merge"
-    },
-    {
-      "label": "Step 0 - Clone GitHub repo(s) (only if a GitHub URL was given)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/github-and-merge.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_github_and_merge_step_0_clone_github_repo_s_only_if_a_github_url_was_given",
-      "community": 16,
-      "community_name": "graphify reference: GitHub clone and cross-repo merge",
-      "norm_label": "step 0 - clone github repo(s) (only if a github url was given)"
-    },
-    {
-      "label": "hooks.md",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/hooks.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_hooks",
-      "community": 14,
-      "community_name": "graphify reference: commit hook and native AGENTS.md integration",
-      "norm_label": "hooks.md"
-    },
-    {
-      "label": "graphify reference: commit hook and native AGENTS.md integration",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/hooks.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_hooks_graphify_reference_commit_hook_and_native_agents_md_integration",
-      "community": 14,
-      "community_name": "graphify reference: commit hook and native AGENTS.md integration",
-      "norm_label": "graphify reference: commit hook and native agents.md integration"
-    },
-    {
-      "label": "For git commit hook",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/hooks.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_hooks_for_git_commit_hook",
-      "community": 14,
-      "community_name": "graphify reference: commit hook and native AGENTS.md integration",
-      "norm_label": "for git commit hook"
-    },
-    {
-      "label": "For native AGENTS.md integration",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/hooks.md",
-      "source_location": "L21",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_hooks_for_native_agents_md_integration",
-      "community": 14,
-      "community_name": "graphify reference: commit hook and native AGENTS.md integration",
-      "norm_label": "for native agents.md integration"
-    },
-    {
-      "label": "query.md",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/query.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_query",
-      "community": 12,
-      "community_name": "graphify reference: query, path, explain",
-      "norm_label": "query.md"
-    },
-    {
-      "label": "graphify reference: query, path, explain",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/query.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_query_graphify_reference_query_path_explain",
-      "community": 12,
-      "community_name": "graphify reference: query, path, explain",
-      "norm_label": "graphify reference: query, path, explain"
-    },
-    {
-      "label": "Step 0 \u2014 Constrained query expansion (REQUIRED before traversal)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/query.md",
-      "source_location": "L23",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_query_step_0_constrained_query_expansion_required_before_traversal",
-      "community": 12,
-      "community_name": "graphify reference: query, path, explain",
-      "norm_label": "step 0 \u2014 constrained query expansion (required before traversal)"
-    },
-    {
-      "label": "Step 1 \u2014 Traversal",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/query.md",
-      "source_location": "L61",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_query_step_1_traversal",
-      "community": 12,
-      "community_name": "graphify reference: query, path, explain",
-      "norm_label": "step 1 \u2014 traversal"
-    },
-    {
-      "label": "For /graphify path",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/query.md",
-      "source_location": "L186",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_query_for_graphify_path",
-      "community": 12,
-      "community_name": "graphify reference: query, path, explain",
-      "norm_label": "for /graphify path"
-    },
-    {
-      "label": "For /graphify explain",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/query.md",
-      "source_location": "L254",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_query_for_graphify_explain",
-      "community": 12,
-      "community_name": "graphify reference: query, path, explain",
-      "norm_label": "for /graphify explain"
-    },
-    {
-      "label": "transcribe.md",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/transcribe.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_transcribe",
-      "community": 17,
-      "community_name": "graphify reference: transcribe video and audio",
-      "norm_label": "transcribe.md"
-    },
-    {
-      "label": "graphify reference: transcribe video and audio",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/transcribe.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_transcribe_graphify_reference_transcribe_video_and_audio",
-      "community": 17,
-      "community_name": "graphify reference: transcribe video and audio",
-      "norm_label": "graphify reference: transcribe video and audio"
-    },
-    {
-      "label": "Step 2.5 - Transcribe video / audio files (only if video files detected)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/transcribe.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_transcribe_step_2_5_transcribe_video_audio_files_only_if_video_files_detected",
-      "community": 17,
-      "community_name": "graphify reference: transcribe video and audio",
-      "norm_label": "step 2.5 - transcribe video / audio files (only if video files detected)"
-    },
-    {
-      "label": "update.md",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/update.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_update",
-      "community": 15,
-      "community_name": "graphify reference: incremental update and cluster-only",
-      "norm_label": "update.md"
-    },
-    {
-      "label": "graphify reference: incremental update and cluster-only",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/update.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_update_graphify_reference_incremental_update_and_cluster_only",
-      "community": 15,
-      "community_name": "graphify reference: incremental update and cluster-only",
-      "norm_label": "graphify reference: incremental update and cluster-only"
-    },
-    {
-      "label": "For --update (incremental re-extraction)",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/update.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_update_for_update_incremental_re_extraction",
-      "community": 15,
-      "community_name": "graphify reference: incremental update and cluster-only",
-      "norm_label": "for --update (incremental re-extraction)"
-    },
-    {
-      "label": "For --cluster-only",
-      "file_type": "document",
-      "source_file": ".agents/skills/graphify/references/update.md",
-      "source_location": "L202",
-      "_origin": "ast",
-      "id": "agents_skills_graphify_references_update_for_cluster_only",
-      "community": 15,
-      "community_name": "graphify reference: incremental update and cluster-only",
-      "norm_label": "for --cluster-only"
-    },
-    {
       "label": "package.json",
       "file_type": "code",
       "source_file": "agent/package.json",
       "source_location": "L1",
       "_origin": "ast",
       "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "package.json",
-      "id": "agent_package",
-      "community_name": "Agent Package Config"
+      "id": "agent_package"
     },
     {
       "label": "name",
@@ -725,9 +65,9 @@
       "source_location": "L2",
       "_origin": "ast",
       "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "name",
-      "id": "agent_package_name",
-      "community_name": "Agent Package Config"
+      "id": "agent_package_name"
     },
     {
       "label": "version",
@@ -736,9 +76,9 @@
       "source_location": "L3",
       "_origin": "ast",
       "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "version",
-      "id": "agent_package_version",
-      "community_name": "Agent Package Config"
+      "id": "agent_package_version"
     },
     {
       "label": "private",
@@ -747,9 +87,9 @@
       "source_location": "L4",
       "_origin": "ast",
       "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "private",
-      "id": "agent_package_private",
-      "community_name": "Agent Package Config"
+      "id": "agent_package_private"
     },
     {
       "label": "type",
@@ -758,9 +98,9 @@
       "source_location": "L5",
       "_origin": "ast",
       "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "type",
-      "id": "agent_package_type",
-      "community_name": "Agent Package Config"
+      "id": "agent_package_type"
     },
     {
       "label": "description",
@@ -769,9 +109,9 @@
       "source_location": "L6",
       "_origin": "ast",
       "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "description",
-      "id": "agent_package_description",
-      "community_name": "Agent Package Config"
+      "id": "agent_package_description"
     },
     {
       "label": "scripts",
@@ -780,9 +120,9 @@
       "source_location": "L7",
       "_origin": "ast",
       "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "scripts",
-      "id": "agent_package_scripts",
-      "community_name": "Agent Package Config"
+      "id": "agent_package_scripts"
     },
     {
       "label": "start",
@@ -791,9 +131,9 @@
       "source_location": "L8",
       "_origin": "ast",
       "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "start",
-      "id": "agent_package_scripts_start",
-      "community_name": "Agent Package Config"
+      "id": "agent_package_scripts_start"
     },
     {
       "label": "generate",
@@ -802,9 +142,9 @@
       "source_location": "L9",
       "_origin": "ast",
       "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "generate",
-      "id": "agent_package_scripts_generate",
-      "community_name": "Agent Package Config"
+      "id": "agent_package_scripts_generate"
     },
     {
       "label": "test",
@@ -813,9 +153,9 @@
       "source_location": "L10",
       "_origin": "ast",
       "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "test",
-      "id": "agent_package_scripts_test",
-      "community_name": "Agent Package Config"
+      "id": "agent_package_scripts_test"
     },
     {
       "label": "engines",
@@ -824,9 +164,9 @@
       "source_location": "L12",
       "_origin": "ast",
       "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "engines",
-      "id": "agent_package_engines",
-      "community_name": "Agent Package Config"
+      "id": "agent_package_engines"
     },
     {
       "label": "node",
@@ -835,9 +175,9 @@
       "source_location": "L13",
       "_origin": "ast",
       "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "node",
-      "id": "agent_package_engines_node",
-      "community_name": "Agent Package Config"
+      "id": "agent_package_engines_node"
     },
     {
       "label": "dependencies",
@@ -846,9 +186,9 @@
       "source_location": "L15",
       "_origin": "ast",
       "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "dependencies",
-      "id": "agent_package_dependencies",
-      "community_name": "Agent Package Config"
+      "id": "agent_package_dependencies"
     },
     {
       "label": "nodemailer",
@@ -857,9 +197,9 @@
       "source_location": "L16",
       "_origin": "ast",
       "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "nodemailer",
-      "id": "agent_package_dependencies_nodemailer",
-      "community_name": "Agent Package Config"
+      "id": "agent_package_dependencies_nodemailer"
     },
     {
       "label": "nodemailer",
@@ -868,9 +208,9 @@
       "source_location": "L16",
       "_origin": "ast",
       "community": 2,
+      "community_name": "Agent Package Config",
       "norm_label": "nodemailer",
-      "id": "nodemailer",
-      "community_name": "Agent Package Config"
+      "id": "nodemailer"
     },
     {
       "label": "render.mjs",
@@ -879,9 +219,9 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 3,
+      "community_name": "Render & Sanitize",
       "norm_label": "render.mjs",
-      "id": "agent_src_render",
-      "community_name": "Render & Sanitize"
+      "id": "agent_src_render"
     },
     {
       "label": "HIVE",
@@ -890,9 +230,9 @@
       "source_location": "L8",
       "_origin": "ast",
       "community": 3,
+      "community_name": "Render & Sanitize",
       "norm_label": "hive",
-      "id": "agent_src_render_hive",
-      "community_name": "Render & Sanitize"
+      "id": "agent_src_render_hive"
     },
     {
       "label": "SECTION_META",
@@ -901,9 +241,9 @@
       "source_location": "L19",
       "_origin": "ast",
       "community": 3,
+      "community_name": "Render & Sanitize",
       "norm_label": "section_meta",
-      "id": "agent_src_render_section_meta",
-      "community_name": "Render & Sanitize"
+      "id": "agent_src_render_section_meta"
     },
     {
       "label": "DEFAULT_ORDER",
@@ -912,9 +252,9 @@
       "source_location": "L25",
       "_origin": "ast",
       "community": 3,
+      "community_name": "Render & Sanitize",
       "norm_label": "default_order",
-      "id": "agent_src_render_default_order",
-      "community_name": "Render & Sanitize"
+      "id": "agent_src_render_default_order"
     },
     {
       "label": "escapeHtml()",
@@ -923,9 +263,9 @@
       "source_location": "L27",
       "_origin": "ast",
       "community": 3,
+      "community_name": "Render & Sanitize",
       "norm_label": "escapehtml()",
-      "id": "agent_src_render_escapehtml",
-      "community_name": "Render & Sanitize"
+      "id": "agent_src_render_escapehtml"
     },
     {
       "label": "accentBar()",
@@ -934,9 +274,9 @@
       "source_location": "L35",
       "_origin": "ast",
       "community": 3,
+      "community_name": "Render & Sanitize",
       "norm_label": "accentbar()",
-      "id": "agent_src_render_accentbar",
-      "community_name": "Render & Sanitize"
+      "id": "agent_src_render_accentbar"
     },
     {
       "label": "buildIssue()",
@@ -945,9 +285,9 @@
       "source_location": "L39",
       "_origin": "ast",
       "community": 3,
+      "community_name": "Render & Sanitize",
       "norm_label": "buildissue()",
-      "id": "agent_src_render_buildissue",
-      "community_name": "Render & Sanitize"
+      "id": "agent_src_render_buildissue"
     },
     {
       "label": "research.mjs",
@@ -956,9 +296,9 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "research.mjs",
-      "id": "agent_src_research",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research"
     },
     {
       "label": "HOST_MIN_INTERVAL_MS",
@@ -967,9 +307,9 @@
       "source_location": "L23",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "host_min_interval_ms",
-      "id": "agent_src_research_host_min_interval_ms",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_host_min_interval_ms"
     },
     {
       "label": "hostState",
@@ -978,9 +318,9 @@
       "source_location": "L29",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "hoststate",
-      "id": "agent_src_research_hoststate",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_hoststate"
     },
     {
       "label": "sleep()",
@@ -989,9 +329,9 @@
       "source_location": "L32",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "sleep()",
-      "id": "agent_src_research_sleep",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_sleep"
     },
     {
       "label": "hostOf()",
@@ -1000,9 +340,9 @@
       "source_location": "L36",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "hostof()",
-      "id": "agent_src_research_hostof",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_hostof"
     },
     {
       "label": "minIntervalFor()",
@@ -1011,9 +351,9 @@
       "source_location": "L44",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "minintervalfor()",
-      "id": "agent_src_research_minintervalfor",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_minintervalfor"
     },
     {
       "label": "getHostState()",
@@ -1022,9 +362,9 @@
       "source_location": "L48",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "gethoststate()",
-      "id": "agent_src_research_gethoststate",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_gethoststate"
     },
     {
       "label": "noteRateLimit()",
@@ -1033,9 +373,9 @@
       "source_location": "L57",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "noteratelimit()",
-      "id": "agent_src_research_noteratelimit",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_noteratelimit"
     },
     {
       "label": "noteSuccess()",
@@ -1044,9 +384,9 @@
       "source_location": "L68",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "notesuccess()",
-      "id": "agent_src_research_notesuccess",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_notesuccess"
     },
     {
       "label": "assertCircuitClosed()",
@@ -1055,9 +395,9 @@
       "source_location": "L74",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "assertcircuitclosed()",
-      "id": "agent_src_research_assertcircuitclosed",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_assertcircuitclosed"
     },
     {
       "label": "withHostPace()",
@@ -1066,9 +406,9 @@
       "source_location": "L85",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "withhostpace()",
-      "id": "agent_src_research_withhostpace",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_withhostpace"
     },
     {
       "label": "retryAfterMs()",
@@ -1077,9 +417,9 @@
       "source_location": "L111",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "retryafterms()",
-      "id": "agent_src_research_retryafterms",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_retryafterms"
     },
     {
       "label": "isRateExceededBody()",
@@ -1088,9 +428,9 @@
       "source_location": "L125",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "israteexceededbody()",
-      "id": "agent_src_research_israteexceededbody",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_israteexceededbody"
     },
     {
       "label": "isRetryableStatus()",
@@ -1099,9 +439,9 @@
       "source_location": "L133",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "isretryablestatus()",
-      "id": "agent_src_research_isretryablestatus",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_isretryablestatus"
     },
     {
       "label": "fetchWithRetry()",
@@ -1110,9 +450,9 @@
       "source_location": "L142",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "fetchwithretry()",
-      "id": "agent_src_research_fetchwithretry",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_fetchwithretry"
     },
     {
       "label": "decodeHtmlEntities()",
@@ -1121,9 +461,9 @@
       "source_location": "L229",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "decodehtmlentities()",
-      "id": "agent_src_research_decodehtmlentities",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_decodehtmlentities"
     },
     {
       "label": "stripHtml()",
@@ -1132,9 +472,9 @@
       "source_location": "L253",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "striphtml()",
-      "id": "agent_src_research_striphtml",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_striphtml"
     },
     {
       "label": "truncate()",
@@ -1143,9 +483,9 @@
       "source_location": "L260",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "truncate()",
-      "id": "agent_src_research_truncate",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_truncate"
     },
     {
       "label": "settled()",
@@ -1154,9 +494,9 @@
       "source_location": "L266",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "settled()",
-      "id": "agent_src_research_settled",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_settled"
     },
     {
       "label": "searchHn()",
@@ -1165,9 +505,9 @@
       "source_location": "L275",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "searchhn()",
-      "id": "agent_src_research_searchhn",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_searchhn"
     },
     {
       "label": "searchHnWithFallback()",
@@ -1176,9 +516,9 @@
       "source_location": "L306",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "searchhnwithfallback()",
-      "id": "agent_src_research_searchhnwithfallback",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_searchhnwithfallback"
     },
     {
       "label": "parseArxiv()",
@@ -1187,9 +527,9 @@
       "source_location": "L321",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "parsearxiv()",
-      "id": "agent_src_research_parsearxiv",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_parsearxiv"
     },
     {
       "label": "searchArxiv()",
@@ -1198,9 +538,9 @@
       "source_location": "L340",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "searcharxiv()",
-      "id": "agent_src_research_searcharxiv",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_searcharxiv"
     },
     {
       "label": "searchOpenAlex()",
@@ -1209,9 +549,9 @@
       "source_location": "L359",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "searchopenalex()",
-      "id": "agent_src_research_searchopenalex",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_searchopenalex"
     },
     {
       "label": "reconstructAbstract()",
@@ -1220,9 +560,9 @@
       "source_location": "L400",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "reconstructabstract()",
-      "id": "agent_src_research_reconstructabstract",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_reconstructabstract"
     },
     {
       "label": "searchPapers()",
@@ -1231,9 +571,9 @@
       "source_location": "L413",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "searchpapers()",
-      "id": "agent_src_research_searchpapers",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_searchpapers"
     },
     {
       "label": "dedupe()",
@@ -1242,9 +582,9 @@
       "source_location": "L439",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "dedupe()",
-      "id": "agent_src_research_dedupe",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_dedupe"
     },
     {
       "label": "pickTop()",
@@ -1253,9 +593,9 @@
       "source_location": "L451",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "picktop()",
-      "id": "agent_src_research_picktop",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_picktop"
     },
     {
       "label": "researchDigest()",
@@ -1264,9 +604,9 @@
       "source_location": "L462",
       "_origin": "ast",
       "community": 0,
+      "community_name": "Research Resilience",
       "norm_label": "researchdigest()",
-      "id": "agent_src_research_researchdigest",
-      "community_name": "Research Resilience"
+      "id": "agent_src_research_researchdigest"
     },
     {
       "label": "__test",
@@ -1275,9 +615,9 @@
       "source_location": "L496",
       "_origin": "ast",
       "community": 8,
+      "community_name": "Research Tests",
       "norm_label": "__test",
-      "id": "agent_src_research_mjs_agent_src_research_test",
-      "community_name": "Research Tests"
+      "id": "agent_src_research_mjs_agent_src_research_test"
     },
     {
       "label": "research.test.mjs",
@@ -1286,9 +626,9 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 8,
+      "community_name": "Research Tests",
       "norm_label": "research.test.mjs",
-      "id": "agent_src_research_test_mjs_agent_src_research_test",
-      "community_name": "Research Tests"
+      "id": "agent_src_research_test_mjs_agent_src_research_test"
     },
     {
       "label": "headers",
@@ -1297,9 +637,9 @@
       "source_location": "L27",
       "_origin": "ast",
       "community": 8,
+      "community_name": "Research Tests",
       "norm_label": "headers",
-      "id": "agent_src_research_test_headers",
-      "community_name": "Research Tests"
+      "id": "agent_src_research_test_headers"
     },
     {
       "label": "abs",
@@ -1308,9 +648,9 @@
       "source_location": "L34",
       "_origin": "ast",
       "community": 8,
+      "community_name": "Research Tests",
       "norm_label": "abs",
-      "id": "agent_src_research_test_abs",
-      "community_name": "Research Tests"
+      "id": "agent_src_research_test_abs"
     },
     {
       "label": "parsed",
@@ -1319,9 +659,9 @@
       "source_location": "L45",
       "_origin": "ast",
       "community": 8,
+      "community_name": "Research Tests",
       "norm_label": "parsed",
-      "id": "agent_src_research_test_parsed",
-      "community_name": "Research Tests"
+      "id": "agent_src_research_test_parsed"
     },
     {
       "label": "run.mjs",
@@ -1330,9 +670,9 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 4,
+      "community_name": "Run Orchestration",
       "norm_label": "run.mjs",
-      "id": "agent_src_run",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_run"
     },
     {
       "label": "__dirname",
@@ -1341,9 +681,9 @@
       "source_location": "L11",
       "_origin": "ast",
       "community": 4,
+      "community_name": "Run Orchestration",
       "norm_label": "__dirname",
-      "id": "agent_src_run_dirname",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_run_dirname"
     },
     {
       "label": "ROOT",
@@ -1352,9 +692,9 @@
       "source_location": "L12",
       "_origin": "ast",
       "community": 4,
+      "community_name": "Run Orchestration",
       "norm_label": "root",
-      "id": "agent_src_run_root",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_run_root"
     },
     {
       "label": "STATE_PATH",
@@ -1363,9 +703,9 @@
       "source_location": "L13",
       "_origin": "ast",
       "community": 4,
+      "community_name": "Run Orchestration",
       "norm_label": "state_path",
-      "id": "agent_src_run_state_path",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_run_state_path"
     },
     {
       "label": "loadState()",
@@ -1374,9 +714,9 @@
       "source_location": "L15",
       "_origin": "ast",
       "community": 4,
+      "community_name": "Run Orchestration",
       "norm_label": "loadstate()",
-      "id": "agent_src_run_loadstate",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_run_loadstate"
     },
     {
       "label": "saveState()",
@@ -1385,9 +725,9 @@
       "source_location": "L22",
       "_origin": "ast",
       "community": 4,
+      "community_name": "Run Orchestration",
       "norm_label": "savestate()",
-      "id": "agent_src_run_savestate",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_run_savestate"
     },
     {
       "label": "requireEnv()",
@@ -1396,9 +736,9 @@
       "source_location": "L26",
       "_origin": "ast",
       "community": 4,
+      "community_name": "Run Orchestration",
       "norm_label": "requireenv()",
-      "id": "agent_src_run_requireenv",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_run_requireenv"
     },
     {
       "label": "parseRecipients()",
@@ -1407,9 +747,9 @@
       "source_location": "L32",
       "_origin": "ast",
       "community": 4,
+      "community_name": "Run Orchestration",
       "norm_label": "parserecipients()",
-      "id": "agent_src_run_parserecipients",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_run_parserecipients"
     },
     {
       "label": "MONTHS",
@@ -1418,9 +758,9 @@
       "source_location": "L39",
       "_origin": "ast",
       "community": 4,
+      "community_name": "Run Orchestration",
       "norm_label": "months",
-      "id": "agent_src_run_months",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_run_months"
     },
     {
       "label": "formatDate()",
@@ -1429,9 +769,9 @@
       "source_location": "L42",
       "_origin": "ast",
       "community": 4,
+      "community_name": "Run Orchestration",
       "norm_label": "formatdate()",
-      "id": "agent_src_run_formatdate",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_run_formatdate"
     },
     {
       "label": "dateStamp()",
@@ -1440,9 +780,9 @@
       "source_location": "L47",
       "_origin": "ast",
       "community": 4,
+      "community_name": "Run Orchestration",
       "norm_label": "datestamp()",
-      "id": "agent_src_run_datestamp",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_run_datestamp"
     },
     {
       "label": "hourStamp()",
@@ -1451,9 +791,9 @@
       "source_location": "L51",
       "_origin": "ast",
       "community": 4,
+      "community_name": "Run Orchestration",
       "norm_label": "hourstamp()",
-      "id": "agent_src_run_hourstamp",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_run_hourstamp"
     },
     {
       "label": "main()",
@@ -1462,9 +802,9 @@
       "source_location": "L55",
       "_origin": "ast",
       "community": 4,
+      "community_name": "Run Orchestration",
       "norm_label": "main()",
-      "id": "agent_src_run_main",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_run_main"
     },
     {
       "label": "sanitize.mjs",
@@ -1473,9 +813,9 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 3,
+      "community_name": "Render & Sanitize",
       "norm_label": "sanitize.mjs",
-      "id": "agent_src_sanitize",
-      "community_name": "Render & Sanitize"
+      "id": "agent_src_sanitize"
     },
     {
       "label": "REPLACEMENTS",
@@ -1484,9 +824,9 @@
       "source_location": "L7",
       "_origin": "ast",
       "community": 3,
+      "community_name": "Render & Sanitize",
       "norm_label": "replacements",
-      "id": "agent_src_sanitize_replacements",
-      "community_name": "Render & Sanitize"
+      "id": "agent_src_sanitize_replacements"
     },
     {
       "label": "decodeHtmlEntities()",
@@ -1495,9 +835,9 @@
       "source_location": "L25",
       "_origin": "ast",
       "community": 3,
+      "community_name": "Render & Sanitize",
       "norm_label": "decodehtmlentities()",
-      "id": "agent_src_sanitize_decodehtmlentities",
-      "community_name": "Render & Sanitize"
+      "id": "agent_src_sanitize_decodehtmlentities"
     },
     {
       "label": "sanitizeNewsletterText()",
@@ -1506,9 +846,9 @@
       "source_location": "L64",
       "_origin": "ast",
       "community": 3,
+      "community_name": "Render & Sanitize",
       "norm_label": "sanitizenewslettertext()",
-      "id": "agent_src_sanitize_sanitizenewslettertext",
-      "community_name": "Render & Sanitize"
+      "id": "agent_src_sanitize_sanitizenewslettertext"
     },
     {
       "label": "sanitizeDigestEntries()",
@@ -1517,9 +857,9 @@
       "source_location": "L105",
       "_origin": "ast",
       "community": 3,
+      "community_name": "Render & Sanitize",
       "norm_label": "sanitizedigestentries()",
-      "id": "agent_src_sanitize_sanitizedigestentries",
-      "community_name": "Render & Sanitize"
+      "id": "agent_src_sanitize_sanitizedigestentries"
     },
     {
       "label": "sanitizeIssue()",
@@ -1528,9 +868,9 @@
       "source_location": "L122",
       "_origin": "ast",
       "community": 3,
+      "community_name": "Render & Sanitize",
       "norm_label": "sanitizeissue()",
-      "id": "agent_src_sanitize_sanitizeissue",
-      "community_name": "Render & Sanitize"
+      "id": "agent_src_sanitize_sanitizeissue"
     },
     {
       "label": "sanitizeHtmlDocument()",
@@ -1539,9 +879,9 @@
       "source_location": "L133",
       "_origin": "ast",
       "community": 3,
+      "community_name": "Render & Sanitize",
       "norm_label": "sanitizehtmldocument()",
-      "id": "agent_src_sanitize_sanitizehtmldocument",
-      "community_name": "Render & Sanitize"
+      "id": "agent_src_sanitize_sanitizehtmldocument"
     },
     {
       "label": "smtp.mjs",
@@ -1549,10 +889,10 @@
       "source_file": "agent/src/smtp.mjs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 7,
+      "community_name": "SMTP Transport",
       "norm_label": "smtp.mjs",
-      "id": "agent_src_smtp",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_smtp"
     },
     {
       "label": "requireEnv()",
@@ -1560,10 +900,10 @@
       "source_file": "agent/src/smtp.mjs",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 4,
+      "community": 7,
+      "community_name": "SMTP Transport",
       "norm_label": "requireenv()",
-      "id": "agent_src_smtp_requireenv",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_smtp_requireenv"
     },
     {
       "label": "optionalEnv()",
@@ -1571,10 +911,10 @@
       "source_file": "agent/src/smtp.mjs",
       "source_location": "L9",
       "_origin": "ast",
-      "community": 4,
+      "community": 7,
+      "community_name": "SMTP Transport",
       "norm_label": "optionalenv()",
-      "id": "agent_src_smtp_optionalenv",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_smtp_optionalenv"
     },
     {
       "label": "parseBool()",
@@ -1582,10 +922,10 @@
       "source_file": "agent/src/smtp.mjs",
       "source_location": "L15",
       "_origin": "ast",
-      "community": 4,
+      "community": 7,
+      "community_name": "SMTP Transport",
       "norm_label": "parsebool()",
-      "id": "agent_src_smtp_parsebool",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_smtp_parsebool"
     },
     {
       "label": "getSmtpConfig()",
@@ -1593,10 +933,10 @@
       "source_file": "agent/src/smtp.mjs",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 4,
+      "community": 7,
+      "community_name": "SMTP Transport",
       "norm_label": "getsmtpconfig()",
-      "id": "agent_src_smtp_getsmtpconfig",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_smtp_getsmtpconfig"
     },
     {
       "label": "createTransport()",
@@ -1604,10 +944,10 @@
       "source_file": "agent/src/smtp.mjs",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 4,
+      "community": 7,
+      "community_name": "SMTP Transport",
       "norm_label": "createtransport()",
-      "id": "agent_src_smtp_createtransport",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_smtp_createtransport"
     },
     {
       "label": "sendSmtpEmail()",
@@ -1615,10 +955,10 @@
       "source_file": "agent/src/smtp.mjs",
       "source_location": "L61",
       "_origin": "ast",
-      "community": 4,
+      "community": 7,
+      "community_name": "SMTP Transport",
       "norm_label": "sendsmtpemail()",
-      "id": "agent_src_smtp_sendsmtpemail",
-      "community_name": "Run Orchestration"
+      "id": "agent_src_smtp_sendsmtpemail"
     },
     {
       "label": "validate.mjs",
@@ -1627,9 +967,9 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 6,
+      "community_name": "Validate & Rank",
       "norm_label": "validate.mjs",
-      "id": "agent_src_validate",
-      "community_name": "Validate & Rank"
+      "id": "agent_src_validate"
     },
     {
       "label": "REQUIRED",
@@ -1638,9 +978,9 @@
       "source_location": "L6",
       "_origin": "ast",
       "community": 6,
+      "community_name": "Validate & Rank",
       "norm_label": "required",
-      "id": "agent_src_validate_required",
-      "community_name": "Validate & Rank"
+      "id": "agent_src_validate_required"
     },
     {
       "label": "PRIMARY_HOST_HINTS",
@@ -1649,9 +989,9 @@
       "source_location": "L8",
       "_origin": "ast",
       "community": 6,
+      "community_name": "Validate & Rank",
       "norm_label": "primary_host_hints",
-      "id": "agent_src_validate_primary_host_hints",
-      "community_name": "Validate & Rank"
+      "id": "agent_src_validate_primary_host_hints"
     },
     {
       "label": "INSIGHT_TERMS",
@@ -1660,9 +1000,9 @@
       "source_location": "L24",
       "_origin": "ast",
       "community": 6,
+      "community_name": "Validate & Rank",
       "norm_label": "insight_terms",
-      "id": "agent_src_validate_insight_terms",
-      "community_name": "Validate & Rank"
+      "id": "agent_src_validate_insight_terms"
     },
     {
       "label": "BOILERPLATE",
@@ -1671,9 +1011,9 @@
       "source_location": "L57",
       "_origin": "ast",
       "community": 6,
+      "community_name": "Validate & Rank",
       "norm_label": "boilerplate",
-      "id": "agent_src_validate_boilerplate",
-      "community_name": "Validate & Rank"
+      "id": "agent_src_validate_boilerplate"
     },
     {
       "label": "isHttpUrl()",
@@ -1682,9 +1022,9 @@
       "source_location": "L63",
       "_origin": "ast",
       "community": 6,
+      "community_name": "Validate & Rank",
       "norm_label": "ishttpurl()",
-      "id": "agent_src_validate_ishttpurl",
-      "community_name": "Validate & Rank"
+      "id": "agent_src_validate_ishttpurl"
     },
     {
       "label": "clamp()",
@@ -1693,9 +1033,9 @@
       "source_location": "L72",
       "_origin": "ast",
       "community": 6,
+      "community_name": "Validate & Rank",
       "norm_label": "clamp()",
-      "id": "agent_src_validate_clamp",
-      "community_name": "Validate & Rank"
+      "id": "agent_src_validate_clamp"
     },
     {
       "label": "wordCount()",
@@ -1704,9 +1044,9 @@
       "source_location": "L76",
       "_origin": "ast",
       "community": 6,
+      "community_name": "Validate & Rank",
       "norm_label": "wordcount()",
-      "id": "agent_src_validate_wordcount",
-      "community_name": "Validate & Rank"
+      "id": "agent_src_validate_wordcount"
     },
     {
       "label": "validateItem()",
@@ -1715,9 +1055,9 @@
       "source_location": "L87",
       "_origin": "ast",
       "community": 6,
+      "community_name": "Validate & Rank",
       "norm_label": "validateitem()",
-      "id": "agent_src_validate_validateitem",
-      "community_name": "Validate & Rank"
+      "id": "agent_src_validate_validateitem"
     },
     {
       "label": "scoreInsight()",
@@ -1726,9 +1066,9 @@
       "source_location": "L116",
       "_origin": "ast",
       "community": 6,
+      "community_name": "Validate & Rank",
       "norm_label": "scoreinsight()",
-      "id": "agent_src_validate_scoreinsight",
-      "community_name": "Validate & Rank"
+      "id": "agent_src_validate_scoreinsight"
     },
     {
       "label": "stripRankingFields()",
@@ -1737,9 +1077,9 @@
       "source_location": "L171",
       "_origin": "ast",
       "community": 6,
+      "community_name": "Validate & Rank",
       "norm_label": "striprankingfields()",
-      "id": "agent_src_validate_striprankingfields",
-      "community_name": "Validate & Rank"
+      "id": "agent_src_validate_striprankingfields"
     },
     {
       "label": "validateAndRankDigest()",
@@ -1748,9 +1088,9 @@
       "source_location": "L186",
       "_origin": "ast",
       "community": 6,
+      "community_name": "Validate & Rank",
       "norm_label": "validateandrankdigest()",
-      "id": "agent_src_validate_validateandrankdigest",
-      "community_name": "Validate & Rank"
+      "id": "agent_src_validate_validateandrankdigest"
     },
     {
       "label": "Hive Digest (monthly) Cursor Automation",
@@ -1764,8 +1104,8 @@
       "rationale": "Preferred scheduled path; cloud agents could not create the automation via web UI due to Cloudflare bot check, so settings are pasted in the dashboard. Repo keeps GitHub Actions as fallback.",
       "community": 1,
       "norm_label": "hive digest (monthly) cursor automation",
-      "id": "cursor_automations_newsletter_hive_digest_automation",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "cursor_automations_newsletter_hive_digest_automation"
     },
     {
       "label": "Node Agent (npm start --prefix agent)",
@@ -1779,8 +1119,8 @@
       "rationale": "Always use the existing Node agent rather than reimplementing research, ranking, or email by hand.",
       "community": 1,
       "norm_label": "node agent (npm start --prefix agent)",
-      "id": "cursor_automations_newsletter_node_agent",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "cursor_automations_newsletter_node_agent"
     },
     {
       "label": "SMTP Newsletter Delivery",
@@ -1794,8 +1134,8 @@
       "rationale": "Sending uses nodemailer SMTP with env secrets; Resend and Resend MCP are explicitly disallowed.",
       "community": 1,
       "norm_label": "smtp newsletter delivery",
-      "id": "cursor_automations_newsletter_smtp_delivery",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "cursor_automations_newsletter_smtp_delivery"
     },
     {
       "label": "HN Algolia Research Source",
@@ -1808,8 +1148,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "hn algolia research source",
-      "id": "cursor_automations_newsletter_hn_algolia",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "cursor_automations_newsletter_hn_algolia"
     },
     {
       "label": "arXiv Research Source",
@@ -1822,8 +1162,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "arxiv research source",
-      "id": "cursor_automations_newsletter_arxiv",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "cursor_automations_newsletter_arxiv"
     },
     {
       "label": "OpenAlex Paper Backup",
@@ -1836,8 +1176,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "openalex paper backup",
-      "id": "cursor_automations_newsletter_openalex",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "cursor_automations_newsletter_openalex"
     },
     {
       "label": "Cross-Source Fallback Chain",
@@ -1851,8 +1191,8 @@
       "rationale": "Falls back arXiv \u2192 OpenAlex \u2192 HN-only; soft-fails individual queries and opens per-host circuits after exhausted rate-limit cycles so backups do not keep hammering a host.",
       "community": 1,
       "norm_label": "cross-source fallback chain",
-      "id": "cursor_automations_newsletter_source_fallback",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "cursor_automations_newsletter_source_fallback"
     },
     {
       "label": "Insight Value Ranking",
@@ -1866,8 +1206,8 @@
       "rationale": "Scores are ranking-only and never included in email body or subject.",
       "community": 1,
       "norm_label": "insight value ranking",
-      "id": "cursor_automations_newsletter_insight_ranking",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "cursor_automations_newsletter_insight_ranking"
     },
     {
       "label": "Dark Hive Theme",
@@ -1881,8 +1221,8 @@
       "rationale": "Emailed HTML must always use the dark Hive theme; do not switch to light.",
       "community": 5,
       "norm_label": "dark hive theme",
-      "id": "cursor_automations_newsletter_dark_hive_theme",
-      "community_name": "Hive Branding & UI"
+      "community_name": "Hive Branding & UI",
+      "id": "cursor_automations_newsletter_dark_hive_theme"
     },
     {
       "label": "Monthly Cron 09:00 IST",
@@ -1895,8 +1235,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "monthly cron 09:00 ist",
-      "id": "cursor_automations_newsletter_monthly_cron_ist",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "cursor_automations_newsletter_monthly_cron_ist"
     },
     {
       "label": "Delete Merged PR Branch Workflow",
@@ -1910,8 +1250,8 @@
       "rationale": "Complements or replaces GitHub Automatically delete head branches when that toggle is unavailable to automation tokens; never deletes main/master.",
       "community": 9,
       "norm_label": "delete merged pr branch workflow",
-      "id": "github_workflows_delete_merged_branch_workflow",
-      "community_name": "Branch Cleanup CI"
+      "community_name": "Branch Cleanup CI",
+      "id": "github_workflows_delete_merged_branch_workflow"
     },
     {
       "label": "Hive Digest Monthly GitHub Actions Workflow",
@@ -1925,8 +1265,8 @@
       "rationale": "GitHub Actions cron is UTC-only, so schedule is 30 3 1 * * (03:30 UTC = 09:00 IST on the 1st).",
       "community": 1,
       "norm_label": "hive digest monthly github actions workflow",
-      "id": "github_workflows_newsletter_hive_digest_monthly",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "github_workflows_newsletter_hive_digest_monthly"
     },
     {
       "label": "Agent Start Step (npm start --prefix agent)",
@@ -1939,8 +1279,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "agent start step (npm start --prefix agent)",
-      "id": "github_workflows_newsletter_agent_start",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "github_workflows_newsletter_agent_start"
     },
     {
       "label": "SMTP GitHub Actions Secrets",
@@ -1953,8 +1293,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "smtp github actions secrets",
-      "id": "github_workflows_newsletter_smtp_secrets",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "github_workflows_newsletter_smtp_secrets"
     },
     {
       "label": "Hive Digest",
@@ -1967,8 +1307,8 @@
       "contributor": null,
       "community": 5,
       "norm_label": "hive digest",
-      "id": "readme_hive_digest",
-      "community_name": "Hive Branding & UI"
+      "community_name": "Hive Branding & UI",
+      "id": "readme_hive_digest"
     },
     {
       "label": "Hive by Synbrains",
@@ -1981,8 +1321,8 @@
       "contributor": null,
       "community": 5,
       "norm_label": "hive by synbrains",
-      "id": "readme_synbrains_hive",
-      "community_name": "Hive Branding & UI"
+      "community_name": "Hive Branding & UI",
+      "id": "readme_synbrains_hive"
     },
     {
       "label": "Three Content Lanes",
@@ -1995,8 +1335,8 @@
       "contributor": null,
       "community": 5,
       "norm_label": "three content lanes",
-      "id": "readme_three_lanes",
-      "community_name": "Hive Branding & UI"
+      "community_name": "Hive Branding & UI",
+      "id": "readme_three_lanes"
     },
     {
       "label": "Validation and Insight Ranking",
@@ -2010,8 +1350,8 @@
       "rationale": "Scores are never shown in the newsletter; higher-scoring stories appear first and weaker sections sort last.",
       "community": 1,
       "norm_label": "validation and insight ranking",
-      "id": "readme_insight_ranking",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "readme_insight_ranking"
     },
     {
       "label": "Cursor Automation (Preferred)",
@@ -2025,8 +1365,8 @@
       "rationale": "Cursor Automation is the preferred scheduled newsletter path; GitHub Actions is the fallback.",
       "community": 1,
       "norm_label": "cursor automation (preferred)",
-      "id": "readme_cursor_automation",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "readme_cursor_automation"
     },
     {
       "label": "GitHub Actions Newsletter Fallback",
@@ -2039,8 +1379,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "github actions newsletter fallback",
-      "id": "readme_github_actions_fallback",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "readme_github_actions_fallback"
     },
     {
       "label": "Agent CLI (agent/)",
@@ -2053,8 +1393,8 @@
       "contributor": null,
       "community": 5,
       "norm_label": "agent cli (agent/)",
-      "id": "readme_agent_cli",
-      "community_name": "Hive Branding & UI"
+      "community_name": "Hive Branding & UI",
+      "id": "readme_agent_cli"
     },
     {
       "label": "tech-digest-agent.html Browser Artifact",
@@ -2067,8 +1407,8 @@
       "contributor": null,
       "community": 5,
       "norm_label": "tech-digest-agent.html browser artifact",
-      "id": "readme_tech_digest_agent_html",
-      "community_name": "Hive Branding & UI"
+      "community_name": "Hive Branding & UI",
+      "id": "readme_tech_digest_agent_html"
     },
     {
       "label": "Automatic Merged Branch Deletion",
@@ -2081,8 +1421,8 @@
       "contributor": null,
       "community": 9,
       "norm_label": "automatic merged branch deletion",
-      "id": "readme_delete_merged_branch",
-      "community_name": "Branch Cleanup CI"
+      "community_name": "Branch Cleanup CI",
+      "id": "readme_delete_merged_branch"
     },
     {
       "label": "Hive Digest Browser UI",
@@ -2095,8 +1435,8 @@
       "contributor": null,
       "community": 5,
       "norm_label": "hive digest browser ui",
-      "id": "tech_digest_agent_hive_digest_ui",
-      "community_name": "Hive Branding & UI"
+      "community_name": "Hive Branding & UI",
+      "id": "tech_digest_agent_hive_digest_ui"
     },
     {
       "label": "Anthropic Messages API",
@@ -2110,8 +1450,8 @@
       "rationale": "Browser calls api.anthropic.com directly with web search; only succeeds inside a Claude.ai artifact or equivalent proxy \u2014 plain browser open has no client-side API key.",
       "community": 5,
       "norm_label": "anthropic messages api",
-      "id": "tech_digest_agent_anthropic_api",
-      "community_name": "Hive Branding & UI"
+      "community_name": "Hive Branding & UI",
+      "id": "tech_digest_agent_anthropic_api"
     },
     {
       "label": "categoryPrompt",
@@ -2124,8 +1464,8 @@
       "contributor": null,
       "community": 5,
       "norm_label": "categoryprompt",
-      "id": "tech_digest_agent_category_prompt",
-      "community_name": "Hive Branding & UI"
+      "community_name": "Hive Branding & UI",
+      "id": "tech_digest_agent_category_prompt"
     },
     {
       "label": "fetchCategory",
@@ -2138,8 +1478,8 @@
       "contributor": null,
       "community": 5,
       "norm_label": "fetchcategory",
-      "id": "tech_digest_agent_fetch_category",
-      "community_name": "Hive Branding & UI"
+      "community_name": "Hive Branding & UI",
+      "id": "tech_digest_agent_fetch_category"
     },
     {
       "label": "validateItem",
@@ -2152,8 +1492,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "validateitem",
-      "id": "tech_digest_agent_validate_item",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "tech_digest_agent_validate_item"
     },
     {
       "label": "scoreInsight",
@@ -2167,8 +1507,8 @@
       "rationale": "Insight scores reorder sections and filter entries but are never surfaced in the UI or exported newsletter.",
       "community": 1,
       "norm_label": "scoreinsight",
-      "id": "tech_digest_agent_score_insight",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "tech_digest_agent_score_insight"
     },
     {
       "label": "rankItems",
@@ -2181,8 +1521,8 @@
       "contributor": null,
       "community": 1,
       "norm_label": "rankitems",
-      "id": "tech_digest_agent_rank_items",
-      "community_name": "Automation & Delivery"
+      "community_name": "Automation & Delivery",
+      "id": "tech_digest_agent_rank_items"
     },
     {
       "label": "NEWSLETTER_DARK Theme Palette",
@@ -2196,8 +1536,8 @@
       "rationale": "Generated newsletter HTML is always dark Hive theme; insight scores are never included.",
       "community": 5,
       "norm_label": "newsletter_dark theme palette",
-      "id": "tech_digest_agent_newsletter_dark",
-      "community_name": "Hive Branding & UI"
+      "community_name": "Hive Branding & UI",
+      "id": "tech_digest_agent_newsletter_dark"
     },
     {
       "label": "Claude Web Search Tool",
@@ -2210,8 +1550,8 @@
       "contributor": null,
       "community": 5,
       "norm_label": "claude web search tool",
-      "id": "tech_digest_agent_web_search",
-      "community_name": "Hive Branding & UI"
+      "community_name": "Hive Branding & UI",
+      "id": "tech_digest_agent_web_search"
     },
     {
       "label": "generateIssue",
@@ -2224,572 +1564,11 @@
       "contributor": null,
       "community": 5,
       "norm_label": "generateissue",
-      "id": "tech_digest_agent_generate_issue",
-      "community_name": "Hive Branding & UI"
+      "community_name": "Hive Branding & UI",
+      "id": "tech_digest_agent_generate_issue"
     }
   ],
   "links": [
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill",
-      "target": "agents_skills_graphify_skill_graphify",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L681",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_graphify",
-      "target": "agents_skills_graphify_skill_for_graphify_add_and_watch",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L669",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_graphify",
-      "target": "agents_skills_graphify_skill_for_graphify_query",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L687",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_graphify",
-      "target": "agents_skills_graphify_skill_for_the_commit_hook_and_native_agents_md_integration",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L663",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_graphify",
-      "target": "agents_skills_graphify_skill_for_update_and_cluster_only",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L693",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_graphify",
-      "target": "agents_skills_graphify_skill_honesty_rules",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L645",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_graphify",
-      "target": "agents_skills_graphify_skill_interpreter_guard_for_subcommands",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_graphify",
-      "target": "agents_skills_graphify_skill_usage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L45",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_graphify",
-      "target": "agents_skills_graphify_skill_what_graphify_is_for",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L49",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_graphify",
-      "target": "agents_skills_graphify_skill_what_you_must_do_when_invoked",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L61",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_what_you_must_do_when_invoked",
-      "target": "agents_skills_graphify_skill_step_0_github_repos_and_multi_path_merge_only_if_a_url_or_several_paths",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L65",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_what_you_must_do_when_invoked",
-      "target": "agents_skills_graphify_skill_step_1_ensure_graphify_is_installed",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L144",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_what_you_must_do_when_invoked",
-      "target": "agents_skills_graphify_skill_step_2_5_video_and_audio_only_if_video_files_detected",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L107",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_what_you_must_do_when_invoked",
-      "target": "agents_skills_graphify_skill_step_2_detect_files",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L148",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_what_you_must_do_when_invoked",
-      "target": "agents_skills_graphify_skill_step_3_extract_entities_and_relationships",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L450",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_what_you_must_do_when_invoked",
-      "target": "agents_skills_graphify_skill_step_4_5_graph_health_check_read_only_integrity_gate",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L387",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_what_you_must_do_when_invoked",
-      "target": "agents_skills_graphify_skill_step_4_build_graph_cluster_analyze_generate_outputs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L476",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_what_you_must_do_when_invoked",
-      "target": "agents_skills_graphify_skill_step_5_label_communities",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L517",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_what_you_must_do_when_invoked",
-      "target": "agents_skills_graphify_skill_step_6_generate_obsidian_vault_opt_in_html",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L543",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_what_you_must_do_when_invoked",
-      "target": "agents_skills_graphify_skill_step_9_save_manifest_update_cost_tracker_clean_up_and_report",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L537",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_what_you_must_do_when_invoked",
-      "target": "agents_skills_graphify_skill_steps_6b_8_wiki_neo4j_falkordb_svg_graphml_mcp_benchmark_only_on_their_flags",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L167",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_step_3_extract_entities_and_relationships",
-      "target": "agents_skills_graphify_skill_part_a_structural_extraction_for_code_files",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L193",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_step_3_extract_entities_and_relationships",
-      "target": "agents_skills_graphify_skill_part_b_semantic_extraction_parallel_subagents",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/SKILL.md",
-      "source_location": "L353",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_skill_step_3_extract_entities_and_relationships",
-      "target": "agents_skills_graphify_skill_part_c_merge_ast_semantic_into_final_extraction",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/add-watch.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_add_watch",
-      "target": "agents_skills_graphify_references_add_watch_graphify_reference_add_a_url_and_watch_a_folder",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/add-watch.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_add_watch_graphify_reference_add_a_url_and_watch_a_folder",
-      "target": "agents_skills_graphify_references_add_watch_for_graphify_add",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/add-watch.md",
-      "source_location": "L39",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_add_watch_graphify_reference_add_a_url_and_watch_a_folder",
-      "target": "agents_skills_graphify_references_add_watch_for_watch",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_exports",
-      "target": "agents_skills_graphify_references_exports_graphify_reference_extra_exports_and_benchmark",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_exports_graphify_reference_extra_exports_and_benchmark",
-      "target": "agents_skills_graphify_references_exports_step_6b_wiki_only_if_wiki_flag",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_exports_graphify_reference_extra_exports_and_benchmark",
-      "target": "agents_skills_graphify_references_exports_step_7_neo4j_export_only_if_neo4j_or_neo4j_push_flag",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L31",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_exports_graphify_reference_extra_exports_and_benchmark",
-      "target": "agents_skills_graphify_references_exports_step_7a_falkordb_export_only_if_falkordb_or_falkordb_push_flag",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L47",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_exports_graphify_reference_extra_exports_and_benchmark",
-      "target": "agents_skills_graphify_references_exports_step_7b_svg_export_only_if_svg_flag",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L53",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_exports_graphify_reference_extra_exports_and_benchmark",
-      "target": "agents_skills_graphify_references_exports_step_7c_graphml_export_only_if_graphml_flag",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L59",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_exports_graphify_reference_extra_exports_and_benchmark",
-      "target": "agents_skills_graphify_references_exports_step_7d_mcp_server_only_if_mcp_flag",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/exports.md",
-      "source_location": "L79",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_exports_graphify_reference_extra_exports_and_benchmark",
-      "target": "agents_skills_graphify_references_exports_step_8_token_reduction_benchmark_only_if_total_words_5000",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/extraction-spec.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_extraction_spec",
-      "target": "agents_skills_graphify_references_extraction_spec_graphify_reference_extraction_subagent_prompt",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/github-and-merge.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_github_and_merge",
-      "target": "agents_skills_graphify_references_github_and_merge_graphify_reference_github_clone_and_cross_repo_merge",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/github-and-merge.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_github_and_merge_graphify_reference_github_clone_and_cross_repo_merge",
-      "target": "agents_skills_graphify_references_github_and_merge_step_0_clone_github_repo_s_only_if_a_github_url_was_given",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/hooks.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_hooks",
-      "target": "agents_skills_graphify_references_hooks_graphify_reference_commit_hook_and_native_agents_md_integration",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/hooks.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_hooks_graphify_reference_commit_hook_and_native_agents_md_integration",
-      "target": "agents_skills_graphify_references_hooks_for_git_commit_hook",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/hooks.md",
-      "source_location": "L21",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_hooks_graphify_reference_commit_hook_and_native_agents_md_integration",
-      "target": "agents_skills_graphify_references_hooks_for_native_agents_md_integration",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/query.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_query",
-      "target": "agents_skills_graphify_references_query_graphify_reference_query_path_explain",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/query.md",
-      "source_location": "L254",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_query_graphify_reference_query_path_explain",
-      "target": "agents_skills_graphify_references_query_for_graphify_explain",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/query.md",
-      "source_location": "L186",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_query_graphify_reference_query_path_explain",
-      "target": "agents_skills_graphify_references_query_for_graphify_path",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/query.md",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_query_graphify_reference_query_path_explain",
-      "target": "agents_skills_graphify_references_query_step_0_constrained_query_expansion_required_before_traversal",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/query.md",
-      "source_location": "L61",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_query_graphify_reference_query_path_explain",
-      "target": "agents_skills_graphify_references_query_step_1_traversal",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/transcribe.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_transcribe",
-      "target": "agents_skills_graphify_references_transcribe_graphify_reference_transcribe_video_and_audio",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/transcribe.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_transcribe_graphify_reference_transcribe_video_and_audio",
-      "target": "agents_skills_graphify_references_transcribe_step_2_5_transcribe_video_audio_files_only_if_video_files_detected",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/update.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_update",
-      "target": "agents_skills_graphify_references_update_graphify_reference_incremental_update_and_cluster_only",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/update.md",
-      "source_location": "L202",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_update_graphify_reference_incremental_update_and_cluster_only",
-      "target": "agents_skills_graphify_references_update_for_cluster_only",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".agents/skills/graphify/references/update.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "agents_skills_graphify_references_update_graphify_reference_incremental_update_and_cluster_only",
-      "target": "agents_skills_graphify_references_update_for_update_incremental_re_extraction",
-      "confidence_score": 1.0
-    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -5307,5 +4086,5 @@
       "source_file": "tech-digest-agent.html"
     }
   ],
-  "built_at_commit": "6e5b7d586586ba29aa651357fcd923b705651c94"
+  "built_at_commit": "ebe5cf2e0577296039eb1a0ebaf8d7833b7e28c7"
 }

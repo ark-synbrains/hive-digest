@@ -68,6 +68,7 @@ graphify hook install
 This repo already includes:
 - `.cursor/rules/graphify.mdc` — always-on Cursor rule (query-first)
 - `.agents/skills/graphify/` — `/graphify` Agent Skill + references
+- `.graphifyignore` — excludes skill/rule artifacts from the generated graph
 - `.gitattributes` — union-merge driver for `graphify-out/graph.json`
 
 ### Rebuild / query
@@ -157,6 +158,7 @@ graphify-out/                       knowledge graph (graphify)
   graph.json                        queryable graph data
   GRAPH_REPORT.md                   communities / god nodes / questions
 .agents/skills/graphify/            /graphify Agent Skill + references
+.graphifyignore                     exclude skill/rule files from the graph
 .github/workflows/newsletter.yml
 .cursor/automations/newsletter.md
 .cursor/rules/graphify.mdc          always-on Cursor graphify rule
