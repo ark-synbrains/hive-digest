@@ -190,8 +190,9 @@ knowledge graph of *those stories* and use it to slightly improve ranking.
    fails because of GraphRAG.
 5. `scoreInsight()` applies `_graphBoost` (capped at **+12**).  
    Boosts are **ranking-only** and are stripped before the email is built.
-6. Artifacts for the run (gitignored) land under  
+6. Artifacts for the run (**tracked in git**) land under
    `agent/out/digest-graph/<date>/` (`extraction.json`, `graph.json`, `boosts.json`, …).
+   They are still listed in `.graphifyignore` so they do not enter the codebase graph.
 
 **Controls:**
 
@@ -238,7 +239,7 @@ and [`agent/out/README.md`](../agent/out/README.md).
 | Email delivery | SMTP via `SMTP_*` + `NEWSLETTER_TO_EMAILS` (historical env name) |
 | Upstream APIs | Retries, per-host pacing, circuit breaker, soft-fail per query |
 | Ranking privacy | Insight / GraphRAG scores logged only — never in subject/body |
-| Codebase vs content | Separate graphs; `.graphifyignore` keeps digests/skills out of code graph |
+| Codebase vs content | Separate graphs; `.graphifyignore` keeps digests/`agent/out`/skills out of the *code* graph (those paths can still be git-tracked) |
 | Browser UI | `hive-digest.html` needs Claude.ai artifact proxy for Anthropic calls |
 
 ---
@@ -248,8 +249,10 @@ and [`agent/out/README.md`](../agent/out/README.md).
 | Doc | Contents |
 | --- | --- |
 | [README.md](../README.md) | Product overview, setup, flowchart summary |
+| [DOCUMENTATION.md](DOCUMENTATION.md) | Doc sync policy — update related docs with every change |
 | [agent/README.md](../agent/README.md) | Node sender commands and module table |
 | [digests/README.md](../digests/README.md) | Issue archive layout |
+| [agent/out/README.md](../agent/out/README.md) | Tracked run artifacts + GraphRAG outputs |
 | [graphify-out/GRAPH_REPORT.md](../graphify-out/GRAPH_REPORT.md) | Latest codebase graph communities / hubs |
 | [`.cursor/automations/hive-digest.md`](../.cursor/automations/hive-digest.md) | Cursor Automation recipe |
 
@@ -261,5 +264,5 @@ Think of Hive Digest as a **research → rank → publish** factory. Graphify si
 beside that factory as a **map of the factory’s code** (for builders), and also
 steps into the line briefly after research to **map how this month’s stories
 relate**, nudging ranking without changing how stories are fetched or how the
-email looks. Finished issues are stored in `digests/` so every run leaves a
-durable record in the repository.
+email looks. Finished issues are stored in `digests/` and full run artifacts in
+`agent/out/` so every run leaves a durable record in the repository.

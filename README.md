@@ -9,7 +9,8 @@ Brand: **Hive by Synbrains** (accents `#EE462F` → `#7610C7`).
 
 **Architecture:** see [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the
 overall system design, pipeline flowchart, and how Graphify is integrated
-(codebase map + content GraphRAG).
+(codebase map + content GraphRAG). Doc sync policy:
+[`docs/DOCUMENTATION.md`](docs/DOCUMENTATION.md).
 
 ## Naming (read this first)
 
@@ -290,5 +291,6 @@ graphify-out/                       codebase knowledge graph (graphify)
 .cursor/rules/graphify.mdc          always-on Cursor graphify rule
 .gitattributes                      graph.json union-merge driver
 docs/ARCHITECTURE.md                system architecture + Graphify integration
+docs/DOCUMENTATION.md               keep docs in sync with code changes
 README.md
 ```

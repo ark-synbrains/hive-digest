@@ -461,8 +461,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "agent_src_graphrag_test",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "graphrag.test.mjs"
     },
     {
@@ -472,8 +472,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_sample",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "sample"
     },
     {
@@ -483,8 +483,8 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_extraction_idmap",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "{ extraction, idmap }"
     },
     {
@@ -494,8 +494,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_fallback",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "fallback"
     },
     {
@@ -505,8 +505,8 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_basescore",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "basescore"
     },
     {
@@ -516,8 +516,8 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_boostedscore",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "boostedscore"
     },
     {
@@ -527,8 +527,8 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_tmp",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "tmp"
     },
     {
@@ -538,8 +538,8 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_bycategory_ranked_report",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "{ bycategory: ranked, report }"
     },
     {
@@ -549,8 +549,8 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "agent_src_graphrag_test_serialized",
-      "community": 6,
-      "community_name": "Validate & Rank",
+      "community": 10,
+      "community_name": "graphrag.mjs",
       "norm_label": "serialized"
     },
     {
@@ -1162,7 +1162,7 @@
       "label": "archiveIssue()",
       "file_type": "code",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L83",
+      "source_location": "L86",
       "_origin": "ast",
       "id": "agent_src_run_archiveissue",
       "community": 4,
@@ -1173,7 +1173,7 @@
       "label": "main()",
       "file_type": "code",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L137",
+      "source_location": "L140",
       "_origin": "ast",
       "id": "agent_src_run_main",
       "community": 4,
@@ -1264,8 +1264,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "agent_src_smtp",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 14,
+      "community_name": "smtp.mjs",
       "norm_label": "smtp.mjs"
     },
     {
@@ -1275,8 +1275,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "agent_src_smtp_requireenv",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 14,
+      "community_name": "smtp.mjs",
       "norm_label": "requireenv()"
     },
     {
@@ -1286,8 +1286,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "agent_src_smtp_optionalenv",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 14,
+      "community_name": "smtp.mjs",
       "norm_label": "optionalenv()"
     },
     {
@@ -1297,8 +1297,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "agent_src_smtp_parsebool",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 14,
+      "community_name": "smtp.mjs",
       "norm_label": "parsebool()"
     },
     {
@@ -1308,8 +1308,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "agent_src_smtp_sleep",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 14,
+      "community_name": "smtp.mjs",
       "norm_label": "sleep()"
     },
     {
@@ -1319,8 +1319,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "agent_src_smtp_istransientsmtperror",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 14,
+      "community_name": "smtp.mjs",
       "norm_label": "istransientsmtperror()"
     },
     {
@@ -1330,8 +1330,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "agent_src_smtp_getsmtpconfig",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 14,
+      "community_name": "smtp.mjs",
       "norm_label": "getsmtpconfig()"
     },
     {
@@ -1341,8 +1341,8 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "agent_src_smtp_createtransport",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 14,
+      "community_name": "smtp.mjs",
       "norm_label": "createtransport()"
     },
     {
@@ -1352,8 +1352,8 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "agent_src_smtp_sendsmtpemail",
-      "community": 4,
-      "community_name": "Run Orchestration",
+      "community": 14,
+      "community_name": "smtp.mjs",
       "norm_label": "sendsmtpemail()"
     },
     {
@@ -1396,8 +1396,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "agent_src_validate_insight_terms",
-      "community": 10,
-      "community_name": "graphrag.mjs",
+      "community": 6,
+      "community_name": "Validate & Rank",
       "norm_label": "insight_terms"
     },
     {
@@ -1495,8 +1495,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "cursor_automations_hive_digest",
-      "community": 12,
-      "community_name": "Cursor Automation \u2014 Hive Digest (monthly)",
+      "community": 7,
+      "community_name": "Documentation guide",
       "norm_label": "hive-digest.md"
     },
     {
@@ -1506,8 +1506,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "cursor_automations_hive_digest_cursor_automation_hive_digest_monthly",
-      "community": 12,
-      "community_name": "Cursor Automation \u2014 Hive Digest (monthly)",
+      "community": 7,
+      "community_name": "Documentation guide",
       "norm_label": "cursor automation \u2014 hive digest (monthly)"
     },
     {
@@ -1517,8 +1517,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "cursor_automations_hive_digest_naming",
-      "community": 12,
-      "community_name": "Cursor Automation \u2014 Hive Digest (monthly)",
+      "community": 7,
+      "community_name": "Documentation guide",
       "norm_label": "naming"
     },
     {
@@ -1528,8 +1528,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "cursor_automations_hive_digest_settings",
-      "community": 12,
-      "community_name": "Cursor Automation \u2014 Hive Digest (monthly)",
+      "community": 7,
+      "community_name": "Documentation guide",
       "norm_label": "settings"
     },
     {
@@ -1539,8 +1539,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "cursor_automations_hive_digest_required_environment_secrets",
-      "community": 12,
-      "community_name": "Cursor Automation \u2014 Hive Digest (monthly)",
+      "community": 7,
+      "community_name": "Documentation guide",
       "norm_label": "required environment secrets"
     },
     {
@@ -1550,8 +1550,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "cursor_automations_hive_digest_prompt",
-      "community": 12,
-      "community_name": "Cursor Automation \u2014 Hive Digest (monthly)",
+      "community": 7,
+      "community_name": "Documentation guide",
       "norm_label": "prompt"
     },
     {
@@ -1561,8 +1561,8 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "cursor_automations_hive_digest_automate_one_liner_local_cursor",
-      "community": 12,
-      "community_name": "Cursor Automation \u2014 Hive Digest (monthly)",
+      "community": 7,
+      "community_name": "Documentation guide",
       "norm_label": "`/automate` one-liner (local cursor)"
     },
     {
@@ -1572,8 +1572,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "agent_readme",
-      "community": 12,
-      "community_name": "Cursor Automation \u2014 Hive Digest (monthly)",
+      "community": 7,
+      "community_name": "Documentation guide",
       "norm_label": "readme.md"
     },
     {
@@ -1583,8 +1583,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "agent_readme_agent_hive_digest_node_sender",
-      "community": 12,
-      "community_name": "Cursor Automation \u2014 Hive Digest (monthly)",
+      "community": 7,
+      "community_name": "Documentation guide",
       "norm_label": "`agent/` \u2014 hive digest node sender"
     },
     {
@@ -1594,8 +1594,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "agent_readme_commands",
-      "community": 12,
-      "community_name": "Cursor Automation \u2014 Hive Digest (monthly)",
+      "community": 7,
+      "community_name": "Documentation guide",
       "norm_label": "commands"
     },
     {
@@ -1605,8 +1605,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_architecture",
-      "community": 12,
-      "community_name": "Cursor Automation \u2014 Hive Digest (monthly)",
+      "community": 7,
+      "community_name": "Documentation guide",
       "norm_label": "architecture.md"
     },
     {
@@ -1701,7 +1701,7 @@
       "label": "5. Issue archive",
       "file_type": "document",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L213",
+      "source_location": "L214",
       "_origin": "ast",
       "id": "docs_architecture_5_issue_archive",
       "community": 12,
@@ -1712,7 +1712,7 @@
       "label": "6. Trust boundaries & secrets",
       "file_type": "document",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L234",
+      "source_location": "L235",
       "_origin": "ast",
       "id": "docs_architecture_6_trust_boundaries_secrets",
       "community": 12,
@@ -1723,7 +1723,7 @@
       "label": "7. Related docs",
       "file_type": "document",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L246",
+      "source_location": "L247",
       "_origin": "ast",
       "id": "docs_architecture_7_related_docs",
       "community": 12,
@@ -1734,12 +1734,89 @@
       "label": "8. Mental model (one paragraph)",
       "file_type": "document",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L258",
+      "source_location": "L261",
       "_origin": "ast",
       "id": "docs_architecture_8_mental_model_one_paragraph",
       "community": 12,
       "community_name": "Cursor Automation \u2014 Hive Digest (monthly)",
       "norm_label": "8. mental model (one paragraph)"
+    },
+    {
+      "label": "DOCUMENTATION.md",
+      "file_type": "document",
+      "source_file": "docs/DOCUMENTATION.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_documentation",
+      "community": 7,
+      "community_name": "Documentation guide",
+      "norm_label": "documentation.md"
+    },
+    {
+      "label": "Documentation guide",
+      "file_type": "document",
+      "source_file": "docs/DOCUMENTATION.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_documentation_documentation_guide",
+      "community": 7,
+      "community_name": "Documentation guide",
+      "norm_label": "documentation guide"
+    },
+    {
+      "label": "Canonical docs",
+      "file_type": "document",
+      "source_file": "docs/DOCUMENTATION.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "docs_documentation_canonical_docs",
+      "community": 7,
+      "community_name": "Documentation guide",
+      "norm_label": "canonical docs"
+    },
+    {
+      "label": "When you change code, update docs",
+      "file_type": "document",
+      "source_file": "docs/DOCUMENTATION.md",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "docs_documentation_when_you_change_code_update_docs",
+      "community": 7,
+      "community_name": "Documentation guide",
+      "norm_label": "when you change code, update docs"
+    },
+    {
+      "label": "Tracked outputs (do not call these gitignored)",
+      "file_type": "document",
+      "source_file": "docs/DOCUMENTATION.md",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "docs_documentation_tracked_outputs_do_not_call_these_gitignored",
+      "community": 7,
+      "community_name": "Documentation guide",
+      "norm_label": "tracked outputs (do not call these gitignored)"
+    },
+    {
+      "label": "Checklist before merge",
+      "file_type": "document",
+      "source_file": "docs/DOCUMENTATION.md",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "docs_documentation_checklist_before_merge",
+      "community": 7,
+      "community_name": "Documentation guide",
+      "norm_label": "checklist before merge"
+    },
+    {
+      "label": "Agents / contributors",
+      "file_type": "document",
+      "source_file": "docs/DOCUMENTATION.md",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "docs_documentation_agents_contributors",
+      "community": 7,
+      "community_name": "Documentation guide",
+      "norm_label": "agents / contributors"
     },
     {
       "label": "Delete Merged PR Branch Workflow",
@@ -2683,7 +2760,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L148",
+      "source_location": "L151",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run_main",
@@ -3017,7 +3094,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L177",
+      "source_location": "L180",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run_main",
@@ -3859,7 +3936,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L145",
+      "source_location": "L148",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run_main",
@@ -3915,7 +3992,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L83",
+      "source_location": "L86",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run",
@@ -3992,7 +4069,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L137",
+      "source_location": "L140",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run",
@@ -4153,7 +4230,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L139",
+      "source_location": "L142",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run_main",
@@ -4165,7 +4242,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L278",
+      "source_location": "L281",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run_main",
@@ -4177,7 +4254,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L210",
+      "source_location": "L213",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run_main",
@@ -4189,7 +4266,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L210",
+      "source_location": "L213",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run_main",
@@ -4201,7 +4278,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L141",
+      "source_location": "L144",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run_main",
@@ -4213,7 +4290,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L142",
+      "source_location": "L145",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run_main",
@@ -4225,7 +4302,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L227",
+      "source_location": "L230",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run_main",
@@ -4237,7 +4314,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L180",
+      "source_location": "L183",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run_main",
@@ -4249,7 +4326,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L177",
+      "source_location": "L180",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run_main",
@@ -4261,7 +4338,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L230",
+      "source_location": "L233",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run_main",
@@ -4273,7 +4350,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "agent/src/run.mjs",
-      "source_location": "L154",
+      "source_location": "L157",
       "weight": 1.0,
       "_origin": "ast",
       "source": "agent_src_run_main",
@@ -4809,10 +4886,21 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L254",
+      "source_location": "L257",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_architecture",
+      "target": "cursor_automations_hive_digest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/DOCUMENTATION.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_documentation",
       "target": "cursor_automations_hive_digest",
       "confidence_score": 1.0
     },
@@ -4894,6 +4982,17 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/DOCUMENTATION.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_documentation",
+      "target": "agent_readme",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "agent/README.md",
@@ -4913,6 +5012,17 @@
       "_origin": "ast",
       "source": "docs_architecture",
       "target": "docs_architecture_hive_digest_architecture_graphify_integration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/ARCHITECTURE.md",
+      "source_location": "L252",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_architecture",
+      "target": "docs_documentation",
       "confidence_score": 1.0
     },
     {
@@ -4963,7 +5073,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L213",
+      "source_location": "L214",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_architecture_hive_digest_architecture_graphify_integration",
@@ -4974,7 +5084,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L234",
+      "source_location": "L235",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_architecture_hive_digest_architecture_graphify_integration",
@@ -4985,7 +5095,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L246",
+      "source_location": "L247",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_architecture_hive_digest_architecture_graphify_integration",
@@ -4996,7 +5106,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/ARCHITECTURE.md",
-      "source_location": "L258",
+      "source_location": "L261",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_architecture_hive_digest_architecture_graphify_integration",
@@ -5034,6 +5144,72 @@
       "_origin": "ast",
       "source": "docs_architecture_4_how_graphify_is_integrated",
       "target": "docs_architecture_role_b_content_graphrag_inside_the_monthly_digest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/DOCUMENTATION.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_documentation",
+      "target": "docs_documentation_documentation_guide",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/DOCUMENTATION.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_documentation_documentation_guide",
+      "target": "docs_documentation_agents_contributors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/DOCUMENTATION.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_documentation_documentation_guide",
+      "target": "docs_documentation_canonical_docs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/DOCUMENTATION.md",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_documentation_documentation_guide",
+      "target": "docs_documentation_checklist_before_merge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/DOCUMENTATION.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_documentation_documentation_guide",
+      "target": "docs_documentation_tracked_outputs_do_not_call_these_gitignored",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/DOCUMENTATION.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_documentation_documentation_guide",
+      "target": "docs_documentation_when_you_change_code_update_docs",
       "confidence_score": 1.0
     },
     {
@@ -5098,5 +5274,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d5f47c911fa59ce4facc51ca00a60d0919f73606"
+  "built_at_commit": "1a95dd245d7c5104767ecebff5bd0731950084fb"
 }

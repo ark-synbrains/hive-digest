@@ -1,0 +1,36 @@
+---
+description: Keep documentation in sync with code changes
+alwaysApply: true
+---
+
+# Documentation sync (mandatory)
+
+Whenever you change behavior, layout, env vars, workflows, or Graphify integration in this repo, **update every related doc in the same change**.
+
+## Required checklist (before committing)
+
+1. Identify what changed (pipeline step, path, flag, archive location, CI, Graphify role, etc.).
+2. Update **all** docs that mention the old behavior. At minimum scan:
+   - `README.md`
+   - `docs/ARCHITECTURE.md`
+   - `docs/DOCUMENTATION.md`
+   - `agent/README.md`
+   - `digests/README.md`
+   - `agent/out/README.md` (if `agent/out/` behavior changed)
+   - `.cursor/automations/hive-digest.md` (if monthly send / archive / GraphRAG changed)
+   - Inline comments in touched source that describe public behavior (e.g. `agent/src/run.mjs`)
+3. Keep Mermaid flowcharts in `README.md` and `docs/ARCHITECTURE.md` aligned with the real pipeline.
+4. Do **not** leave contradictory statements (e.g. calling a tracked path “gitignored”).
+5. If you add a new tracked output path or env flag, document it in README + ARCHITECTURE (and agent README when agent-specific).
+
+## Tracked vs ignored (current)
+
+- **Tracked:** `digests/`, `agent/out/`, `graphify-out/` (except machine-local/cache patterns in `.gitignore`), docs under `docs/`
+- **Gitignored:** `node_modules/`, `.env*`, `agent/digest-corpus/`, `agent/digest-graph/`, graphify cache/python sidecars
+- **`.graphifyignore`:** excludes skill/rule/digest/`agent/out` from the *codebase* graph — that does **not** mean those paths are gitignored
+
+## Prefer one source of truth
+
+- System design / Graphify roles → `docs/ARCHITECTURE.md`
+- Doc maintenance policy → `docs/DOCUMENTATION.md`
+- Product quick start → `README.md`

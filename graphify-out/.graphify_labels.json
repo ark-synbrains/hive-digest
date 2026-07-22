@@ -6,10 +6,12 @@
   "4": "Run Orchestration",
   "5": "Hive Branding & UI",
   "6": "Validate & Rank",
+  "7": "Documentation guide",
   "8": "Research Tests",
   "9": "Branch Cleanup CI",
   "10": "graphrag.mjs",
   "11": "compute_boosts",
   "12": "Cursor Automation — Hive Digest (monthly)",
-  "13": "Cursor Automation (Preferred)"
+  "13": "Cursor Automation (Preferred)",
+  "14": "smtp.mjs"
 }

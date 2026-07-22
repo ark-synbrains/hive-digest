@@ -18,5 +18,7 @@ digests/
 
 Same-day re-runs overwrite that date’s folder (monthly schedule is once per month).
 
-Local copies also land under `agent/out/` (tracked in git; includes GraphRAG
-run artifacts under `agent/out/digest-graph/`).
+Matching run artifacts also land under `agent/out/` (tracked in git; includes
+GraphRAG under `agent/out/digest-graph/`). See [`../agent/out/README.md`](../agent/out/README.md).
+
+Doc sync policy: [`../docs/DOCUMENTATION.md`](../docs/DOCUMENTATION.md).

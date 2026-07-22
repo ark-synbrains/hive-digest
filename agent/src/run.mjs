@@ -69,8 +69,8 @@ function hourStamp(d = new Date()) {
 }
 
 /**
- * Persist every generated issue into the repo archive (digests/) and a local
- * scratch copy under agent/out/. Both dry-run and live sends call this.
+ * Persist every generated issue into the repo archive (digests/) and matching
+ * tracked artifacts under agent/out/. Both dry-run and live sends call this.
  *
  * Layout:
  *   digests/YYYY-MM-DD/
@@ -79,6 +79,9 @@ function hourStamp(d = new Date()) {
  *     ranking.json
  *     graphrag.json
  *     meta.json
+ *   agent/out/
+ *     digest-YYYY-MM-DD.{html,txt,ranking.json,graphrag.json}
+ *     digest-graph/YYYY-MM-DD/…
  */
 function archiveIssue({
   stamp,
@@ -123,7 +126,7 @@ function archiveIssue({
   writeFileSync(join(repoDir, 'graphrag.json'), JSON.stringify(graphRag, null, 2) + '\n');
   writeFileSync(join(repoDir, 'meta.json'), JSON.stringify(meta, null, 2) + '\n');
 
-  // Local scratch (gitignored) — same payloads for quick inspection
+  // Tracked run artifacts (committed with digests/ by CI / automation)
   const outDir = join(ROOT, 'out');
   mkdirSync(outDir, { recursive: true });
   writeFileSync(join(outDir, `digest-${stamp}.html`), issue.html);
@@ -198,7 +201,7 @@ async function main() {
           sectionOrder,
           graphRag,
           archive: archived.repoDir,
-          scratch: archived.outDir,
+          outDir: archived.outDir,
         },
         null,
         2
@@ -289,7 +292,7 @@ async function main() {
         runsCompleted: state.runsCompleted,
         sectionOrder,
         archive: archived.repoDir,
-        scratch: archived.outDir,
+        outDir: archived.outDir,
       },
       null,
       2

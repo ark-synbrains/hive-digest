@@ -4,6 +4,10 @@ This folder is **committed to git**. Every dry-run (`npm run generate`) and live
 send (`npm start`) writes here in addition to the canonical archive under
 `digests/YYYY-MM-DD/`.
 
+When you change what is written here, update this README, `digests/README.md`,
+`docs/ARCHITECTURE.md`, and the monthly workflow commit step — see
+[`docs/DOCUMENTATION.md`](../../docs/DOCUMENTATION.md).
+
 ## Layout
 
 ```

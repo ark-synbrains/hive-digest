@@ -15,7 +15,7 @@ and emails a Hive Digest issue via SMTP. It is **not** a Cursor Cloud Agent.
 | `src/sanitize.mjs` | `sanitizeDigestText` / `sanitizeIssue` |
 | `src/smtp.mjs` | nodemailer transport (`SMTP_*` env) |
 | `scripts/build_content_graph.py` | Graphify build/cluster helper for content boosts |
-| `state.json` | Local send history (gitignored patterns may apply in CI) |
+| `state.json` | Local send history (tracked; updated on successful sends) |
 
 Pipeline: `researchDigest` → `enrichDigestWithGraphRag` → `validateAndRankDigest`
 → `buildIssue` → `sanitizeIssue` → archive `digests/` → SMTP.
@@ -42,8 +42,9 @@ npm start          # research + archive + send (needs SMTP_* + NEWSLETTER_TO_EMA
 ```
 
 Every generated issue (dry-run or send) is written to **`digests/YYYY-MM-DD/`** in the
-repo (`hive-digest.html`, `.txt`, ranking/GraphRAG/meta JSON). Scratch copies also
-go to `agent/out/` (**tracked** in git — issue scratch + GraphRAG run files).
+repo (`hive-digest.html`, `.txt`, ranking/GraphRAG/meta JSON). Matching run
+artifacts also go to **`agent/out/`** (tracked — HTML/text copies + GraphRAG
+graph under `agent/out/digest-graph/`). See [`out/README.md`](out/README.md).
 Monthly GitHub Actions commits new `digests/` and `agent/out/` folders after a
 successful send.
 

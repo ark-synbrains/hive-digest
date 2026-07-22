@@ -1,107 +1,112 @@
 {
   "agent/package.json": {
-    "mtime": 1784710797.060536,
+    "mtime": 1784710663.2977617,
     "ast_hash": "631d3807b8135dc788ca0dfaa5270a84",
     "semantic_hash": ""
   },
   "agent/src/render.mjs": {
-    "mtime": 1784710797.0616164,
+    "mtime": 1784704621.848619,
     "ast_hash": "7b5e10c10259bb64851a353a2e446cf0",
     "semantic_hash": ""
   },
   "agent/src/research.mjs": {
-    "mtime": 1784710797.0616164,
+    "mtime": 1784704621.848619,
     "ast_hash": "ed27a33881a2c26046bac70bed422d23",
     "semantic_hash": ""
   },
   "agent/src/research.test.mjs": {
-    "mtime": 1784710797.0616164,
+    "mtime": 1784704621.848619,
     "ast_hash": "c200ecacea9fb6d04b2a7f0e1869f050",
     "semantic_hash": ""
   },
   "agent/src/run.mjs": {
-    "mtime": 1784710797.0616164,
-    "ast_hash": "4be1bd639c1a1457ff8e91d7ecaf58b6",
+    "mtime": 1784710986.2884197,
+    "ast_hash": "e98216ab7f62e45e7288f541f6fceedf",
     "semantic_hash": ""
   },
   "agent/src/sanitize.mjs": {
-    "mtime": 1784710797.0616164,
+    "mtime": 1784704621.848619,
     "ast_hash": "344a228f40ccfccbc449287ec0c05017",
     "semantic_hash": ""
   },
   "agent/src/smtp.mjs": {
-    "mtime": 1784710797.0616164,
+    "mtime": 1784704621.848619,
     "ast_hash": "cd2cbfc645c89cda5b38107d1b40b0ac",
     "semantic_hash": ""
   },
   "agent/src/validate.mjs": {
-    "mtime": 1784710797.0616164,
+    "mtime": 1784710663.2977617,
     "ast_hash": "0a56795051cf8562e04309c5debeb6fc",
     "semantic_hash": ""
   },
   "agent/state.json": {
-    "mtime": 1784710797.0616164,
+    "mtime": 1784710663.2977617,
     "ast_hash": "eeddb7e9808a89690ffacd200b1baa05",
     "semantic_hash": ""
   },
   ".github/workflows/delete-merged-branch.yml": {
-    "mtime": 1784710797.0588796,
+    "mtime": 1784704621.848619,
     "ast_hash": "9f7f870897f8394e0da098c61893efa2",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1784710797.0589447,
-    "ast_hash": "0cdecf024dd80cf9511edf4d38844bd6",
+    "mtime": 1784710975.4484668,
+    "ast_hash": "3ce32d9398c3ccd1342a732dee6a2cfe",
     "semantic_hash": ""
   },
   ".github/workflows/graphify.yml": {
-    "mtime": 1784710797.0589447,
+    "mtime": 1784704621.848619,
     "ast_hash": "12552605c38056383863cfd8fba74fd7",
     "semantic_hash": ""
   },
   "hive-digest.html": {
-    "mtime": 1784710797.063536,
+    "mtime": 1784704621.852619,
     "ast_hash": "5a25f0f0e8639d2f4413e591b7114fc4",
     "semantic_hash": ""
   },
   ".cursor/automations/hive-digest.md": {
-    "mtime": 1784710797.0586436,
+    "mtime": 1784710712.6937618,
     "ast_hash": "d5ea31cf7dfded5db4fdcb5893870ff2",
     "semantic_hash": ""
   },
   ".github/workflows/hive-digest.yml": {
-    "mtime": 1784710797.0589447,
+    "mtime": 1784710689.7217617,
     "ast_hash": "f3252c5ce832b12d7aa4f0cc07acaffb",
     "semantic_hash": ""
   },
   "agent/README.md": {
-    "mtime": 1784710797.0589447,
-    "ast_hash": "22899471d2975063af845d519ccb3c62",
+    "mtime": 1784710964.2125165,
+    "ast_hash": "fb9ea7e272e8d29e68788255519d6de3",
     "semantic_hash": ""
   },
   "agent/src/digest.test.mjs": {
-    "mtime": 1784710797.060536,
+    "mtime": 1784704621.848619,
     "ast_hash": "4fec4b07812f1a75befb18d9884ee582",
     "semantic_hash": ""
   },
   "agent/scripts/build_content_graph.py": {
-    "mtime": 1784710797.060536,
+    "mtime": 1784710663.2977617,
     "ast_hash": "3c9000374403461cfac277a1788e5684",
     "semantic_hash": ""
   },
   "agent/src/graphrag.mjs": {
-    "mtime": 1784710797.0616164,
+    "mtime": 1784710663.2977617,
     "ast_hash": "c1985b15fb9ece815a2779bdec18bdc8",
     "semantic_hash": ""
   },
   "agent/src/graphrag.test.mjs": {
-    "mtime": 1784710797.0616164,
+    "mtime": 1784710663.2977617,
     "ast_hash": "8ed1eed42bf60d1665014a72a1c16e1e",
     "semantic_hash": ""
   },
   "docs/ARCHITECTURE.md": {
-    "mtime": 1784710797.062332,
-    "ast_hash": "40e3455ba368bfa91fb1b4910b7a97f7",
+    "mtime": 1784710985.9524212,
+    "ast_hash": "06f45c0e3b135d386266ab7d0d3cd950",
+    "semantic_hash": ""
+  },
+  "docs/DOCUMENTATION.md": {
+    "mtime": 1784710937.7806368,
+    "ast_hash": "2e1b3d2d46565e1a14d479072f290485",
     "semantic_hash": ""
   }
 }
