@@ -93,6 +93,7 @@ graphify explain "fetchWithRetry"
 (`agent/**`, `tech-digest-agent.html`, and common source extensions), then
 commits refreshed `graphify-out/` artifacts when the graph changes.
 Manual runs: Actions → **graphify** → **Run workflow**.
+
 ## Important: where this runs
 
 This tool calls `https://api.anthropic.com/v1/messages` directly from the
