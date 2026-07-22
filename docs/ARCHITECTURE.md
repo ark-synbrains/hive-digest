@@ -10,7 +10,7 @@ Repo: [ark-synbrains/hive-digest](https://github.com/ark-synbrains/hive-digest)
 
 ---
 
-## 1. What the system does (plain English)
+## 1. What the system does
 
 Hive Digest is an automated newsletter that:
 
@@ -155,7 +155,7 @@ reading every file.
 | --- | --- |
 | Interactive viz | [`graphify-out/graph.html`](../graphify-out/graph.html) |
 | Queryable data | [`graphify-out/graph.json`](../graphify-out/graph.json) |
-| Plain-language report | [`graphify-out/GRAPH_REPORT.md`](../graphify-out/GRAPH_REPORT.md) |
+| Audit report | [`graphify-out/GRAPH_REPORT.md`](../graphify-out/GRAPH_REPORT.md) |
 | Always-on Cursor rule | [`.cursor/rules/graphify.mdc`](../.cursor/rules/graphify.mdc) |
 | Agent Skill | [`.agents/skills/graphify/`](../.agents/skills/graphify/) |
 | Ignore rules / skills / digests / local out | [`.graphifyignore`](../.graphifyignore) — **rules are never graph corpus** |
