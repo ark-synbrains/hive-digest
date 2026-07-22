@@ -25,6 +25,8 @@ runner for the preferred Graphify engine; otherwise a Node fallback is used.
 
 Browser UI counterpart (Claude.ai artifact): [`../hive-digest.html`](../hive-digest.html).
 
+System design + Graphify roles: [`../docs/ARCHITECTURE.md`](../docs/ARCHITECTURE.md).
+
 Monthly automation entrypoints:
 
 - [`.github/workflows/hive-digest.yml`](../.github/workflows/hive-digest.yml)
