@@ -51,12 +51,29 @@ Artifacts:
 - [`graphify-out/graph.json`](graphify-out/graph.json) — queryable graph data
 - [`graphify-out/GRAPH_REPORT.md`](graphify-out/GRAPH_REPORT.md) — communities, god nodes, suggested questions
 
+### Skill setup (once per machine)
+
+```bash
+# CLI (PyPI package name is temporarily graphifyy)
+uv tool install graphifyy   # or: pipx install graphifyy
+
+# Project-scoped Cursor rule + Agent Skills skill (committed in this repo)
+graphify install --platform cursor --project
+graphify install --platform agents --project
+
+# Optional: keep graph.json current + conflict-safe on commits
+graphify hook install
+```
+
+This repo already includes:
+- `.cursor/rules/graphify.mdc` — always-on Cursor rule (query-first)
+- `.agents/skills/graphify/` — `/graphify` Agent Skill + references
+- `.graphifyignore` — excludes skill/rule artifacts from the generated graph
+- `.gitattributes` — union-merge driver for `graphify-out/graph.json`
+
 ### Rebuild / query
 
 ```bash
-# install once (PyPI package name is temporarily graphifyy)
-pip install graphifyy && graphify install --platform cursor
-
 # AST-only refresh after code changes (no LLM)
 graphify update .
 
@@ -140,8 +157,11 @@ graphify-out/                       knowledge graph (graphify)
   graph.html                        interactive visualization
   graph.json                        queryable graph data
   GRAPH_REPORT.md                   communities / god nodes / questions
+.agents/skills/graphify/            /graphify Agent Skill + references
+.graphifyignore                     exclude skill/rule files from the graph
 .github/workflows/newsletter.yml
 .cursor/automations/newsletter.md
-.cursor/rules/graphify.mdc
+.cursor/rules/graphify.mdc          always-on Cursor graphify rule
+.gitattributes                      graph.json union-merge driver
 README.md
 ```

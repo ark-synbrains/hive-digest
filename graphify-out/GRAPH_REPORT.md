@@ -1,12 +1,17 @@
-# Graph Report - .  (2026-07-21)
+# Graph Report - .  (2026-07-22)
 
 ## Corpus Check
-- Corpus is ~9,137 words - fits in a single context window. You may not need a graph.
+- cluster-only mode — file stats not available
 
 ## Summary
 - 128 nodes · 220 edges · 10 communities (9 shown, 1 thin omitted)
 - Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.72)
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `ebe5cf2e`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - Research Resilience

@@ -1,9 +1,72 @@
 {
-  "built_at": "2026-07-21T09:13:51.309675+00:00",
-  "root": "/workspace",
-  "total_files": 14,
-  "total_words": 9137,
-  "nodes": 128,
-  "edges": 0,
-  "commit": "0a7a9f8f66f3f41f5e39e5ae335e313ff3065836"
+  "agent/package.json": {
+    "mtime": 1784630404.1834033,
+    "ast_hash": "5cf669f21a526e0a672075e6f2ab0239",
+    "semantic_hash": ""
+  },
+  "agent/src/render.mjs": {
+    "mtime": 1784630404.1834033,
+    "ast_hash": "a824f232795e364a10eb5d38550231a0",
+    "semantic_hash": ""
+  },
+  "agent/src/research.mjs": {
+    "mtime": 1784630404.1834033,
+    "ast_hash": "26b06ce2f5d5ee7c8f76928a1243eb53",
+    "semantic_hash": ""
+  },
+  "agent/src/research.test.mjs": {
+    "mtime": 1784630404.1834033,
+    "ast_hash": "c200ecacea9fb6d04b2a7f0e1869f050",
+    "semantic_hash": ""
+  },
+  "agent/src/run.mjs": {
+    "mtime": 1784630404.1834033,
+    "ast_hash": "22a9bd486ae369f5d9c1cb386b582e62",
+    "semantic_hash": ""
+  },
+  "agent/src/sanitize.mjs": {
+    "mtime": 1784630404.1834033,
+    "ast_hash": "e2ed66c16bc50a756339ed654bcd8005",
+    "semantic_hash": ""
+  },
+  "agent/src/smtp.mjs": {
+    "mtime": 1784630404.1834033,
+    "ast_hash": "6122fa8852664688d0ebaea3cdcf17fc",
+    "semantic_hash": ""
+  },
+  "agent/src/validate.mjs": {
+    "mtime": 1784630404.1834033,
+    "ast_hash": "671696ea41260f505d445ecd9eabd3bd",
+    "semantic_hash": ""
+  },
+  "agent/state.json": {
+    "mtime": 1784630404.1834033,
+    "ast_hash": "fb27a94462bea05f76d2768a0a5f8831",
+    "semantic_hash": ""
+  },
+  ".cursor/automations/newsletter.md": {
+    "mtime": 1784630404.1834033,
+    "ast_hash": "73c46253e54ca0371bbbe640f48c0c44",
+    "semantic_hash": ""
+  },
+  ".github/workflows/delete-merged-branch.yml": {
+    "mtime": 1784630404.1834033,
+    "ast_hash": "9f7f870897f8394e0da098c61893efa2",
+    "semantic_hash": ""
+  },
+  ".github/workflows/newsletter.yml": {
+    "mtime": 1784630404.1834033,
+    "ast_hash": "a51f8ee78b15a689051a5ebb58ccb30d",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1784699876.9056258,
+    "ast_hash": "cb103154372647982e90d63959168648",
+    "semantic_hash": ""
+  },
+  "tech-digest-agent.html": {
+    "mtime": 1784630404.1834033,
+    "ast_hash": "843523a4fbc47e41c46a5357574ece75",
+    "semantic_hash": ""
+  }
 }
