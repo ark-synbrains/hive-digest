@@ -86,6 +86,14 @@ graphify path "researchDigest" "sendSmtpEmail"
 graphify explain "fetchWithRetry"
 ```
 
+### Rebuild on code changes (CI)
+
+[`.github/workflows/graphify.yml`](.github/workflows/graphify.yml) runs
+`graphify update . --force` on pushes to `main` that touch code
+(`agent/**`, `tech-digest-agent.html`, and common source extensions), then
+commits refreshed `graphify-out/` artifacts when the graph changes.
+Manual runs: Actions → **graphify** → **Run workflow**.
+
 ## Important: where this runs
 
 This tool calls `https://api.anthropic.com/v1/messages` directly from the
