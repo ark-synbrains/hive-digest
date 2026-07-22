@@ -74,9 +74,9 @@ Do not open a PR or create a feature branch for a normal successful send.
   - Falls back across sources: arXiv → OpenAlex → HN-only; each HN lane has alternate queries if the primary is empty/failing.
   - Builds a content GraphRAG graph (Graphify) from candidates and applies ranking-only `_graphBoost` scores (capped; never emailed). Soft-falls back to a Node graph if Python/graphifyy is missing. Set `HIVE_GRAPHRAG=0` to skip.
   - Validates entries, scores insight value, ranks high→low, orders sections by average score (scores logged only, never emailed).
-  - Archives the issue under `digests/YYYY-MM-DD/` (HTML, text, ranking, GraphRAG, meta) and a scratch copy under `agent/out/`.
+  - Archives the issue under `digests/YYYY-MM-DD/` (HTML, text, ranking, GraphRAG, meta) and under `agent/out/` (tracked scratch + GraphRAG run artifacts).
   - Sanitizes digest text/HTML before SMTP send.
-- After a successful send, commit and push any new files under `digests/` (and `agent/state.json` if changed) so the issue is stored in the repository. Do not open a PR for that archive commit on a normal monthly send if you can push to the automation branch/main per environment policy; prefer a direct commit like the GitHub Actions workflow.
+- After a successful send, commit and push any new files under `digests/`, `agent/out/`, and `agent/state.json` if changed so the issue is stored in the repository. Do not open a PR for that archive commit on a normal monthly send if you can push to the automation branch/main per environment policy; prefer a direct commit like the GitHub Actions workflow.
 - Sending uses nodemailer SMTP with env secrets:
   - SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM
   - NEWSLETTER_TO_EMAILS (comma/semicolon-separated; historical env name)
