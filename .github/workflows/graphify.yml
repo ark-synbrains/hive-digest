@@ -1,0 +1,89 @@
+# Rebuild the checked-in graphify knowledge graph whenever a PR merges into main.
+# Complements the Cursor Automation in .cursor/automations/graphify.md
+# (preferred). This workflow is the CI fallback that commits AST-only updates
+# directly to the PR base branch — no LLM / API key required.
+
+name: graphify
+
+on:
+  pull_request:
+    types: [closed]
+  workflow_dispatch:
+
+concurrency:
+  group: graphify-${{ github.event.pull_request.base.ref || github.ref_name }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild-graph:
+    name: rebuild knowledge graph
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (
+        github.event.pull_request.merged == true &&
+        !startsWith(github.event.pull_request.title, 'chore(graphify)')
+      )
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout base branch
+        uses: actions/checkout@v4
+        with:
+          # Land graph updates on the branch the PR merged into (usually main).
+          ref: ${{ github.event.pull_request.base.ref || github.ref_name }}
+          fetch-depth: 0
+
+      - name: Skip when merge only touched graphify-out
+        if: github.event_name == 'pull_request'
+        id: skip
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          files="$(gh api "repos/${{ github.repository }}/pulls/${PR}/files" --paginate --jq '.[].filename')"
+          if [ -z "$files" ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          non_graph="$(printf '%s\n' "$files" | grep -v '^graphify-out/' || true)"
+          if [ -z "$non_graph" ]; then
+            echo "Merged PR #${PR} only changed graphify-out/ — skipping rebuild."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Setup Python
+        if: steps.skip.outputs.skip != 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install graphifyy
+        if: steps.skip.outputs.skip != 'true'
+        run: pip install graphifyy
+
+      - name: Rebuild graph (AST-only, no LLM)
+        if: steps.skip.outputs.skip != 'true'
+        # --force: allow legitimate node-count drops after deletions/refactors.
+        run: graphify update . --force
+
+      - name: Commit graphify-out if changed
+        if: steps.skip.outputs.skip != 'true'
+        env:
+          PR: ${{ github.event.pull_request.number || 'manual' }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add graphify-out/
+          if git diff --cached --quiet; then
+            echo "Graph unchanged — no commit needed."
+            exit 0
+          fi
+          git commit -m "chore(graphify): rebuild knowledge graph after merge #${PR}"
+          git push
