@@ -1,7 +1,7 @@
-# Graph Report - workspace  (2026-07-22)
+# Graph Report - hive-digest  (2026-07-22)
 
 ## Corpus Check
-- 17 files · ~15,481 words
+- 17 files · ~15,479 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1a95dd24`
+- Built from commit: `1b0ac567`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

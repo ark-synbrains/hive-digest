@@ -1621,15 +1621,15 @@
       "norm_label": "hive digest \u2014 architecture & graphify integration"
     },
     {
-      "label": "1. What the system does (plain English)",
+      "label": "1. What the system does",
       "file_type": "document",
       "source_file": "docs/ARCHITECTURE.md",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "docs_architecture_1_what_the_system_does_plain_english",
+      "id": "docs_architecture_1_what_the_system_does",
       "community": 12,
       "community_name": "Cursor Automation \u2014 Hive Digest (monthly)",
-      "norm_label": "1. what the system does (plain english)"
+      "norm_label": "1. what the system does"
     },
     {
       "label": "2. Overall architecture flowchart",
@@ -4923,7 +4923,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_architecture_hive_digest_architecture_graphify_integration",
-      "target": "docs_architecture_1_what_the_system_does_plain_english",
+      "target": "docs_architecture_1_what_the_system_does",
       "confidence_score": 1.0
     },
     {
@@ -5098,5 +5098,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "1a95dd245d7c5104767ecebff5bd0731950084fb"
+  "built_at_commit": "1b0ac567802d098c06dae26f3f130ab5644aeba6"
 }
